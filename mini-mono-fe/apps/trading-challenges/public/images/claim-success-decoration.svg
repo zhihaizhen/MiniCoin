@@ -1,0 +1,20 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 左侧彩带 -->
+  <path d="M10 20 Q15 10, 25 15 T45 20" stroke="#FFA940" stroke-width="3" fill="none" opacity="0.8"/>
+  <path d="M8 22 Q13 14, 23 18 T42 23" stroke="#FFD666" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <!-- 右侧彩带 -->
+  <path d="M75 20 Q80 10, 95 15 T110 20" stroke="#FFA940" stroke-width="3" fill="none" opacity="0.8"/>
+  <path d="M78 23 Q85 14, 97 18 T112 22" stroke="#FFD666" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <!-- 中间星星装饰 -->
+  <circle cx="45" cy="12" r="2" fill="#FFD666" opacity="0.9"/>
+  <circle cx="55" cy="8" r="1.5" fill="#FFA940" opacity="0.8"/>
+  <circle cx="65" cy="10" r="2" fill="#FFD666" opacity="0.9"/>
+  <circle cx="75" cy="15" r="1.5" fill="#FFA940" opacity="0.8"/>
+  
+  <!-- 小圆点装饰 -->
+  <circle cx="35" cy="25" r="1" fill="#52C41A" opacity="0.6"/>
+  <circle cx="85" cy="28" r="1" fill="#52C41A" opacity="0.6"/>
+</svg>
+

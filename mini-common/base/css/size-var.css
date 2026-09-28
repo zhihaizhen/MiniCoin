@@ -1,0 +1,39 @@
+:root {
+  --size-0: 0;
+  --size-1: 1px;
+  --size-2: 2px;
+  --size-4: 4px;
+  --size-5: 5px;
+  --size-6: 6px;
+  --size-8: 8px;
+  --size-7: 7px;
+  --size-10: 10px;
+  --size-12: 12px;
+  --size-14: 14px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-28: 28px;
+  --size-30: 30px;
+  --size-32: 32px;
+  --size-36: 36px;
+  --size-40: 40px;
+  --size-48: 48px;
+  --size-56: 56px;
+  --size-64: 64px;
+  --size-72: 72px;
+  --size-80: 80px;
+  --size-92: 92px;
+  --size-96: 96px;
+  --size-100: 100px;
+
+  --font-size-8: 8px; /* only used for iconfont */
+  --font-size-10: 10px;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-48: 48px;
+}

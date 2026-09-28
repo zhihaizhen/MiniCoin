@@ -1,0 +1,415 @@
+.wsot-registration-timer-widget {
+  .wsot-clock-bg {
+    padding: 22px 0 26px 0;
+    .wsot-flex {
+      display: flex;
+      .wsot-clock-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(34, 36, 93, 1);
+        width: 70px;
+        height: 70px;
+        margin: 0px 45px;
+        -webkit-clip-path: polygon(
+          75% 0%,
+          100% 18%,
+          100% 100%,
+          21% 100%,
+          0 80%,
+          0% 0%
+        );
+        clip-path: polygon(75% 0%, 100% 18%, 100% 100%, 21% 100%, 0 80%, 0% 0%);
+        .wsot-clock-num {
+          font-family: metral;
+          padding-top: 0 !important;
+          letter-spacing: 0px;
+          color: rgba(255, 255, 255, 1);
+          font-size: 28px;
+          font-style: normal;
+          line-height: 34px;
+          margin-bottom: 3px;
+          text-align: center;
+          width: 40px;
+        }
+        .wsot-clock-txt {
+          font-family: metral;
+          padding-top: 0 !important;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 13px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.8);
+          text-shadow: 0px 5.86047px 11.7209px rgba(0, 0, 0, 0.4);
+        }
+      }
+      .wsot-clock-colon-bg {
+        position: relative;
+        padding: 0px 0px;
+        width: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .wsot-clock-colon {
+          position: absolute;
+          display: inline-block;
+          width: 4px;
+          height: 5px;
+          background: rgba(255, 255, 255, 1);
+          &:first-child {
+            margin-bottom: 0;
+            top: 28px;
+          }
+          &:last-child {
+            margin-bottom: 0;
+            top: 36px;
+          }
+        }
+      }
+    }
+  }
+  .wsot-clock-disabled-bg {
+    .wsot-flex {
+      .wsot-clock-item {
+        .wsot-clock-num,
+        .wsot-clock-txt {
+          padding-top: 0 !important;
+          color: rgba(255, 255, 255, 0.4) !important;
+        }
+      }
+      .wsot-clock-colon-bg {
+        .wsot-clock-colon {
+          background: rgba(255, 255, 255, 0.4) !important;
+        }
+      }
+    }
+  }
+}
+.wsot-next-with-clock-widget {
+  .wsot-clock-bg {
+    padding: 14px 0 18px 0;
+    .wsot-flex {
+      display: flex;
+      .wsot-clock-item {
+        margin: 0 16px;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        .wsot-clock-num {
+          padding-top: 0 !important;
+          font-family: metral;
+          letter-spacing: 8px;
+          color: rgba(255, 255, 255, 1);
+          font-size: 20px;
+          font-style: normal;
+          line-height: 24px;
+          margin-bottom: 3px;
+          text-align: center;
+          width: 40px;
+        }
+        .wsot-clock-txt {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: normal;
+          color: rgba(255, 255, 255, 0.4);
+          line-height: 15px;
+          text-align: center;
+        }
+      }
+      .wsot-clock-colon-bg {
+        position: relative;
+        padding: 0px 0px;
+        width: 6px;
+        .wsot-clock-colon {
+          position: absolute;
+          display: inline-block;
+          width: 4px;
+          height: 5px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 1);
+          &:first-child {
+            margin-bottom: 0px;
+            top: 5px;
+          }
+          &:last-child {
+            margin-bottom: 0px;
+            top: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+.wsot-next-with-clock-widget {
+  .wsot-clock-bg {
+    padding: 14px 0 18px 0;
+    .wsot-flex {
+      display: flex;
+      .wsot-clock-item {
+        margin: 0 16px;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        .wsots-clock-num {
+          font-family: metral;
+          letter-spacing: 8px;
+          color: rgba(255, 255, 255, 1);
+          font-size: 20px;
+          font-style: normal;
+          line-height: 24px;
+          margin-bottom: 3px;
+          text-align: center;
+          width: 40px;
+        }
+        .wsot-clock-txt {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: normal;
+          color: rgba(255, 255, 255, 0.4);
+          line-height: 15px;
+          text-align: center;
+        }
+      }
+      .wsot-clock-colon-bg {
+        position: relative;
+        padding: 0px 0px;
+        width: 6px;
+        .wsot-clock-colon {
+          position: absolute;
+          display: inline-block;
+          width: 4px;
+          height: 5px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 1);
+          &:first-child {
+            margin-bottom: 0px;
+            top: 5px;
+          }
+          &:last-child {
+            margin-bottom: 0px;
+            top: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .wsot-registration-timer-widget {
+    .wsot-clock-bg {
+      padding: 14px 0 42px 0;
+      width: 380px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .wsot-registration-timer-widget {
+    .wsot-clock-bg {
+      padding: 10px 0 16px 0;
+      .wsot-flex {
+        display: flex;
+        .wsot-clock-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: none;
+          width: 50px;
+          height: 50px;
+          margin: 0px 15px;
+          -webkit-clip-path: none;
+          clip-path: none;
+          .wsot-clock-num {
+            padding-top: 0 !important;
+            font-family: metral;
+            letter-spacing: 0px;
+            color: rgba(255, 255, 255, 1);
+            font-size: 18px;
+            font-style: normal;
+            line-height: 34px;
+            margin-bottom: 3px;
+            text-align: center;
+            width: 40px;
+          }
+          .wsot-clock-txt {
+            font-family: metral;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 13px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 5.86047px 11.7209px rgba(0, 0, 0, 0.4);
+          }
+        }
+        .wsot-clock-colon-bg {
+          position: relative;
+          padding: 0px 0px;
+          width: 6px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .wsot-clock-colon {
+            position: absolute;
+            display: inline-block;
+            width: 4px;
+            height: 5px;
+            background: rgba(255, 255, 255, 1);
+            &:first-child {
+              margin-bottom: 0;
+              top: 20px;
+            }
+            &:last-child {
+              margin-bottom: 0;
+              top: 30px;
+            }
+          }
+        }
+      }
+    }
+    .wsot-clock-disabled-bg {
+      .wsot-flex {
+        .wsot-clock-item {
+          .wsot-clock-num,
+          .wsot-clock-txt {
+            padding-top: 0 !important;
+            color: rgba(255, 255, 255, 0.4) !important;
+          }
+        }
+        .wsot-clock-colon-bg {
+          .wsot-clock-colon {
+            background: rgba(255, 255, 255, 0.4) !important;
+          }
+        }
+      }
+    }
+  }
+  .wsot-next-with-clock-widget {
+    .wsot-clock-bg {
+      padding: 14px 0 18px 0;
+      .wsot-flex {
+        display: flex;
+        .wsot-clock-item {
+          margin: 0 16px;
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          .wsot-clock-num {
+            font-family: metral;
+            padding-top: 0 !important;
+            letter-spacing: 8px;
+            color: rgba(255, 255, 255, 1);
+            font-size: 20px;
+            font-style: normal;
+            line-height: 24px;
+            margin-bottom: 3px;
+            text-align: center;
+            width: 40px;
+          }
+          .wsot-clock-txt {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: normal;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 15px;
+            text-align: center;
+          }
+        }
+        .wsot-clock-colon-bg {
+          position: relative;
+          padding: 0px 0px;
+          width: 6px;
+          .wsot-clock-colon {
+            position: absolute;
+            display: inline-block;
+            width: 4px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 1);
+            &:first-child {
+              margin-bottom: 0px;
+              top: 5px;
+            }
+            &:last-child {
+              margin-bottom: 0px;
+              top: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .wsot-next-with-clock-widget {
+    .wsot-clock-bg {
+      padding: 14px 0 18px 0;
+      .wsot-flex {
+        display: flex;
+        .wsot-clock-item {
+          margin: 0 16px;
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          .wsots-clock-num {
+            font-family: metral;
+            letter-spacing: 8px;
+            color: rgba(255, 255, 255, 1);
+            font-size: 20px;
+            font-style: normal;
+            line-height: 24px;
+            margin-bottom: 3px;
+            text-align: center;
+            width: 40px;
+          }
+          .wsot-clock-txt {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: normal;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 15px;
+            text-align: center;
+          }
+        }
+        .wsot-clock-colon-bg {
+          position: relative;
+          padding: 0px 0px;
+          width: 6px;
+          .wsot-clock-colon {
+            position: absolute;
+            display: inline-block;
+            width: 4px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 1);
+            &:first-child {
+              margin-bottom: 0px;
+              top: 5px;
+            }
+            &:last-child {
+              margin-bottom: 0px;
+              top: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

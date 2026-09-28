@@ -1,0 +1,320 @@
+// 数据模块
+.homeData {
+  display: flex;
+  justify-content: center;
+
+  .coreContent {
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 180px;
+  }
+
+  .title {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary, #FFFFFF);
+  }
+
+
+
+
+  .marketWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    padding: 40px 0;
+
+    .marketLeft {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .marketRight {
+      width: 458px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--line-border-default, #28292A);
+      overflow: hidden;
+    }
+  }
+
+  .tabHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 24px 0 24px;
+  }
+
+  .tabTitle {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color: var(--text-primary, #FFFFFF);
+  }
+
+  .tableContent {
+    width: 100%;
+    padding: 0 12px 12px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      height: 48px;
+      padding: 0;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      color: var(--text-secondary);
+      border-bottom: none;
+    }
+
+    .content {
+      min-height: 200px;
+    }
+  }
+}
+
+// 表头和内容通用
+.left {
+  text-align: left;
+  padding-left: 12px;
+}
+
+.right {
+  text-align: right;
+  padding-right: 12px;
+}
+
+.center {
+  text-align: center;
+}
+
+.pairs {
+  flex: 0 0 200px;
+}
+
+
+.change {
+  flex: 0 0 130px;
+}
+
+.trade {
+  flex-basis: 98px;
+}
+
+.rate {
+  flex-basis: 108px;
+}
+
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.greenColor {
+  color: var(--text-green);
+}
+
+.redColor {
+  color: var(--text-red);
+}
+
+
+
+// 左边row
+.leftRowItem,
+.rightRowItem {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary, #FFFFFF);
+  text-decoration: none;
+  border-radius: 8px;
+
+  &:hover {
+    background: var(--fill-fill-hover-1, #1D1D1D);
+    cursor: pointer;
+
+    .tradeBtn {
+      background: var(--fill-button-brand-default, #ABE127);
+      color: var(--text-black, #101112);
+    }
+  }
+
+
+  .tradeBtn {
+    border-radius: 8px;
+    background: var(--fill-button-tertiary-default, #28292A);
+    color: var(--text-white, #FFF);
+    cursor: pointer;
+    padding: 8px 22px;
+    margin-right: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+    max-width: 100px;
+  }
+
+  .itemIcon {
+    width: 28px;
+    height: 28px;
+    background-color: var(--bg-tertiary, #28292A);
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+}
+
+.more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: var(--text-primary);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text-brand-default);
+
+    svg {
+      fill: var(--text-brand-default, #abe127);
+      transform: translateX(4px);
+      transition: all 0.3s;
+    }
+  }
+
+  svg {
+    fill: var(--text-white);
+    margin-left: 4px;
+  }
+}
+
+
+// H5 专用样式
+.h524Change {
+  display: none;
+}
+
+.size14 {
+  font-size: 14px;
+}
+
+.pairsName {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 767px) {
+
+  .left {
+    padding-left: 0px;
+  }
+
+  .right {
+    padding-right: 0px;
+  }
+
+  .homeData {
+    .title {
+      font-size: 24px;
+    }
+
+    .coreContent {
+      width: 100%;
+      padding: 0px 16px 100px;
+    }
+
+    .blockTitle {
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 20px;
+    }
+
+    .blockExtra {
+      font-size: 14px;
+    }
+
+    .marketWrapper {
+      flex-direction: column;
+      padding: 24px 0;
+
+      .marketRight {
+        width: 100%;
+      }
+    }
+
+    .tabHeader {
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+      padding: 8px 16px 0 16px;
+    }
+
+
+    .tableContent {
+      padding: 0 16px;
+
+      .header {
+        height: 40px;
+        font-size: 12px;
+        margin-top: 0;
+      }
+
+      .content {
+        min-height: auto;
+      }
+    }
+
+    .pairs {
+      flex: 0 0 50%;
+    }
+
+    .price,
+    .change,
+    .rate,
+    .trade {
+      display: none;
+    }
+
+    .h524Change {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex: 0 0 50%;
+      gap: 4px;
+    }
+
+    .leftRowItem .rightRowItem {
+      height: 56px;
+      padding: 12px 0;
+
+      .itemIcon {
+        width: 28px;
+        height: 28px;
+        margin-right: 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,832 @@
+/* Proof of Reserves Page Styles */
+
+.pageWrapper {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-white);
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  height: 400px;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  background-size: contain;
+  background-position: left top;
+  background-repeat: no-repeat;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .heroContainer {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    // padding: 91.5px 40px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @media (max-width: 1024px) {
+      padding: 60px 40px;
+    }
+
+    @media (max-width: 768px) {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+    }
+  }
+
+  .heroContent {
+    flex: 1;
+    max-width: 622px;
+
+    @media (max-width: 768px) {
+      max-width: 343px;
+      width: 343px;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-align: center;
+      order: 2;
+    }
+  }
+
+  .symbolImage {
+    position: absolute;
+    top: 0;
+    right: -58px;
+    width: 360px;
+    height: 363px;
+
+    @media (max-width: 768px) {
+      width: 220px;
+      height: 220px;
+      position: relative;
+      right: auto;
+      margin: 86px auto 0;
+    }
+  }
+
+  .heroImageMobile {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      order: -1;
+    }
+  }
+
+  .heroImageMobileImg {
+    @media (max-width: 768px) {
+      width: 244px;
+      height: 246px;
+      object-fit: cover;
+      margin-left: -12px;
+      margin-top: -16px;
+    }
+  }
+
+  .heroTitle {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.33;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 18px;
+
+    @media (max-width: 1024px) {
+      font-size: 48px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 32px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 32px;
+    }
+  }
+
+  .heroDescription {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.44;
+    color: #ffffff;
+    max-width: 600px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 343px;
+      width: 343px;
+      margin-bottom: 56px;
+    }
+  }
+}
+
+/* Reserve Section */
+.reserveSection {
+  padding: 30px 0;
+  background-color: var(--bg-primary);
+
+  @media (max-width: 768px) {
+    padding: 30px 0 24px;
+  }
+
+  .reserveContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 1024px) {
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 16px;
+    }
+  }
+
+  .auditDateSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    max-width: 1200px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+  }
+
+  /* PC端布局容器 */
+  .pcLayout {
+    display: block;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  /* 移动端布局容器 */
+  .mobileLayout {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      align-items: flex-start;
+    }
+  }
+
+  /* PC端描述文字容器 */
+  .pcDescription {
+    display: block;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .reserveTitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+  .auditDateDropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .auditDateSelector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #1d1d1d;
+    border-radius: 4px;
+    min-width: 360px;
+    height: 40px;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #2a2a2a;
+    }
+
+    @media (max-width: 768px) {
+      min-width: 256px;
+      width: 256px;
+      max-width: 256px;
+      padding: 8px 16px;
+    }
+  }
+
+  .auditDateText {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+    overflow: hidden;
+    flex: 1;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      text-align: left;
+    }
+  }
+
+  .dropdownIcon {
+    color: #ffffff;
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: calc(100% + 4px);
+    /* 添加4px间距 */
+    left: 0;
+    right: 0;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+    /* 调整为完整的圆角 */
+    padding: 12px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 0.3s ease;
+    max-height: 364px;
+    /* 7个选项的高度: 7 * 48px (每个选项) + 48px (上下padding) */
+    overflow-y: auto;
+
+    /* 自定义滚动条样式 */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #2a2a2a;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #666666;
+      border-radius: 3px;
+
+      &:hover {
+        background: #888888;
+      }
+    }
+
+    /* Firefox 滚动条样式 */
+    scrollbar-width: thin;
+    scrollbar-color: #666666 #2a2a2a;
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .dropdownItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--bg-primary);
+    }
+
+    &.selected {
+      background-color: transparent;
+    }
+  }
+
+  .dropdownItemText {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff;
+    overflow: hidden;
+    flex: 1;
+    text-align: left;
+  }
+
+  .radioButton {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .radioSelected {
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 8px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.13 0.870001L3.5 6.5L0.870001 3.87L0 4.75L3.5 8.25L10 1.75L9.13 0.870001Z' fill='%23101112'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .reserveDescription {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #a6a6a6;
+    margin-bottom: 32px;
+
+    @media (max-width: 768px) {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  .reserveGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+
+  .reserveCard {
+    width: 100%;
+    height: 144px;
+    background-color: #1d1d1d;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 120px;
+      padding: 12px;
+    }
+  }
+
+  .cardLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    height: 100%;
+
+    @media (max-width: 768px) {
+      gap: 16px;
+      width: auto;
+      flex: 1;
+    }
+  }
+
+  .cardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .tokenSymbol {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+
+  .tokenName {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: -0.01em;
+    color: #a6a6a6;
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+
+  .ratioSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ratioLabel {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.36;
+    color: #999999;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+  .ratioValue {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: -0.01em;
+    color: #2db270;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  .tokenIconContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .tokenIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 48px 0;
+  background-color: var(--bg-primary);
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
+  .featuresContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 1024px) {
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 16px;
+    }
+  }
+
+  .featuresGrid {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
+      gap: 24px;
+    }
+  }
+
+  .featureCard {
+    border-radius: 44px;
+    position: relative;
+    overflow: hidden;
+    height: 460px;
+
+    @media (max-width: 1024px) {
+      height: auto;
+      min-height: 300px;
+    }
+
+    @media (max-width: 768px) {
+      min-height: 460px;
+      border-radius: 30px;
+    }
+
+    &.leftCard {
+      width: 489px;
+      flex-shrink: 0;
+      border-radius: 44px;
+      border-radius: 44px;
+      background: radial-gradient(
+        120.59% 280.93% at 93.96% -5.23%,
+        #abe127 0%,
+        #99ce17 45.77%,
+        #20280b 100%
+      );
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media (max-width: 1024px) {
+        width: auto;
+        flex: 1;
+        justify-content: flex-start;
+        padding: 30px;
+      }
+
+      @media (max-width: 768px) {
+        padding: 24px;
+        position: relative;
+      }
+
+      · .cardText {
+        z-index: 2;
+        position: relative;
+
+        @media (max-width: 1024px) {
+          margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+          margin-bottom: 0;
+          max-width: 70%;
+        }
+      }
+
+      .cardImageContainer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        height: 220px;
+        z-index: 1;
+
+        @media (max-width: 1024px) {
+          width: 160px;
+          height: 160px;
+        }
+
+        @media (max-width: 768px) {
+          width: 220px;
+          height: 207px;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+
+    &.rightCard {
+      width: 661px;
+      flex-shrink: 0;
+      background-color: #1a1a1a;
+      padding: 30px 0 30px 30px;
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 1024px) {
+        width: auto;
+        flex: 1;
+        padding: 30px 0 30px 30px;
+        position: relative;
+      }
+
+      @media (max-width: 768px) {
+        padding: 30px;
+        position: relative;
+        min-height: 540px;
+        margin-bottom: 24px;
+      }
+
+      .cardText {
+        flex: 1;
+        max-width: 430px;
+
+        @media (max-width: 1024px) {
+          max-width: 430px;
+          padding-right: 20px;
+          align-items: center;
+        }
+
+        @media (max-width: 768px) {
+          align-items: center;
+        }
+      }
+
+      .cardImageContainer {
+        width: 192px;
+        flex-shrink: 0;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        @media (max-width: 1024px) {
+          width: 192px;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+          width: 137px;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  .cardTitle {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 56px;
+    letter-spacing: -0.8px;
+    color: #ffffff;
+    margin-bottom: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  .cardDescription {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: rgba(255, 255, 255);
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  .cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* What is PoR Section */
+.porSection {
+  padding: 44px 0;
+  background-color: #1d1d1d;
+  border-radius: 44px;
+  margin: 0 auto 48px;
+  max-width: 1200px;
+
+  @media (max-width: 1200px) {
+    margin: 0 40px;
+    max-width: none;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 16px 24px;
+    padding: 30px 20px;
+  }
+
+  .porContainer {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @media (max-width: 1024px) {
+      padding: 0 30px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  .porTitle {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: 19px;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .porContent {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+
+  .porItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .bullet {
+    color: #a6a6a6;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.36;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .porItem p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.36;
+    color: #a6a6a6;
+    margin: 0;
+  }
+}

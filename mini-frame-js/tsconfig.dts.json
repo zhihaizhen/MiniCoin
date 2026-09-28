@@ -1,0 +1,13 @@
+// only for generate d.ts
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "./dist-connector/types",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+  },
+  "files": ["src/connector.ts"]
+}

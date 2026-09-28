@@ -1,0 +1,237 @@
+@mobile: ~'(max-width: 768px)';
+
+
+.overview {
+  border: 1px solid var(--line-border-default, #28292a);
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+  color: var(--text-primary, #fff);
+}
+
+.titleIcon {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary, #a8aaad);
+  cursor: pointer;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ===== PC Tab ===== */
+.pcTab {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 40px;
+  padding: 4px;
+  border: 1px solid var(--line-border-default, #28292a);
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.tabItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary, #FFF);
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    color: var(--text-primary, #fff);
+  }
+}
+
+.tabItemActive {
+  background: var(--fill-button-primary-default, #fff);
+  color: var(--text-black, #101112) !important;
+}
+
+/* ===== H5 Dropdown (hidden on PC) ===== */
+.h5Filter {
+  display: none;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: var(--bg-secondary, #1d1d1d);
+  border-radius: 12px;
+}
+
+.cardLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--text-secondary, #808588);
+}
+
+.cardLabelIcon {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary, #808588);
+  cursor: pointer;
+}
+
+.cardValue {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--text-primary, #fff);
+  word-break: break-all;
+}
+
+/* ===== Mobile ===== */
+@media @mobile {
+  .overview {
+    border-radius: 16px;
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0;
+  }
+
+  .titleIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* hide PC tab, show H5 dropdown */
+  .pcTab {
+    display: none;
+  }
+
+  .h5Filter {
+    display: block;
+    position: relative;
+    width: fit-content;
+  }
+
+  .h5DropBtn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 28px;
+    padding: 0 4px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary, #fff);
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+
+    // > span:first-child {
+    //   display: inline-block;
+    //   width: 60px;
+    //   text-align: left;
+    // }
+  }
+
+  .chevron {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 10;
+    min-width: 120px;
+    padding: 4px;
+    background: var(--bg-secondary, #1d1d1d);
+    border: 1px solid var(--line-border-default, #28292a);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .dropdownItem {
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--text-secondary, #a8aaad);
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      background: var(--fill-button-tertiary-default, #28292a);
+      color: var(--text-primary, #fff);
+    }
+  }
+
+  .dropdownItemActive {
+    color: var(--text-brand-default-web, #abe127);
+  }
+
+  /* H5 cards: stacked vertically */
+  .cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    gap: 4px;
+    border-radius: 12px;
+  }
+
+  .cardLabel {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .cardValue {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+}

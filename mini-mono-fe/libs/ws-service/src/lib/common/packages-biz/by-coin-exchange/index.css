@@ -1,0 +1,149 @@
+.re-coin-exchange__wrapper {
+  width: 380px;
+  min-height: 408px;
+  background: var(--re-rui-bg-web-2);
+  box-shadow: var(--re-rui-shadow);
+  border-radius: 4px;
+}
+
+.re-coin-exchange__header {
+  height: 44px;
+  line-height: 44px;
+  border-bottom: var(--divide-line);
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: move;
+}
+
+.re-coin-exchange__header .icon-close {
+  cursor: pointer;
+  width: 20px;
+}
+.re-coin-exchange__header-text {
+  color: var(--gray-09);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.re-coin-exchange__header span {
+  display: inline-block;
+}
+
+.re-coin-exchange__coin {
+  margin: 20px 20px 0 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.re-coin-exchange__coin span {
+  display: inline-block;
+}
+
+.re-coin-exchange__coin-type-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  min-width: 87px;
+  width: 87px;
+}
+
+.re-coin-exchange__coin-type-select .re-select.re-select--medium {
+  width: 108px !important;
+}
+
+.re-coin-exchange__coin-type-select .re-input__wrapper {
+  margin-left: 6px;
+}
+
+.re-coin-exchange__coin-amount .re-input.re-input-number {
+  width: 165px !important;
+}
+.re-coin-exchange__coin-amount .re-button {
+  width: 80px;
+  height: 32px;
+  margin-left: 8px;
+}
+
+.re-coin-exchange__coin-amount {
+  display: flex;
+  margin-top: 20px;
+  line-height: 32px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.re-coin-exchange__coin-percentage {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.re-coin-exchange__coin-amount .re-input {
+  height: 32px;
+}
+
+.re-coin-exchange—coin-switch {
+  cursor: pointer;
+  padding: 0 11px;
+}
+.re-coin-exchange__price {
+  padding: 0 20px;
+}
+
+.re-coin-exchange__price-header {
+  padding: 20px 0 20px 0;
+}
+
+.re-coin-exchange__price-coin_1 {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.re-coin-exchange__price-coin_2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.re-coin-exchange__price-available-limit {
+  display: flex;
+  margin-top: 24px;
+  font-size: 12px;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.re-coin-exchange__price {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.re-dialog__foot.re-coin-exchange__footer {
+  padding: var(--size-12) var(--size-20);
+}
+
+.re-coin-exchange__button-unative {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.re-coin-exchange__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.re-coin-exchange__red {
+  font-size: 12px;
+  color: #ed5556;
+}
+
+.re-coin-exchange__text {
+  font-size: 12px;
+  color: #888;
+}
+
+.re-coin-exchange__inner-dialog {
+  width: 380px;
+}

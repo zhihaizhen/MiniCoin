@@ -1,0 +1,285 @@
+.tasksSection {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 0px 18%;
+
+  .title {
+    color: #18191C;
+
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+  }
+
+  .des {
+    color: #18191C;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+    letter-spacing: 0.32px;
+    margin-top: 16px;
+  }
+
+  .taskItemContainer {
+    width: 100%;
+    margin-top: 32px;
+
+    .taskItem {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+      border-radius: 24px;
+      border: 1px solid #E9ECEF;
+      background: #F5F7FA;
+      padding: 24px;
+      margin-bottom: 32px;
+
+      .left {
+        display: flex;
+        width: 60%;
+
+        .sort {
+          position: relative;
+          width: 220px;
+          height: 116px;
+          margin-right: 40px;
+          // background: url('@{BASE_PATH}/images/taskIcon.svg') no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .index_title_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            width: 220px;
+            border-radius: 88px;
+            border: 2px solid #99D7FF;
+            background: #FFF;
+            color: #0075ED;
+            font-size: 30px;
+            font-weight: 600;
+            padding: 16px;
+          }
+
+          .done {
+            color: #8C8C8C;
+            border: none;
+          }
+
+          svg {
+            width: 48px;
+            height: 48px;
+            margin-right: 16px;
+          }
+        }
+
+        .content {
+          color: #18191C;
+          width: 500px;
+
+          .title {
+            font-size: 22px;
+            font-weight: 600;
+          }
+
+          .text {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 8px 0 4px 0;
+
+            .ponit {
+              color: var(--text-brand-default, var(--text-brand-default));
+              font-size: 14px;
+              font-weight: 400;
+              margin: 0 4px 0 8px;
+            }
+          }
+
+
+          .text:nth-child(3) {
+            margin: 0 0 8px 0;
+          }
+        }
+      }
+
+      .right {
+        button {
+          border: none;
+          border-radius: 4px;
+          color: #fff;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 800;
+          padding: 4px 24px;
+          height: 48px;
+          background-color: var(--text-brand-default);
+          cursor: pointer;
+
+          &:hover {
+            background: var(--text-brand-hover, #0057C2);
+          }
+
+        }
+
+        .doneBtn {
+          cursor: not-allowed;
+          background: #B0D4F7;
+
+          &:hover {
+            background: #B0D4F7 !important;
+          }
+        }
+      }
+    }
+
+    .taskItem:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tasksSection {
+    padding: 0px 16px;
+
+    .title {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 700;
+    }
+
+    .des {
+      font-size: 12px;
+      line-height: 16px;
+      margin-top: 6px;
+      color: #8C8C8C;
+    }
+
+    .taskItemContainer {
+      .taskItem {
+        width: auto;
+        flex-direction: column;
+        padding: 16px;
+        margin-bottom: 16px;
+
+        .top {
+          width: 100%;
+
+          .content {
+            .titleContainer {
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+            }
+
+            .index_title {
+              width: 45px;
+              height: 10px;
+              display: flex;
+              padding: 3.333px;
+              align-items: center;
+              gap: 3.333px;
+              color: var(--text-brand-default);
+              border-radius: 18.333px;
+              border: 0.417px solid #99D7FF;
+              background: #FFF;
+              font-size: 8px;
+              font-weight: 600;
+              color: 99D7FF;
+              justify-content: center;
+
+              .icon {
+                width: 10px;
+                height: 10px;
+              }
+            }
+
+            .done {
+              color: #8C8C8C;
+              border: none;
+            }
+
+            .title {
+              font-size: 12px;
+              font-weight: 600;
+              color: #18191C;
+              margin-left: 6px;
+            }
+
+            .text {
+              font-size: 12px;
+              margin-top: 4px;
+              color: #8C8C8C;
+
+              .ponit {
+                font-size: 12px;
+                color: var(--text-brand-default);
+                margin-left: 4px;
+                margin-right: 1px;
+              }
+            }
+
+          }
+
+        }
+      }
+
+      .bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .left {
+          display: flex;
+          flex-direction: column;
+
+          .text {
+            font-size: 12px;
+            color: #8C8C8C;
+            margin-bottom: 4px;
+
+            .ponit {
+              font-size: 12px;
+              color: var(--text-brand-default);
+              margin-left: 4px;
+            }
+          }
+
+          .process_bar {
+            width: 166px;
+            margin-top: 4px;
+          }
+        }
+
+        button {
+          display: flex;
+          width: 77px;
+          height: 36px;
+          padding: 7px auto;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border: none;
+          border-radius: 8px;
+          color: #fff;
+          cursor: pointer;
+          font-size: 12px;
+        }
+
+        .doneBtn {
+          background: var(--text-brand-default, var(--text-brand-default));
+        }
+      }
+    }
+  }
+}

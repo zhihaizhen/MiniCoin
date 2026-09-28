@@ -1,0 +1,171 @@
+.section {
+  width: 100%;
+  padding: 100px 0;
+  background: #0a0b0a;
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 560px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+  color: var(--text-brand-default-web, #abe127);
+}
+
+.title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.8px;
+  color: var(--text-primary, #fff);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.row:not(.reverse) .text {
+  padding-left: 120px;
+}
+
+.row.reverse .text {
+  padding-right: 120px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 999px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+  color: var(--text-brand-default-web, #abe127);
+  background: rgba(155, 228, 83, 0.1);
+  border: 1px solid #9be453;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.featTitle {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+  color: var(--text-primary, #fff);
+}
+
+.featDesc {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--text-secondary, #808588);
+}
+
+.media {
+  flex-shrink: 0;
+  overflow: hidden;
+
+  img {
+    width: 720px;
+    height: 560px;
+    display: block;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .head {
+    max-width: 100%;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+  }
+
+  .list {
+    gap: 48px;
+  }
+
+  .row,
+  .reverse {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .text {
+    gap: 16px;
+  }
+
+  .tag {
+    padding: 10px 18px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .featTitle {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .featDesc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

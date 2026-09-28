@@ -1,0 +1,276 @@
+@media (min-width: 767px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    min-width: 60%;
+    flex-direction: column;
+    padding-left: 56px;
+    padding-top: 20px;
+    overflow: scroll;
+  }
+
+  .chartContainer {
+    height: 626px;
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
+    overflow: scroll;
+  }
+
+  .resolution {
+    margin-top: 10px;
+  }
+
+  .back {
+    cursor: pointer;
+  }
+
+  .header {
+    .select-box-wrapper {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .select-box {
+      display: flex;
+      align-items: center;
+
+      button {
+        height: 40px;
+      }
+    }
+
+    .filter-select {
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .label {
+      color: var(--text-primary);
+    }
+
+    .select {
+      width: 160px;
+      margin-top: 12px;
+
+      :global {
+        .ant-select-selector {
+          height: 32px;
+
+          input {
+            height: 32px;
+          }
+
+          .ant-select-selection-item {
+            line-height: 32px;
+          }
+        }
+      }
+    }
+
+    .select-contractType {
+      margin-right: 24px;
+      width: 220px;
+    }
+
+    .header-row1 {
+      display: flex;
+
+      .symbol {
+        display: none;
+      }
+
+      .trade-h5 {
+        display: none;
+      }
+    }
+
+    :global {
+      .ant-btn {
+        height: 40px;
+        font-weight: 600;
+      }
+    }
+
+
+    .rangePicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .select-time {
+        display: none;
+      }
+
+      .h5-rangePicker {
+        display: none;
+      }
+
+      button {
+        margin-left: 10px;
+        height: 40px;
+      }
+
+      :global {
+        .ant-picker {
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .tips {
+    display: none;
+  }
+
+  .history-price-tag-desc {
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .table {
+    margin-top: 20px;
+    min-width: 80%;
+    margin-bottom: 80px;
+
+    thead {
+      th {
+        width: 200px !important;
+        text-align: left !important;
+        padding-left: 0px !important;
+        padding-right: 5px !important;
+        font-weight: 500 !important;
+        background-color: #ffffff !important;
+      }
+    }
+
+    tbody {
+      td {
+        width: 200px !important;
+        text-align: left !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        font-weight: 600 !important;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .chartContainer {
+    height: 306px;
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
+  }
+
+  .resolution {
+    margin-top: 10px;
+  }
+
+  .back {
+    display: none;
+  }
+
+  .header {
+    padding: 16px;
+
+    .header-row1 {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+
+      .symbol {
+        display: flex;
+
+        svg {
+          margin-left: 5px;
+        }
+      }
+
+      .trade-h5 {
+        display: flex;
+      }
+    }
+
+    .trade-web {
+      display: none;
+    }
+
+    .select-box {
+      display: none;
+    }
+
+    .rangePicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .web-rangePicker {
+        display: none;
+      }
+    }
+  }
+
+  .tips {
+    margin-top: 10px;
+  }
+
+  .history-price-tag-desc {
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .table {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+
+    table {
+      font-size: 12px !important;
+    }
+  }
+
+  .range-wrapper {
+    label {
+      padding-inline: 12px !important
+    }
+  }
+}
+
+.title {
+  color: var(--text-primary);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.loading-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+
+  .img {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: url('@{BASE_PATH}/icons/loading.gif') no-repeat center;
+    background-size: cover;
+  }
+}

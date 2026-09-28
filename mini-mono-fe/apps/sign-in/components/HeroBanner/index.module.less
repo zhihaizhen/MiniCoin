@@ -1,0 +1,271 @@
+.heroBanner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+// 容器
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+// 左侧内容区
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 722px;
+  flex: 1;
+}
+
+// 标题
+.title {
+  color: var(--text-primary, #f5f5f5);
+  font-size: 48px;
+  font-weight: var(--Bold, 600);
+  line-height: 64px;
+  letter-spacing: -1.44px;
+
+  .highlight {
+    color: #f8d148;
+  }
+}
+
+// 活动时间
+.timeInfo {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--text-white, #f5f5f5);
+}
+
+// 倒计时区域
+.countdownSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.countdownLabel {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.countdownTimer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeUnit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid var(--line-border-default, #28292a);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.unitLabel {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.timeSeparator {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-secondary, #a8aaad);
+  margin: 0 4px;
+}
+
+// 按钮组
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--Number, 12px);
+  background: var(--fill-button-tertiary-default, #28292a);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border: none;
+  }
+}
+
+// 右侧装饰
+.rightDecoration {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  flex-shrink: 0;
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+// 响应式设计
+@media (max-width: 1240px) {
+  .container {
+    padding: 0 60px;
+    gap: 60px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  .rightDecoration {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroBanner {
+    height: auto;
+    min-height: auto;
+    padding: 24px 16px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 0;
+    gap: 32px;
+    align-items: center;
+  }
+
+  // 右侧装饰在移动端显示在上面
+  .rightDecoration {
+    order: -1;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 8px;
+  }
+
+  .leftContent {
+    gap: 16px;
+    max-width: 100%;
+    order: 0;
+    align-items: center;
+  }
+
+  .title {
+    color: var(--text-static-white, #fff);
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.32px;
+
+    br {
+      display: none;
+    }
+  }
+
+  .timeInfo {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: var(--Medium, 500);
+    text-align: center;
+    color: var(--text-secondary, #a8aaad);
+    margin-bottom: 8px;
+  }
+
+  .countdownSection {
+    gap: 12px;
+  }
+
+  .countdownLabel {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .countdownTimer {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .timeBox {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 28px;
+    border-radius: 4px;
+    border: 1px solid var(--line-border-default, #28292a);
+  }
+
+  .unitLabel {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text-secondary, #a8aaad);
+  }
+
+  .timeSeparator {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;
+  }
+
+  .buttonGroup {
+    margin-top: 16px;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+    gap: 12px;
+
+    > :global(.registerButton) {
+      flex: 1;
+      max-width: 200px;
+    }
+  }
+
+  .shareButton {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+}

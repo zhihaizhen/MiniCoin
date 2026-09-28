@@ -1,0 +1,202 @@
+/* 无法用变量，只能用色值 */
+html.theme-dark,
+.theme-dark:root {
+  /* 主要背景色   --bg-primary = #070808   */
+  --tv-color-platform-background: #070808;
+  --tv-color-pane-background: #070808;
+
+  /* 上方工具栏的颜色，--text-secondary = #808588 */
+  --tv-color-toolbar-button-text: #808588;
+  --tv-color-toolbar-button-text-hover: #abe127;
+  --tv-color-toolbar-button-text-active: #abe127;
+  --tv-color-toolbar-button-text-active-hover: #c9f066;
+  --tv-color-toolbar-toggle-button-background-active: #abe127;
+  --tv-color-toolbar-toggle-button-background-active-hover: #abe127;
+  --tv-color-item-active-text: #abe127;
+
+  /* 左侧绘图工具栏 popup的颜色  --fill-fill-modal=#101112， --bg-secondary=#1D1D1D  --text-white-to-black= #101112 */
+  --tv-color-popup-background: #101112;
+  --tv-color-popup-element-background: #101112;
+  --tv-color-popup-element-background-hover: #28292a;
+  --tv-color-popup-element-background-active: #abe127;
+  --tv-color-popup-element-text-active: #101112;
+  --tv-color-popup-element-background-active-hover: #28292a;
+}
+
+/* 初始加载时右侧价格轴区域默认 body 背景为纯黑，需与主图背景统一 */
+html.theme-dark body,
+html.theme-dark .chart-page,
+html.theme-dark .chart-page .chart-container-border {
+  background-color: #070808 !important;
+}
+
+html.theme-light,
+.theme-light:root {
+  /* 主要背景色   --bg-primary = #ffffff   */
+  --tv-color-platform-background: #ffffff;
+  --tv-color-pane-background: #ffffff;
+  --tv-color-toolbar-button-background-hover: #f8f8f8;
+  --tv-color-toolbar-button-text: #808588;
+  --tv-color-toolbar-button-text-hover: #31bd65;
+  --tv-color-toolbar-button-text-active: #31bd65;
+  --tv-color-toolbar-button-text-active-hover: #31bd65;
+  --tv-color-toolbar-toggle-button-background-active: #31bd65;
+  --tv-color-toolbar-toggle-button-background-active-hover: #31bd65;
+
+  --tv-color-popup-background: #ffffff;
+  --tv-color-popup-element-background: #ffffff;
+  --tv-color-popup-element-background-hover: #f5f5f5;
+  --tv-color-popup-element-background-active: #31bd65;
+  --tv-color-popup-element-text-active: #101112;
+  --tv-color-popup-element-background-active-hover: #f5f5f5;
+}
+
+html.theme-light body,
+html.theme-light .chart-page,
+html.theme-light .chart-page .chart-container-border {
+  background-color: #ffffff !important;
+}
+
+.theme-light:root .layout__area--left {
+  border-right: 1px solid #f5f5f5;
+}
+
+/* 给popup加边框 */
+.theme-dark:root .menuWrap-Kq3ruQo8 {
+  /* --line-border-default= #28292A */
+  border: 1px solid #28292a;
+}
+
+.theme-dark:root .layout__area--left {
+  border-right: 1px solid #1d1d1d;
+}
+
+/* .theme-light:root .menuWrap-Kq3ruQo8 {
+  border: 1px solid #28292A;
+  border-radius: 8px;
+} */
+
+/* 图表设置弹窗 */
+
+/* 背景色 */
+
+html.theme-dark .dialog-aRAWUDhF {
+  background-color: #101112 !important;
+}
+
+/* checkbox */
+html.theme-dark .wrapper-GZajBGIm .box-GZajBGIm:before {
+  border: none;
+}
+
+html.theme-dark .wrapper-GZajBGIm .input-GZajBGIm:checked + .box-GZajBGIm,
+html.theme-dark
+  .wrapper-GZajBGIm
+  .input-GZajBGIm:hover:checked:not(:focus):not(:disabled)
+  + .box-GZajBGIm {
+  background-color: #fff;
+  border: none !important;
+  border-color: none !important;
+}
+
+.wrapper-GZajBGIm .input-GZajBGIm:checked + .box-GZajBGIm,
+.wrapper-GZajBGIm
+  .input-GZajBGIm:hover:checked:not(:focus):not(:disabled)
+  + .box-GZajBGIm {
+  background-color: #101112;
+  border: none !important;
+  border-color: none !important;
+}
+
+html.theme-dark
+  .wrapper-GZajBGIm
+  .input-GZajBGIm:checked
+  + .box-GZajBGIm.check-GZajBGIm
+  .icon-GZajBGIm {
+  stroke: #101112 !important;
+}
+
+.wrapper-GZajBGIm
+  .input-GZajBGIm:checked
+  + .box-GZajBGIm.check-GZajBGIm
+  .icon-GZajBGIm {
+  stroke: #fff !important;
+}
+
+/* button  */
+html.theme-dark .color-brand-D4RPB3ZC.variant-primary-D4RPB3ZC {
+  --ui-lib-button-default-color-content: #101112 !important;
+  --ui-lib-button-default-color-border: #fff !important;
+  --ui-lib-button-default-color-bg: #fff !important;
+}
+
+.color-brand-D4RPB3ZC.variant-primary-D4RPB3ZC {
+  --ui-lib-button-default-color-content: #fff !important;
+  --ui-lib-button-default-color-border: #101112 !important;
+  --ui-lib-button-default-color-bg: #101112 !important;
+}
+
+html.theme-dark .color-brand-D4RPB3ZC.variant-secondary-D4RPB3ZC {
+  --ui-lib-button-default-color-content: #fff !important;
+  --ui-lib-button-default-color-border: #fff !important;
+  --ui-lib-button-default-color-bg: #101112 !important;
+}
+
+.color-brand-D4RPB3ZC.variant-secondary-D4RPB3ZC {
+  --ui-lib-button-default-color-content: #101112;
+  --ui-lib-button-default-color-border: #101112;
+  --ui-lib-button-default-color-bg: #fff;
+
+  &:hover {
+    --ui-lib-button-default-color-content: #101112;
+    --ui-lib-button-default-color-border: #101112;
+    --ui-lib-button-default-color-bg: #fff;
+  }
+}
+
+/* 输入框聚焦边框颜色 --line-border-default */
+html.theme-dark .highlight-WDZ0PRNh {
+  border-color: #28292a;
+}
+
+.highlight-WDZ0PRNh {
+  border-color: #f5f5f5;
+}
+
+html.theme-dark .chart-controls-bar {
+  border-color: #1d1d1d;
+}
+
+.chart-controls-bar {
+  border-color: #f5f5f5;
+}
+
+/* active以及hover每一项的背景色 --fill-fill-input-modal  */
+html.theme-dark .accessible-nGEmjtaX:hover {
+  background-color: #28292a;
+}
+
+html.theme-dark .accessible-nGEmjtaX.active-nGEmjtaX {
+  background-color: #28292a;
+
+  &:hover {
+    background-color: #28292a;
+  }
+}
+
+.accessible-nGEmjtaX:hover {
+  background-color: #f5f5f5;
+}
+
+.accessible-nGEmjtaX.active-nGEmjtaX {
+  background-color: #f5f5f5;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+/* modal框关闭按钮 */
+.background-znwuaSC1 {
+  --ui-lib-nav-button-color-outline-default: transparent !important;
+}

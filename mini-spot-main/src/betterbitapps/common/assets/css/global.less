@@ -1,0 +1,90 @@
+/* 全局的公共样式 */
+
+/* 修改root下的字体 */
+body * {
+  // font-weight: 500;
+}
+
+/* 覆盖antd的样式 */
+p {
+  margin-top: 0;
+  margin-bottom: 0 !important;
+}
+
+body a,
+body a:visited {
+  color: var(--text-brand-default-web);
+  text-decoration: none;
+}
+
+body .dex-header a,
+body .dex-header a:visited {
+  color: var(--text-primary);
+}
+
+body .icon.iconfont.brand-hover:hover,
+body a:hover {
+  color: var(--text-brand-hover);
+}
+
+body .icon.iconfont.brand-hover:active,
+body a:active,
+body a:focus {
+  color: var(--text-brand-press);
+}
+
+body .icon.iconfont.icon-close,
+body .icon.iconfont.brand-hover.icon-close {
+  color: var(--text-primary);
+}
+body .icon.iconfont.icon-close:hover,
+body .icon.iconfont.brand-hover.icon-close:hover {
+  color: var(--text-tertiary);
+}
+
+body .icon.iconfont.icon-close:active,
+body .icon.iconfont.brand-hover.icon-close:active {
+  color: var(--text-secondary);
+}
+
+
+/* input选中之后的背景色  */
+input::selection {
+  background-color: transparent !important;
+}
+
+input::-moz-selection {
+  background-color: transparent !important;
+}
+
+input::-webkit-selection {
+  background-color: transparent !important;
+}
+
+
+.zero-scrollbar::-webkit-scrollbar {
+  height: 0px;
+  overflow: -moz-scrollbars-none;
+}
+
+.zero-scrollbar.firefox {
+  scrollbar-color: transparent transparent;
+  scrollbar-track-color: transparent;
+  -ms-scrollbar-track-color: transparent;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+
+
+/* 拖拽角标样式覆盖 */
+.react-grid-item > .react-resizable-handle::after {
+  border-right: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.react-draggable-transparent-selection {
+  user-select: none;
+}
+
+

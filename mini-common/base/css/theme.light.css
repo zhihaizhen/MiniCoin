@@ -1,0 +1,262 @@
+:root.theme-light {
+  --text-primary: var(--neutral-1400);
+  --text-secondary: var(--neutral-600);
+  --text-tertiary: var(--neutral-500);
+  --text-quaternary: var(--neutral-300);
+  --text-white: var(--neutral-50);
+  /* 固定白色 */
+  --text-black: var(--neutral-1400);
+  /* 固定黑色 */
+  --text-white-to-black: var(--neutral-50);
+  /* 黑色背景下白色 */
+
+  --text-brand-default: var(--brand-500);
+  --text-brand-default-web: var(--brand-500);
+  /* 新增的 */
+
+  --text-brand-hover: var(--brand-600);
+  --text-brand-press: var(--brand-700);
+  --text-brand-disable: var(--brand-300);
+  /* 非交易页的颜色 */
+  --text-green: var(--light-green-500);
+  --text-red: var(--light-red-500);
+  --text-blue: var(--blue-500);
+
+
+
+  /* 背景色 */
+  --bg-primary: var(--neutral-50);
+  --bg-secondary: var(--neutral-100);
+  --bg-tertiary: var(--neutral-200);
+
+  /* 组件填充色 */
+  --fill-fill-input: var(--neutral-100);
+  --fill-fill-input-modal: var(--neutral-100);
+  --fill-fill-select: var(--neutral-100);
+  --fill-fill-switch: var(--neutral-50);
+  /* --fill-fill-switch2 才对应switch组件，--fill-fill-switch对应的是tab里面button的那种组件 */
+  --fill-fill-switch2: var(--neutral-200);
+  --fill-fill-slider: var(--neutral-100);
+  /* --fill-fill-tooltip应该没有再用的 */
+  --fill-fill-tooltip: var(--neutral-50);
+  --fill-fill-tooltip-web: var(--neutral-1400);
+  --fill-fill-modal: var(--neutral-50);
+  --fill-fill-mask: rgba(0, 0, 0, 0.7);
+  --fill-fill-dropdown: var(--neutral-50);
+  --fill-fill-hover-1: var(--neutral-100);
+  --fill-fill-checkbox: var(--neutral-1400);
+  /* 这个是进度条 */
+  --fill-fill-dragger: var(--neutral-300);
+  --fill-fill-toast: var(--neutral-1300);
+
+  /* 按钮填充色 */
+  --fill-button-primary-default: var(--neutral-1400);
+  --fill-button-primary-hover: var(--neutral-1000);
+  --fill-button-primary-press: var(--neutral-900);
+  --fill-button-primary-disabled: var(--neutral-200);
+
+  --fill-button-brand-default: var(--brand-500);
+  --fill-button-brand-hover: var(--brand-400);
+  --fill-button-brand-press: var(--brand-600);
+
+  --fill-button-secondary-default: rgba(171, 225, 39, 0.1);
+  --fill-button-secondary-hover: rgba(171, 225, 39, 0.2);
+  --fill-button-secondary-press: rgba(171, 225, 39, 0.3);
+
+  --fill-button-tertiary-default: var(--neutral-200);
+  --fill-button-tertiary-hover: var(--neutral-300);
+  --fill-button-tertiary-press: var(--neutral-400);
+
+  --fill-button-red-default: var(--light-red-500);
+  --fill-button-red-hover: var(--light-red-600);
+  --fill-button-red-press: var(--light-red-700);
+  --fill-button-red-disabled: var(--light-red-100);
+
+  --fill-button-green-default: var(--light-green-500);
+  --fill-button-green-hover: var(--light-green-600);
+  --fill-button-green-press: var(--light-green-700);
+  --fill-button-green-disabled: var(--light-green-100);
+
+  /* tag填充色 */
+  --fill-tag-brand-transparent: rgba(171, 225, 39, 0.12);
+  --fill-tag-brand-solid: var(--brand-50);
+
+  --fill-tag-green: rgba(114, 204, 41, 0.12);
+  --fill-tag-red: rgba(250, 70, 91, 0.12);
+  --fill-tag-gray: rgba(16, 17, 18, 0.05);
+  --fill-tag-blue: rgba(1, 115, 229, 0.2);
+  --fill-tag-orange: rgba(255, 119, 56, 0.12);
+
+  /* 线段颜色 */
+  --line-divider-primary: var(--neutral-200);
+  --line-divider-secondary: var(--neutral-100);
+  --line-divider-tertiary: var(--neutral-100);
+  --line-border-default: var(--neutral-200);
+  --line-border-hover: var(--brand-500);
+  --line-border-focus: var(--brand-500);
+  --line-border-error: var(--light-red-500);
+  --line-border-radio: var(--neutral-300);
+  --line-border-checkbox: var(--neutral-300);
+  --line-dotted-line: var(--neutral-300);
+
+
+  /* 功能性颜色 */
+  --function-brand: var(--brand-500);
+  --function-green: var(--light-green-500);
+  --function-red: var(--light-red-400);
+  --function-blue: var(--blue-500);
+  --function-yellow: var(--yellow-500);
+  --function-orange: var(--orange-500);
+
+  /* 等所有的交易页，白色模式上线后可删除， 资产和大仓库没有使用 */
+  --color-transparent: transparent;
+  --color-white: var(--neutral-50);
+  --color-black: var(--neutral-1400);
+  --color-brand: var(--text-brand-default);
+
+  /* box shadow */
+  --popover-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 用于处理白色模式下，黑色头部 */
+:root.theme-light .header-theme-dark,
+:root.theme-light .banner-theme-dark {
+  --text-primary: var(--neutral-100);
+  --text-secondary: var(--neutral-500);
+  --text-tertiary: var(--neutral-900);
+  --text-quaternary: var(--neutral-1000);
+  --text-white: var(--neutral-100);
+  /* 固定白色 */
+  --text-black: var(--neutral-1400);
+  /* 固定黑色 */
+  --text-white-to-black: var(--neutral-1400);
+  /* 白色背景下黑色 */
+  --text-brand-default-web: var(--brand-400);
+  /* 新增的 */
+  --text-brand-default: var(--brand-400);
+  --text-brand-hover: var(--brand-300);
+  --text-brand-press: var(--brand-200);
+  --text-brand-disable: var(--brand-800);
+
+  --text-green: var(--dark-green-400);
+  --text-red: var(--dark-red-500);
+  --text-blue: var(--blue-500);
+
+  /* 背景色 */
+  --bg-primary: var(--neutral-1500);
+  --bg-secondary: var(--neutral-1300);
+  --bg-tertiary: var(--neutral-1200);
+
+  /* 组件填充色 */
+  --fill-fill-input: var(--neutral-1300);
+  --fill-fill-input-modal: var(--neutral-1200);
+  --fill-fill-select: var(--neutral-1300);
+  --fill-fill-switch: var(--neutral-1100);
+  --fill-fill-slider: var(--neutral-1200);
+  --fill-fill-tooltip: var(--neutral-100);
+  --fill-fill-tooltip-web: var(--neutral-1200);
+  --fill-fill-modal: var(--neutral-1400);
+  --fill-fill-mask: rgba(0, 0, 0, 0.5);
+  --fill-fill-dropdown: var(--neutral-1200);
+  --fill-fill-hover-1: var(--neutral-1300);
+  --fill-fill-checkbox: var(--neutral-5);
+  --fill-fill-dragger: var(--neutral-1000);
+  --fill-fill-toast: var(--neutral-100);
+
+  /* 按钮填充色 */
+  --fill-button-primary-default: var(--neutral-50);
+  --fill-button-primary-hover: var(--neutral-100);
+  --fill-button-primary-press: var(--neutral-200);
+  --fill-button-primary-disabled: var(--neutral-1200);
+
+  --fill-button-brand-default: var(--brand-400);
+  --fill-button-brand-hover: var(--brand-300);
+  --fill-button-brand-press: var(--brand-500);
+
+  --fill-button-secondary-default: rgba(171, 225, 39, 0.2);
+  --fill-button-secondary-hover: rgba(171, 225, 39, 0.3);
+  --fill-button-secondary-press: rgba(171, 225, 39, 0.4);
+
+  --fill-button-tertiary-default: var(--neutral-1200);
+  --fill-button-tertiary-hover: var(--neutral-1100);
+  --fill-button-tertiary-press: var(--neutral-1000);
+
+  /* tag填充色 */
+  --fill-tag-brand-transparent: rgba(171, 225, 39, 0.15);
+  --fill-tag-brand-solid: var(--brand-900);
+  --fill-tag-green: rgba(171, 225, 39, 0.1);
+  --fill-tag-red: rgba(244, 63, 94, 0.1);
+  --fill-tag-gray: rgba(255, 255, 255, 0.08);
+  --fill-tag-blue: rgba(1, 115, 229, 0.2);
+  --fill-tag-yellow: rgba(244, 208, 58, 0.1);
+
+  /* 线段颜色 */
+  --line-divider-primary: var(--neutral-1200);
+  --line-divider-secondary: var(--neutral-1300);
+  --line-divider-tertiary: var(--neutral-1200);
+  --line-border-default: var(--neutral-1200);
+  --line-border-hover: var(--brand-500);
+  --line-border-focus: var(--brand-500);
+  --line-border-error: var(--dark-red-500);
+  --line-border-radio: var(--neutral-1000);
+  --line-border-checkbox: var(--neutral-1000);
+  --line-dotted-line: var(--neutral-1000);
+
+  /* 功能性颜色 */
+  --function-brand: var(--brand-400);
+  --function-green: var(--dark-green-500);
+  --function-red: var(--dark-red-500);
+  --function-blue: var(--blue-500);
+  --function-yellow: var(--yellow-500);
+  --function-orange: var(--orange-500);
+
+}
+
+/* 仅用于交易页的白色模式 */
+:root.theme-light.theme-trade {
+  --text-brand-default: var(--light2-green-500);
+  --text-brand-default-web: var(--light2-green-500);
+
+  --fill-button-brand-default: var(--light2-green-500);
+  --fill-button-brand-hover: var(--light2-green-400);
+  --fill-button-brand-press: var(--light2-green-600);
+
+  --fill-tag-green: rgba(49, 189, 101, 0.12);
+  --fill-tag-red: rgba(251, 113, 137, 0.12);
+  --function-green: var(--light2-green-500);
+  --function-red: var(--light2-red-400);
+  --long-text: var(--text-white);
+  --short-text: var(--text-white);
+
+  --line-border-focus: var(--light2-green-500);
+}
+
+:root.theme-light.greenUpRedDown {
+  --long: var(--light2-green-500);
+  --long-bg: var(--light2-green-500);
+  --long-bg-hover: var(--fill-tag-green);
+
+  --short: var(--light2-red-500);
+  --short-bg: var(--light2-red-500);
+  --short-bg-hover: var(--fill-tag-red);
+}
+
+:root.theme-light.redUpGreenDown {
+  --long: var(--light2-red-500);
+  --long-bg: var(--light2-red-500);
+  --long-bg-hover: var(--fill-tag-red);
+
+  --short: var(--light2-green-500);
+  --short-bg: var(--light2-green-500);
+  --short-bg-hover: var(--fill-tag-green);
+}
+
+:root.theme-light.redUpBlueDown {
+  --long: var(--light2-red-500);
+  --long-bg: var(--light2-red-500);
+  --long-bg-hover: var(--fill-tag-red);
+
+  --short: var(--text-blue);
+  --short-bg: var(--text-blue);
+  --short-bg-hover: var(--fill-tag-blue);
+}

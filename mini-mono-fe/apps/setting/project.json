@@ -1,0 +1,98 @@
+{
+  "root": "apps/setting",
+  "sourceRoot": "apps/setting",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/setting",
+        "outputPath": "dist/apps/setting"
+      },
+      "configurations": {
+        "production": {},
+        "testnet": {
+          "outputPath": "dist/testnet/apps/setting"
+        },
+        "test": {
+          "outputPath": "dist/test/apps/setting"
+        },
+        "dev": {
+          "outputPath": "dist/dev/apps/setting"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "setting:build",
+        "dev": true,
+        "hostname": "dev.test.bitrunfinance.com",
+        "port": 4200
+      },
+      "configurations": {
+        "dev": {
+          "buildTarget": "setting:build:development",
+          "dev": true
+        },
+        "test": {
+          "buildTarget": "setting:build:development",
+          "dev": false
+        },
+        "testnet": {
+          "buildTarget": "setting:build:production",
+          "dev": false
+        },
+        "production": {
+          "buildTarget": "setting:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "setting:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/setting"
+      ],
+      "options": {
+        "jestConfig": "apps/setting/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/setting/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "cexport": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "node .script/custom-export.js",
+            "forwardAllArgs": true
+          }
+        ],
+        "cwd": "apps/setting",
+        "outputPath": "dist/apps/"
+      }
+    }
+  },
+  "tags": []
+}

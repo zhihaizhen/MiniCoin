@@ -1,0 +1,367 @@
+@media screen and (min-width: 767px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 18%;
+
+    .title {
+      color: #18191c;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 56px;
+    }
+
+    .voucher {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-size: contain;
+      background: url('https://cdn.easicoin.io/campaign/tradingCompetition/voucher-bg-web-2025411.png') no-repeat center center;
+      background-size: 100% 100%;
+      height: 248px;
+      width: 588px;
+
+      .top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+
+        .voucherTitle {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          justify-content: center;
+
+          .voucherTitleNum {
+            color: #644f34;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 100%;
+          }
+
+          .usdt {
+            color: #644f34;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 100%;
+            margin-left: 4px;
+          }
+        }
+
+        .description {
+          color: #644f34;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 12px;
+          line-height: 24px;
+        }
+      }
+
+      .bottom {
+        margin-top: 36px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .voucherbtn {
+          width: 172px;
+          display: flex;
+          height: 28px;
+          padding: 8px 24px;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+          border-radius: 100px;
+          background: #644f34;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 20px;
+          color: #fff;
+          cursor: pointer;
+
+          &:hover {
+            background: #7a6547;
+          }
+
+          &.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+        }
+
+        .timer {
+          margin-top: 12px;
+          color: #644f34;
+          text-align: center;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 16px 24px 16px;
+    width: calc(100% - 32px);
+
+    .title {
+      color: #18191c;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  .voucher {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-around;
+    background-size: contain;
+    background: url('https://cdn.easicoin.io/campaign/tradingCompetition/voucher-bg-2025411.svg') no-repeat center center;
+    height: 221px;
+    width: 100%;
+
+    .top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+
+      .voucherTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+
+        .voucherTitleNum {
+          color: #644f34;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 100%;
+          /* 44px */
+        }
+
+        .usdt {
+          color: #644f34;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 100%;
+          margin-left: 4px;
+        }
+      }
+
+      .description {
+        color: #644f34;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 12px;
+      }
+    }
+
+    .bottom {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .voucherbtn {
+        width: 152px;
+        display: flex;
+        height: 28px;
+        padding: 8px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        border-radius: 100px;
+        background: #644f34;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+          background: #615038;
+        }
+
+        &.disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+
+      .timer {
+        opacity: 0.8;
+        margin-top: 12px;
+        color: #644f34;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.drawerWrapper {
+  border-radius: 12px 12px 0 0;
+  height: 275px;
+
+  :global {
+    .ant-drawer-header {
+      display: none;
+    }
+
+    .ant-drawer-body {
+      height: 275px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .failIcon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .failTitle {
+    color: #18191c;
+    line-height: 20px;
+    /* 125% */
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  .failDesc {
+    color: #18191c;
+    font-size: 14px;
+    line-height: 20px;
+    /* 125% */
+    font-weight: 400;
+    margin-top: 9px;
+    width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+    opacity: 0.8;
+  }
+
+  .failBtn {
+    width: 100%;
+    height: 44px;
+    background: var(--text-brand-default);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    border-radius: 4px;
+  }
+}
+
+.ant-drawer-content-wrapper {
+  height: 275px !important;
+}
+
+.modalWrapper {
+  :global {
+    .ant-modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .failIcon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .failTitle {
+    color: #18191c;
+    line-height: 20px;
+    /* 125% */
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  .failDesc {
+    color: #18191c;
+    font-size: 14px;
+    line-height: 20px;
+    /* 125% */
+    font-weight: 400;
+    margin-top: 9px;
+    width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+    opacity: 0.8;
+  }
+
+  .failBtn {
+    width: 100%;
+    height: 44px;
+    background: var(--text-brand-default);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--text-brand-default);
+      opacity: 0.8;
+    }
+  }
+}
+
+.message {
+  :global {
+    .ant-message-notice-content {
+      display: inline-flex;
+      padding: 8px 16px;
+      align-items: center;
+      gap: 8px;
+      height: 40px !important;
+      background: #25262b !important;
+      color: #fff !important;
+      font-size: 14px !important;
+      border-radius: 4px !important;
+
+      svg {
+        width: 16px !important;
+        height: 16px !important;
+        margin-right: 8px !important;
+      }
+    }
+  }
+}

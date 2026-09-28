@@ -1,0 +1,31 @@
+@reference '../../../libs/base-ui/src/styles/tailwind-global-styles.css';
+
+@layer components {
+  .btn-primary {
+    @apply bg-fill-button-primary-default hover:bg-fill-button-primary-hover;
+    @apply rounded-xl flex justify-center items-center;
+    @apply text-text-white-to-black text-sm font-medium;
+    @apply cursor-pointer;
+  }
+  .btn-primary-disabled {
+    @apply bg-fill-button-primary-disabled cursor-not-allowed text-text-tertiary hover:bg-fill-button-primary-disabled!;
+  }
+
+  .btn-tertiary {
+    @apply bg-fill-button-tertiary-default hover:bg-fill-button-tertiary-hover;
+    @apply rounded-xl flex justify-center items-center;
+    @apply text-text-primary text-base font-medium;
+    @apply cursor-pointer;
+  }
+
+  @keyframes dropdown-enter {
+    from {
+      opacity: 0;
+      transform: scaleY(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.currentValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary, #101112);
+}
+
+.colorModal {
+  .radioItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btnRow {
+    display: flex;
+    gap: 12px;
+
+    button {
+      flex: 1;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+
+  :global {
+    .ant-radio-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+
+      span.ant-radio + * {
+        padding-inline-start: 8px;
+        padding-inline-end: 0;
+        line-height: 1;
+      }
+    }
+
+    .ant-radio {
+      top: 0;
+    }
+
+    .ant-radio .ant-radio-inner {
+      width: 16px;
+      height: 16px;
+      border-width: 1.5px;
+      border-color: var(--line-border-radio, #c2c2c2);
+      background: transparent;
+
+      &::after {
+        width: 8px;
+        height: 8px;
+        margin-block-start: -4px;
+        margin-inline-start: -4px;
+        background-color: var(--text-primary, #101112);
+        border-radius: 50%;
+        transform: scale(0);
+        opacity: 1;
+        transition: transform 0.2s;
+      }
+    }
+
+    .ant-radio-checked .ant-radio-inner {
+      border-color: var(--text-primary, #101112);
+      background: transparent;
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+
+    .ant-radio-wrapper:hover .ant-radio-inner,
+    .ant-radio:hover .ant-radio-inner {
+      border-color: var(--text-primary, #101112);
+    }
+
+    .ant-radio-wrapper .ant-radio-checked::after {
+      display: none;
+    }
+  }
+}
+
+.primaryButton {
+  color: var(--text-white, #fff) !important;
+  background: var(--fill-button-black-default, #101112) !important;
+
+  &:hover {
+    color: var(--text-white, #fff) !important;
+    background: var(--fill-button-primary-hover, #44484A) !important;
+  }
+}
+
+.secondaryButton {
+  color: var(--text-primary, #101112);
+  background: var(--fill-bg-secondary, #f5f5f5);
+
+  &:hover {
+    color: var(--text-primary, #101112);
+    background: var(--fill-button-tertiary-hover, #C2C2C2) !important;
+  }
+}
+

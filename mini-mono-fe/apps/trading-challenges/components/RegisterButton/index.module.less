@@ -1,0 +1,117 @@
+.registerBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  height: 56px;
+  padding: 16px 48px;
+  border: 1px solid #96c031;
+  background: var(--fill-button-green-default, #abe127);
+  box-shadow: 0 1px 16px 6px rgba(142, 184, 39, 0.3);
+  cursor: pointer;
+  gap: 10px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--text-black, #101112);
+    text-align: center;
+    z-index: 1;
+  }
+
+  &:hover {
+    background: var(--fill-button-brand-hover);
+    box-shadow: 0 2px 20px 8px rgba(142, 184, 39, 0.35);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 16px 6px rgba(142, 184, 39, 0.25);
+  }
+
+  // 禁用状态
+  &.disabled {
+    background: var(--neutral-800, #666a6c);
+    border-color: var(--neutral-700, #73787a);
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    span {
+      color: var(--neutral-400, #bec0c2);
+    }
+
+    &:hover {
+      background: var(--neutral-800, #666a6c);
+      box-shadow: none;
+      transform: none;
+    }
+
+    &:active {
+      transform: none;
+    }
+
+    .btnGlow {
+      display: none;
+    }
+  }
+}
+
+.btnGlow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(
+    circle at center,
+    rgba(85, 177, 105, 0.3) 0%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  filter: blur(20px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  .registerBtn:hover & {
+    opacity: 1;
+  }
+}
+
+.skeleton {
+  background: var(--neutral-800, #3a3d3f);
+  border-color: transparent;
+  box-shadow: none;
+  cursor: default;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .registerBtn {
+    height: 48px;
+    padding: 16px 48px;
+    width: 200px;
+
+    span {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4444em; // 26px
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "trading-bot",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/charts": "^2.6.7"
+  }
+}

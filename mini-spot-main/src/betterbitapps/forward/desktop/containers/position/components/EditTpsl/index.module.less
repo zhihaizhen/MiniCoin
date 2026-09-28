@@ -1,0 +1,184 @@
+// 编辑已存在委托单止盈止损的简易弹窗（迁自高级弹窗的简化编辑形态）
+
+.takeProfitSettingWrapper {
+  :global {
+    .ant-modal-content {
+      display: flex;
+      flex-direction: column;
+      max-height: 640px;
+      overflow: hidden;
+    }
+
+    .ant-modal-header,
+    .ant-modal-footer {
+      flex: none;
+    }
+
+    .ant-modal-body {
+      flex: 1 1 auto;
+      padding: 0 24px;
+      overflow-y: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .ant-modal-content .ant-modal-header {
+      padding: 24px;
+      border-bottom: none;
+
+      .ant-modal-title {
+        color: var(--text-primary);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+
+    .ant-modal-content .ant-modal-close {
+      top: 27px;
+      right: 24px;
+
+      .ant-modal-close-x {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        margin: 0;
+      }
+    }
+
+    // 底部按钮区：四周 24px 内边距（覆盖全局 Modal 的 0 24 24）
+    .ant-modal-content .ant-modal-footer {
+      padding: 24px;
+    }
+  }
+}
+
+.tpslContent {
+  overflow: visible;
+
+  // 标题区 + 只读信息区
+  .tpslBasic {
+    margin-bottom: 24px;
+
+    .tpslFirstRow {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 0;
+      color: var(--text-primary);
+      font-weight: var(--Bold, 700);
+      font-size: var(--size-16);
+      line-height: 24px;
+
+      .symbol {
+        margin-right: 8px;
+        font-weight: 500;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-right: 4px;
+        padding: 2px 4px;
+        font-weight: var(--Medium, 500);
+        font-size: 10px;
+        line-height: 14px;
+        background: var(--bg-tertiary);
+        border-radius: 4px;
+      }
+
+      .buy {
+        color: var(--long);
+        background: var(--long-bg-hover);
+      }
+
+      .sell {
+        color: var(--short);
+        background: var(--short-bg-hover);
+      }
+    }
+
+    .tpslRow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding: 0;
+      color: var(--text-primary);
+      font-weight: var(--Medium, 500);
+      font-size: var(--size-14);
+      line-height: 18px;
+
+      &Title {
+        color: var(--text-secondary);
+        font-weight: var(--Regular, 400);
+      }
+    }
+  }
+
+  // 区块通用错误提示
+  .blockError {
+    margin-top: 8px;
+    color: var(--short);
+    font-size: 12px;
+  }
+
+  // 止盈 / 止损区块
+  .tpslBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    .blockTitle {
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    // 输入行：触发价占满整行
+    .inputRow {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+
+      // 触发价：占满剩余宽度
+      .priceCell {
+        flex: 1 0 0;
+        min-width: 0;
+      }
+
+      // antd 输入框统一撑满单元格、去边框、统一底色与圆角
+      :global {
+        .ant-input-number-group-wrapper,
+        .ant-input-number-group,
+        .ant-input-number {
+          width: 100%;
+        }
+
+        .ant-input-number,
+        .ant-input-number-group-addon {
+          font-size: 14px;
+          background: var(--fill-fill-input);
+          border: none;
+        }
+
+        .ant-input-number-group-addon {
+          color: var(--text-primary);
+        }
+      }
+
+      // 触发价高 44px（与设计稿一致）
+      .priceCell :global(.ant-input-number-input),
+      .priceCell :global(.ant-input-number) {
+        height: 44px;
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+// Coachmark 通用引导浮层组件样式
+// 对齐 Figma coachmark（node 27544:41409）：340 宽、8 圆角、左侧 beak、圆形图标导航
+// 颜色全部消费现有主题 CSS 变量（暗色/亮色自动跟随）
+
+// ------------------------------
+// 浮层卡片
+// ------------------------------
+.card {
+  position: relative;
+  box-sizing: border-box;
+  width: 340px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+// 箭头：8×8 旋转菱形，贴在卡片边缘指向 target（与 Figma beak 一致）
+.arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--bg-secondary);
+  pointer-events: none;
+}
+
+// 箭头贴在卡片顶边、尖端朝上（卡片在 target 下方）
+// start：left 16px，与高亮左缘对齐；end 用 .arrowAlignEnd 改贴右
+.arrowTop {
+  top: -4px;
+  left: 16px;
+  transform: rotate(45deg);
+}
+
+// 箭头贴在卡片底边、尖端朝下（卡片在 target 上方）
+.arrowBottom {
+  bottom: -4px;
+  left: 16px;
+  transform: rotate(45deg);
+}
+
+// 箭头贴在卡片左边、尖端朝左（卡片在 target 右侧）
+.arrowLeft {
+  left: -4px;
+  top: 16px;
+  transform: rotate(45deg);
+}
+
+// 箭头贴在卡片右边、尖端朝右（卡片在 target 左侧）
+.arrowRight {
+  right: -4px;
+  top: 16px;
+  transform: rotate(45deg);
+}
+
+// 顶/底箭头改贴右侧（Figma 第二步 beak right:16）
+.arrowAlignEnd.arrowTop,
+.arrowAlignEnd.arrowBottom {
+  left: auto;
+  right: 16px;
+}
+
+// 右上角关闭：24×24 热区
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-tertiary);
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    color: var(--text-secondary);
+  }
+}
+
+.title {
+  padding-right: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepCount {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+// 圆形图标按钮（原生 button，避免 antd .ant-btn-default 底色抢样式）
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 34px;
+  height: 28px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 100px;
+  box-shadow: none;
+  line-height: 1;
+  cursor: pointer;
+  outline: none;
+  // 禁止背景色过渡，防止步骤切换时白底渐隐闪烁
+  transition: none;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+}
+
+// 主按钮（下一步/完成）：primary 填充 + 反色箭头
+.btnPrimary {
+  background: var(--fill-button-primary-default);
+  color: var(--text-white-to-black);
+
+  // 仅 hover，不套 :focus——点击后浏览器会保留焦点，避免「点过就变灰」残留
+  &:hover {
+    opacity: 0.88;
+  }
+}
+
+// 最后一步「完成」文案按钮（Figma 27544:64737：px 16、12 Medium）
+.btnFinish {
+  min-width: auto;
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+// 次要按钮（上一步）：tertiary 实心底 + 边框（对齐 Figma 27544:42607）
+.btnSecondary {
+  background: var(--fill-button-tertiary-default);
+  border: 1px solid var(--line-border-default);
+  color: var(--text-primary);
+
+  // 仅 hover，不套 :focus——点击后浏览器会保留焦点，避免「点过就变灰」残留
+  &:hover {
+    background: var(--fill-button-tertiary-hover, var(--fill-button-tertiary-default));
+    color: var(--text-primary);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+// 第一步隐藏「上一步」，占位保留避免布局跳动与 DOM 复用闪烁
+.btnHidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+// ------------------------------
+// 根容器 / 高亮遮罩（供 index.tsx 主组件使用）
+// 单一 fixed 层 + 内部 absolute 四块镂空；宽高由 JS 传像素值，避免 nested fixed 尺寸为 0
+// ------------------------------
+.layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* 仅拦截点击；视觉遮罩改由 .spotlight 的 box-shadow 绘制，以支持圆角镂空 */
+.mask {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.spotlight {
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 4px;
+  /* 大范围阴影充当全屏遮罩，圆角随 border-radius 生效 */
+  box-shadow: 0 0 0 9999px var(--fill-fill-mask);
+  /* 拦截镂空区点击，教程期间禁止操作底层页面（币对/输入/Tab 等） */
+  pointer-events: auto;
+}
+
+.cardWrap {
+  position: absolute;
+  z-index: 2;
+  width: 340px;
+  pointer-events: auto;
+}

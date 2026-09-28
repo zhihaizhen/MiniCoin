@@ -1,0 +1,18 @@
+module.exports = {
+  BASE_PATH: '',
+  GOOGLE_CLIENT_ID:
+    '152948754813-4jdbktenhrat2du0c8gcnftji5fjq8kj.apps.googleusercontent.com',
+  APPLE_CLIENT_ID: 'pro.easicoin.web',
+  NEXT_PUBLIC_APPLE_CLIENT_ID: 'pro.easicoin.web',
+  APPLE_TEAM_ID: 'Y69KA6T3UQ',
+  APPLE_KEY_ID: '7S4BVGK3V2',
+  APPLE_PRIVATE_KEY: `-----BEGIN PRIVATE KEY-----
+    MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgDeHcXEpvRxr1WAda
+    3vI6X2buSgpBiKrcrGZSQjxvt1igCgYIKoZIzj0DAQehRANCAASF7k7ae9E38aLk
+    wVs58S42ZAFSQ3IBEmb0Ajvka+YyRJqQcWwutCwX47V8KG1eySXENbwnV0J+KJje
+    KCAptqPG
+    -----END PRIVATE KEY-----`,
+  SENTRY_AUTH_TOKEN: '',
+  NEXT_PUBLIC_SENTRY_DSN: '',
+  NEXT_PUBLIC_SENTRY_ENABLE: '0'
+};

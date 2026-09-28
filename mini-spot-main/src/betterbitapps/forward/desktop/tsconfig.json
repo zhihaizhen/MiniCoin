@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "experimentalDecorators": true,
+    "paths": {
+      "common/*": ["../../common/*"],
+      "@/*": ["./*"],
+      "@@/*": ["../../.marvel/*"]
+    }
+  },
+  "include": ["./", "../../common/packages-biz/trade-chart/ChartMode.jsx"],
+  "exclude": ["node_modules", "dist", "src/.marvel/*", "public/tradingview"]
+}

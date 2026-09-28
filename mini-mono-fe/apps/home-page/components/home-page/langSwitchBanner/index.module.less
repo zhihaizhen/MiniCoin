@@ -1,0 +1,45 @@
+.langSwitchBanner {
+  background: var(--text-brand-default);
+  font-size: 12px;
+  padding: 0 16px;
+  color: white;
+  height: 44px;
+  align-items: center;
+  display: flex;
+
+  .wrapper {
+    height: 24px;
+    width: 100%;
+    display: flex;
+
+    .left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .action {
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      color: var(--text-brand-default);
+      border: none;
+      padding: 0 8px;
+      border-radius: 16px;
+      cursor: pointer;
+      font-size: 12px;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+
+    .closeButton {
+      cursor: pointer;
+    }
+  }
+
+}

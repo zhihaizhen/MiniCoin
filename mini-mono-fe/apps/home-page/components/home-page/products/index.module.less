@@ -1,0 +1,156 @@
+.Products {
+	display: flex;
+	justify-content: center;
+
+	.coreContent {
+		width: 1200px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 180px;
+		gap: 60px;
+
+	}
+
+	.productSection {
+		display: flex;
+		justify-content: space-between;
+		gap: 24px;
+		width: 100%;
+	}
+
+	.productCard {
+		width: 588px;
+		height: 344px;
+		border: 1px solid var(--line-border-default, #28292A);
+		border-radius: 16px;
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+		background: var(--bg-primary, #0B0611);
+
+		&:hover {
+			border-color: var(--line-border-hover);
+		}
+
+	}
+
+	.productTitle {
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 36px;
+		color: var(--text-primary, #101112);
+		margin: 0;
+		white-space: pre-line;
+	}
+
+	.productImageWrapper {
+		flex: 1;
+		position: relative;
+		height: 211px;
+		overflow: hidden;
+	}
+
+	.productImage {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		top: -31px;
+		right: 0;
+		width: 212px;
+		height: 212px;
+	}
+
+	.productLink {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5em;
+		color: var(--text-primary, #101112);
+		transition: opacity 0.3s;
+
+		svg {
+			fill: var(--text-white);
+		}
+
+		.arrowIcon {
+			width: 16px;
+			height: 16px;
+			margin-left: 4px;
+		}
+
+		&:hover {
+			color: var(--text-brand-default);
+
+			svg {
+				fill: var(--text-brand-default);
+			}
+
+			.arrowIcon {
+				transform: translateX(3px);
+
+			}
+		}
+	}
+
+
+}
+
+@media screen and (max-width: 767px) {
+	.Products {
+		padding: 0px 16px;
+
+		.coreContent {
+			width: 100%;
+			gap: 40px;
+
+		}
+
+
+		.productSection {
+			flex-direction: column;
+			gap: 16px;
+		}
+
+		.productCard {
+			width: 100%;
+			height: 160px;
+			padding: 16px;
+			flex-direction: row;
+			position: relative;
+
+			.productTitle {
+				font-size: 16px;
+				max-width: 212px;
+			}
+		}
+
+		.productImageWrapper {
+			position: unset;
+			height: 160px;
+		}
+
+		.productImage {
+			width: 120px;
+			height: 120px;
+			top: 32px;
+		}
+
+		.productLink {
+			bottom: 16px;
+			left: 16px;
+			font-size: 14px;
+		}
+	}
+}

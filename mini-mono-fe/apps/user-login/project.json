@@ -1,0 +1,98 @@
+{
+  "root": "apps/user-login",
+  "sourceRoot": "apps/user-login",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/user-login",
+        "outputPath": "dist/apps/user-login"
+      },
+      "configurations": {
+        "production": {},
+        "testnet": {
+          "outputPath": "dist/testnet/apps/user-login"
+        },
+        "test": {
+          "outputPath": "dist/test/apps/user-login"
+        },
+        "dev": {
+          "outputPath": "dist/dev/apps/user-login"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "user-login:build",
+        "dev": true,
+        "hostname": "dev.test.bitrunfinance.com",
+        "port": 4200
+      },
+      "configurations": {
+        "dev": {
+          "buildTarget": "user-login:build:development",
+          "dev": true
+        },
+        "test": {
+          "buildTarget": "user-login:build:development",
+          "dev": false
+        },
+        "testnet": {
+          "buildTarget": "user-login:build:production",
+          "dev": false
+        },
+        "production": {
+          "buildTarget": "user-login:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "user-login:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/user-login"
+      ],
+      "options": {
+        "jestConfig": "apps/user-login/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/user-login/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "cexport": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "node .script/custom-export.js",
+            "forwardAllArgs": true
+          }
+        ],
+        "cwd": "apps/user-login",
+        "outputPath": "dist/apps/"
+      }
+    }
+  },
+  "tags": []
+}

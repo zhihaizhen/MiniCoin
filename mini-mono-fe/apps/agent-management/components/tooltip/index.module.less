@@ -1,0 +1,31 @@
+.tooltip {
+  position: relative;
+
+  &_popover {
+    position: absolute;
+    display: inline-block;
+    bottom: 28px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+
+    &_arrow {
+      position: absolute;
+      top: 100%;
+      margin-left: -15px;
+      width: 30px;
+      height: 15px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: #333;
+      }
+    }
+  }
+}

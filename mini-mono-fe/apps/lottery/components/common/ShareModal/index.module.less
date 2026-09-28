@@ -1,0 +1,220 @@
+.modalMask {
+  :global {
+    .ant-modal-content {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+
+  &.mobile {
+    :global {
+      .ant-modal {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 !important;
+      }
+    }
+  }
+}
+
+.shareModal {
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+
+    .close {
+      position: absolute;
+      top: 26px;
+      right: 10px;
+      margin-left: auto;
+      border-radius: 24px;
+      width: 24px;
+      height: 24px;
+      background: url('~/public/images/referral/close.svg') no-repeat center;
+      background-size: 24px 24px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      z-index: 1;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .body {
+      margin: 16px 0;
+      background: var(--bg-primary, #080808);
+      border: 1px solid var(--line-border-default, #28292a);
+      border-radius: 12px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+
+      .card {
+        .cardDesign {
+          padding: 16px 24px 0;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          height: 450px;
+
+          @media (max-width: 768px) {
+            padding: 16px 16px 0;
+            height: 400px;
+            overflow: hidden;
+          }
+
+          .bgImg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            z-index: 0;
+
+            @media (max-width: 768px) {
+              height: 386px;
+            }
+          }
+
+          .logo {
+            width: 120px;
+            height: 28px;
+            object-fit: contain;
+            display: block;
+            z-index: 1;
+
+            @media (max-width: 768px) {
+              display: none;
+            }
+          }
+
+          .contentRow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 24px;
+            z-index: 1;
+
+            @media (max-width: 768px) {
+              gap: 16px;
+              padding-bottom: 16px;
+              margin-top: 20px;
+            }
+          }
+
+          .titleSection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 768px) {
+              padding: 0 8px;
+              max-width: 100%;
+              flex: 0 0 auto;
+              order: -1;
+            }
+
+            .title {
+              color: var(--text-primary, #f5f5f5);
+              font-size: 24px;
+              font-weight: 600;
+              line-height: 1.5;
+              letter-spacing: 0;
+              text-align: center;
+              margin: 0;
+              max-width: 100%;
+
+              @media (max-width: 768px) {
+                font-size: 22px;
+                line-height: 32px;
+                font-weight: 700;
+              }
+            }
+
+            .subTitle {
+              color: var(--text-primary, #f5f5f5);
+              font-size: 12px;
+              font-weight: 500;
+              line-height: 1.5;
+              letter-spacing: 0;
+              text-align: left;
+              max-width: 100%;
+              margin-bottom: 8px;
+              border-radius: 20px;
+              padding: 7px 9px;
+              border: var(--stroke-weight-1, 1px) solid var(--line-border-default, #37393A);
+
+              @media (max-width: 768px) {
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        .invite {
+          width: 100%;
+          padding: 12px 24px;
+          display: flex;
+          gap: 16px;
+          align-items: center;
+
+          @media (max-width: 768px) {
+            padding: 8px 16px;
+            gap: 12px;
+          }
+
+          .inviteInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+            flex: 1;
+
+            @media (max-width: 768px) {
+              max-width: 100%;
+            }
+
+            .codeLabel {
+              color: var(--text-static-white, #fff);
+              font-size: 18px;
+              line-height: 18px;
+              font-weight: 600;
+            }
+
+            .codeValue {
+              color: var(--text-static-white, #fff);
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+
+          .qrcode {
+            padding: 4px;
+            background: #fff;
+            border-radius: 2px;
+            flex-shrink: 0;
+
+            @media (max-width: 768px) {
+              order: 1;
+            }
+
+            .qrcodeWrapper {
+              position: relative;
+              display: flex;
+              line-height: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

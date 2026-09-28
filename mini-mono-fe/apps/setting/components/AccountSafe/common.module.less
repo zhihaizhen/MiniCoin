@@ -1,0 +1,120 @@
+.titleContainer {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line-divider-primary, #eee);
+}
+
+.settingRowContainer {
+  padding: 24px;
+  border-bottom: 1px solid var(--line-divider-primary, #eee);
+}
+
+.settingBlockTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-primary, #101112);
+}
+
+.settingItemContainer {
+  padding: 0 24px;
+
+  .settingItem {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line-divider-primary, #eee);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    .settingItemIcon {
+      height: 48px;
+      line-height: 48px;
+      background-color: rgb(243, 245, 247);
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+      }
+
+      .userIcon {
+        background: url('@{BASE_PATH}/images/accountSafe/user.svg') no-repeat
+          center;
+      }
+
+      .pwdIcon {
+        background: url('@{BASE_PATH}/images/accountSafe/pwd.svg') no-repeat
+          center;
+      }
+
+      .mobileIcon {
+        background: url('@{BASE_PATH}/images/accountSafe/mobile.svg') no-repeat
+          center;
+      }
+
+      .emailIcon {
+        background: url('@{BASE_PATH}/images/accountSafe/email.svg') no-repeat
+          center;
+      }
+
+      .googleIcon {
+        background: url('@{BASE_PATH}/images/accountSafe/google.svg') no-repeat
+          center;
+      }
+      .tradingViewIcon {
+        background: url('@{BASE_PATH}/images/accountSafe/tradingView.svg')
+          no-repeat center;
+      }
+
+      .passkeyIcon {
+        background: url('@{BASE_PATH}/images/accountSafe/passkey.svg') no-repeat
+          center;
+      }
+    }
+
+    .settingItemContent {
+      min-width: 594px;
+      flex: 1;
+
+      .settingItemContentTitle {
+        color: var(--text-primary, #101112);
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .settingItemContentDesc {
+        margin-top: 4px;
+        color: var(--text-secondary, #737373);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+      }
+    }
+
+    .settingItemStatus {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 400;
+    }
+
+    .settingItemOperation {
+      text-align: right;
+      margin-left: 40px;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.itemsCenter {
+  align-items: center;
+}

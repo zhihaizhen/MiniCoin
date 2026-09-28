@@ -1,0 +1,280 @@
+.botHeader {
+  max-width: 1200px;
+  padding: 40px 0;
+  margin: 0 auto;
+
+  .container {
+    max-width: 1200px;
+    height: 301px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      height: auto;
+    }
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  .leftSection {
+    flex: 0 0 613px;
+    width: 613px;
+
+    @media (max-width: 768px) {
+      flex: 1;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .textWrapper {
+    height: 96px;
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .title {
+    height: 64px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: -3px;
+    margin: 0 0 8px 0;
+    color: var(--text-primary, #f5f5f5);
+
+    @media (max-width: 768px) {
+      width: auto;
+      height: auto;
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+    }
+  }
+
+  .description {
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text-secondary, #a8aaad);
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .tradeButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 119px;
+    height: 40px;
+    padding: 0;
+    border-radius: 8px;
+    background: var(--fill-button-primary-default, #fff);
+    color: var(--text-white-to-back, #101112);
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 40px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    margin-bottom: 24px;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  .imageSection {
+    flex: 0 0 302px;
+    width: 302px;
+    height: 301px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex: none;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .robotImage {
+    width: 302px;
+    height: 301px;
+    object-fit: cover;
+    border-radius: 12px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .statsSection {
+    width: 613px;
+    height: 47px;
+    display: flex;
+    align-items: flex-start;
+    gap: 188.5px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+      gap: 40px;
+    }
+  }
+
+  .statItem {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .statLabel {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    color: var(--text-secondary, #a8aaad);
+  }
+
+  .statValue {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--text-primary, #f5f5f5);
+  }
+
+  // 已登录状态
+  .userStats {
+    width: 613px;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--line-border-default, #28292a);
+    background: var(--bg-secondary, #1d1d1d);
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .statsRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  .statCol {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .userStatLabel {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    color: var(--text-secondary, #a8aaad);
+  }
+
+  .userStatValue {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--text-primary, #f5f5f5);
+  }
+
+  .profitValue {
+    color: var(--text-static-green, #abe127);
+  }
+
+  .negativeText {
+    color: var(--text-red, #f43f5e) !important;
+  }
+
+  .zeroText {
+    color: var(--text-primary, #f5f5f5) !important;
+  }
+
+  .userStatLink {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .linkLabel {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    color: var(--text-secondary, #a8aaad);
+  }
+
+  .chevronIcon {
+    width: 14px;
+    height: 14px;
+    color: var(--text-secondary, #a8aaad);
+  }
+
+  .myStrategyButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 32px;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: var(--fill-button-primary-default, #fff);
+    color: var(--text-white-to-back, #101112);
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 32px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: var(--fill-button-primary-hover, #F5F5F5);
+    }
+
+    &:active {
+      background: var(--fill-button-primary-press, #EBEBEB);
+    }
+  }
+}

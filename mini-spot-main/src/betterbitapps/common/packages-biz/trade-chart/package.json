@@ -1,0 +1,11 @@
+{
+  "name": "trade-chart",
+  "version": "0.1.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@unified/helpers": "^0.1.5",
+    "by-storage": "^0.1.1"
+  }
+}

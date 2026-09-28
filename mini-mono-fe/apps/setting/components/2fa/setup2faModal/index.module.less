@@ -1,0 +1,109 @@
+@import '~/pages/index.module.less';
+
+.twoFAItem {
+  display: flex;
+  margin-bottom: 24px;
+
+  &:first-child {
+    margin-top: 32px;
+  }
+
+  &>div {
+    &:nth-child(1) {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 10px;
+      background: var(--text-brand-default);
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    &:nth-child(2) {
+      flex: 1;
+    }
+  }
+
+  .title {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: 8px;
+  }
+
+  .content {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
+    opacity: 0.6;
+    margin-top: 8px;
+  }
+
+  .codeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tokenCode {
+    min-width: 200px;
+    padding: 16px;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #3a3a3a;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+}
+
+.twofaCodeInp {
+  padding: 13px 16px;
+  border-color: #f7f7f7;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.twoFAbtn {
+  width: 100%;
+  padding: 13px 16px;
+  height: 100%;
+}
+
+.modalWrapper {
+  .withdrawTips {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(245, 132, 31, 0.1);
+    margin-bottom: 24px;
+    border: 0.5px solid var(--function-orange, #FF7738);
+
+    .tipsIcon {
+      flex-shrink: 0;
+    }
+
+    .tipsText {
+      color: var(--Functional-warning, #f5841f);
+      margin-left: 8px;
+      font-size: 12px;
+      word-break: break-word;
+    }
+  }
+
+  :global {
+    .ant-btn-primary:disabled {
+      opacity: 0.5;
+      border: none;
+    }
+  }
+}

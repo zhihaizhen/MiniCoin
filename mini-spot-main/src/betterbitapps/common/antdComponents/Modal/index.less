@@ -1,0 +1,56 @@
+.ant-modal-wrap {
+  background: var(--fill-fill-mask);
+
+  .ant-modal-content {
+    border-radius: 16px;
+    background: var(--fill-fill-modal) !important;
+    color: var(--text-primary);
+    border: 1px solid var(--line-divider-primary, #EBEBEB);
+
+    .ant-modal-close {
+      color: var(--text-primary);
+    }
+
+    .ant-modal-close-x {
+      margin-top: 24px;
+      line-height: 1;
+    }
+
+    .ant-modal-header {
+      border-radius: 16px 16px 0 0;
+      padding: 16px;
+      background: var(--fill-fill-modal);
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--line-divider-primary);
+
+      .ant-modal-title {
+        color: var(--text-primary);
+      }
+    }
+
+    .ant-modal-footer {
+      width: 100%;
+      border-top: none;
+      display: flex;
+      padding: 0 var(--size-24) var(--size-24);
+
+      button {
+        width: 50%;
+        border-radius: 8px;
+        height: 40px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// 对modal框里的组件颜色覆盖
+.ant-modal-content {
+  .ant-input-number-group-addon {
+    background: var(--fill-fill-input);
+  }
+
+  .ant-input-number {
+    background: var(--fill-fill-input);
+  }
+}

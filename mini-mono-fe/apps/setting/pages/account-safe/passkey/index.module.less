@@ -1,0 +1,257 @@
+.passkeyPage {
+  max-width: 1200px;
+  min-height: calc(100vh - 64px);
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.headerBlock {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.crumbMuted,
+.crumbLink,
+.crumbCurrent {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.crumbMuted {
+  color: var(--text-secondary, #808588);
+}
+
+.crumbLink {
+  color: var(--text-secondary, #808588);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text-primary, #101112);
+  }
+}
+
+.crumbCurrent {
+  color: var(--text-primary, #101112);
+}
+
+.crumbSep {
+  color: var(--text-secondary, #808588);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mainTitle {
+  margin: 0;
+  color: var(--text-primary, #101112);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+}
+
+.headerAddBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--fill-button-primary-default, #101112);
+  color: var(--text-white-to-black, #fff);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.listWrap {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pageDesc {
+  margin: 0;
+  color: var(--text-secondary, #808588);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--line-border-default, #ebebeb);
+  background: var(--bg-primary, #fff);
+  width: 100%;
+  max-width: 472px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.illustration {
+  width: 116px;
+  height: 120px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 392px;
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.featureTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.featureIcon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.featureTitle {
+  color: var(--text-primary, #101112);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.featureDesc {
+  padding-left: 40px;
+  color: var(--text-secondary, #808588);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.agreeText {
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary, #808588);
+  align-self: flex-start;
+}
+
+.agreeLink {
+  color: var(--text-brand-default-web, #93c919);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 392px;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: var(--fill-button-primary-default, #101112);
+  color: var(--text-white-to-black, #fff);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .passkeyPage {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .mainTitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .card {
+    padding: 24px 16px;
+  }
+
+  .featureDesc {
+    padding-left: 40px;
+  }
+}

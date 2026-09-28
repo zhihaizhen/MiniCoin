@@ -1,0 +1,162 @@
+@import '~/pages/index.module.less';
+
+.desc {
+  margin: 32px 0 8px;
+  opacity: 0.6;
+}
+
+.inp {
+  border-radius: 8px;
+  background-color: #efefef;
+  padding: 13px 16px;
+  margin: 24px 0 32px;
+}
+
+.inp-title {
+  opacity: 0.6;
+}
+
+.resend {
+  margin-top: 24px;
+  text-align: right;
+
+  span {
+    margin-left: 8px;
+    display: inline-block;
+  }
+
+  .btn {
+    height: 25px;
+    margin-left: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-brand-default);
+
+    &:hover {
+      color: var(--text-brand-hover, #D4F385);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+  }
+}
+
+.verification-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .verification-input-wrapper {
+    position: relative;
+
+    .verification-input-wrapper-box {
+      width: 48px;
+      height: 48px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      background-color: #efefef;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      caret-color: transparent;
+      /* Firefox - Input[type=number] hide arrows */
+      -moz-appearance: textfield;
+      padding: 0;
+
+      &.verification-input-wrapper-box-m {
+        width: 40px;
+        height: 40px;
+      }
+
+      &:focus,
+      &:focus-within,
+      &:focus-visible {
+        border: 1px solid var(--text-brand-default) !important;
+        outline: none !important;
+      }
+
+      &[disabled] {
+        color: var(--re-rui-text-a-05);
+      }
+
+      /* Input[type=number] hide arrows */
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      // @media screen and (max-width: 450px) {
+      //   width: 36px;
+      // }
+
+      // @media screen and (max-width: 396px) {
+      //   width: calc(36px - 6%);
+      // }
+
+      @media screen and (max-width: 348px) {
+        width: calc(36px - 8%);
+        height: calc(36px - 8%);
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.twoFA,
+.editModal,
+.countdownModal {
+  :global {
+    .ant-btn {
+      height: 48px;
+      background-color: var(--text-brand-default);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: var(--text-brand-default);
+      }
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+    }
+
+    .ant-input,
+    .ant-input-affix-wrapper {
+      border-color: transparent;
+
+      &:hover {
+        border-color: var(--text-brand-default);
+      }
+
+      &:focus {
+        border-color: var(--text-brand-default);
+      }
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      width: 100%;
+      background-color: var(--text-brand-default);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: var(--text-brand-default);
+      }
+
+      &:disabled {
+        opacity: 0.3;
+
+        cursor: not-allowed;
+      }
+    }
+  }
+}

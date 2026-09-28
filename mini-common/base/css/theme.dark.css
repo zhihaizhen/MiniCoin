@@ -1,0 +1,149 @@
+:root.theme-dark {
+  --text-primary: var(--neutral-50);
+  --text-secondary: var(--neutral-500);
+  --text-tertiary: var(--neutral-900);
+  --text-quaternary: var(--neutral-1000);
+  --text-white: var(--neutral-50);
+  /* 固定白色 */
+  --text-black: var(--neutral-1400);
+  /* 固定黑色 */
+  --text-white-to-black: var(--neutral-1400);
+  /* 白色背景下黑色 */
+  --text-brand-default-web: var(--brand-400);
+  /* 新增的 */
+  --text-brand-default: var(--brand-400);
+  --text-brand-hover: var(--brand-300);
+  --text-brand-press: var(--brand-200);
+  --text-brand-disable: var(--brand-800);
+
+  --text-green: var(--dark-green-400);
+  --text-red: var(--dark-red-500);
+  --text-blue: var(--blue-500);
+
+  /* 背景色 */
+  --bg-primary: var(--neutral-1500);
+  --bg-secondary: var(--neutral-1300);
+  --bg-tertiary: var(--neutral-1200);
+
+  /* 组件填充色 */
+  --fill-fill-input: var(--neutral-1300);
+  --fill-fill-input-modal: var(--neutral-1200);
+  --fill-fill-select: var(--neutral-1300);
+  --fill-fill-switch: var(--neutral-1100);
+  /* --fill-fill-switch2 才对应switch组件，--fill-fill-switch对应的是tab里面button的那种组件 */
+  --fill-fill-switch2: var(--neutral-1100);
+  --fill-fill-slider: var(--neutral-1200);
+  --fill-fill-tooltip: var(--neutral-100);
+  --fill-fill-tooltip-web: var(--neutral-1200);
+  --fill-fill-modal: var(--neutral-1400);
+  --fill-fill-mask: rgba(0, 0, 0, 0.7);
+  --fill-fill-dropdown: var(--neutral-1200);
+  --fill-fill-hover-1: var(--neutral-1300);
+  --fill-fill-checkbox: var(--neutral-5);
+  /* 进度条 */
+  --fill-fill-dragger: var(--neutral-1000);
+  --fill-fill-toast: var(--neutral-100);
+
+  /* 按钮填充色 */
+  --fill-button-primary-default: var(--neutral-50);
+  --fill-button-primary-hover: var(--neutral-100);
+  --fill-button-primary-press: var(--neutral-200);
+  --fill-button-primary-disabled: var(--neutral-1200);
+
+  --fill-button-brand-default: var(--brand-400);
+  --fill-button-brand-hover: var(--brand-300);
+  --fill-button-brand-press: var(--brand-500);
+
+  --fill-button-secondary-default: rgba(171, 225, 39, 0.2);
+  --fill-button-secondary-hover: rgba(171, 225, 39, 0.3);
+  --fill-button-secondary-press: rgba(171, 225, 39, 0.4);
+
+  --fill-button-tertiary-default: var(--neutral-1200);
+  --fill-button-tertiary-hover: var(--neutral-1100);
+  --fill-button-tertiary-press: var(--neutral-1000);
+
+  --fill-button-red-default: var(--dark-red-500);
+  --fill-button-red-hover: var(--dark-red-600);
+  --fill-button-red-press: var(--dark-red-700);
+  --fill-button-red-disabled: var(--dark-red-800);
+
+  --fill-button-green-default: var(--dark-green-400);
+  --fill-button-green-hover: var(--dark-green-300);
+  --fill-button-green-press: var(--dark-green-200);
+  --fill-button-green-disabled: var(--dark-green-900);
+
+  /* tag填充色 */
+  --fill-tag-brand-transparent: rgba(171, 225, 39, 0.15);
+  --fill-tag-brand-solid: var(--brand-900);
+  --fill-tag-green: rgba(171, 225, 39, 0.1);
+  --fill-tag-red: rgba(244, 63, 94, 0.1);
+  --fill-tag-gray: rgba(255, 255, 255, 0.08);
+  --fill-tag-blue: rgba(1, 115, 229, 0.2);
+  --fill-tag-orange: rgba(255, 119, 56, 0.12);
+
+  /* 线段颜色 */
+  --line-divider-primary: var(--neutral-1200);
+  --line-divider-secondary: var(--neutral-1300);
+  --line-divider-tertiary: var(--neutral-1200);
+  --line-border-default: var(--neutral-1200);
+  --line-border-hover: var(--brand-500);
+  --line-border-focus: var(--brand-500);
+  --line-border-error: var(--dark-red-500);
+  --line-border-radio: var(--neutral-1000);
+  --line-border-checkbox: var(--neutral-1000);
+  --line-dotted-line: var(--neutral-1000);
+
+  /* 功能性颜色 */
+  --function-brand: var(--brand-400);
+  --function-green: var(--dark-green-500);
+  --function-red: var(--dark-red-500);
+  --function-blue: var(--blue-500);
+  --function-yellow: var(--yellow-500);
+  --function-orange: var(--orange-500);
+
+
+  /* 以下的变量不能删除，先共存 */
+  --color-transparent: transparent;
+  --color-white: var(--neutral-50);
+  --color-black: var(--neutral-1100);
+  --color-brand: var(--text-brand-default-web);
+
+  /* box shadow */
+  --popover-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+:root.theme-dark.greenUpRedDown {
+  --long: var(--text-green);
+  --long-bg: var(--dark-green-500);
+  --long-bg-hover: var(--fill-tag-green);
+  --long-text: var(--text-black);
+
+  --short: var(--text-red);
+  --short-bg: var(--dark-red-500);
+  --short-bg-hover: var(--fill-tag-red);
+  --short-text: var(--text-white);
+}
+
+:root.theme-dark.redUpGreenDown {
+  --long: var(--text-red);
+  --long-bg: var(--dark-red-500);
+  --long-bg-hover: var(--fill-tag-red);
+  --long-text: var(--text-white);
+
+  --short: var(--text-green);
+  --short-bg: var(--dark-green-500);
+  --short-bg-hover: var(--fill-tag-green);
+  --short-text: var(--text-black);
+}
+
+:root.theme-dark.redUpBlueDown {
+  --long: var(--text-red);
+  --long-bg: var(--dark-red-500);
+  --long-bg-hover: var(--fill-tag-red);
+  --long-text: var(--text-white);
+
+  --short: var(--text-blue);
+  --short-bg: var(--text-blue);
+  --short-bg-hover: var(--fill-tag-blue);
+  --short-text: var(--text-white);
+}

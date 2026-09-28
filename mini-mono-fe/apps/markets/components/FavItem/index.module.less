@@ -1,0 +1,97 @@
+.favItem {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  border: 1px solid var(--line-divider-primary, #EEE);
+  background: var(--fill-fill-input, #F7F7F7);
+  color: var(--text-primary, #101112);
+  box-sizing: border-box;
+  cursor: pointer;
+
+  .favItemLeft {
+    .symbol {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 16px;
+
+      .icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        text-align: center;
+        margin-right: 12px;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+
+        .tag {
+          width: fit-content;
+          border-radius: 4px;
+          font-weight: 400;
+          padding: 2px 4px;
+          margin-top: 4px;
+          font-size: 12px;
+          color: var(--text-tertiary, #A6A6A6);
+          border: 1px solid var(--line-divider-primary, #EEE);
+        }
+      }
+    }
+
+    .price {
+      color: var(--text-primary, #333);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+
+    .change {
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+
+  .favItemRight {
+    text-align: right;
+  }
+
+  :global {
+
+    .ant-checkbox-wrapper-checked,
+    .ant-checkbox-wrapper-checked:hover {
+      border-radius: 50%;
+    }
+
+    .ant-checkbox-inner,
+    .ant-checkbox-input {
+      border-radius: 50%;
+    }
+
+    .ant-checkbox-checked:hover,
+    .ant-checkbox-inner:hover {
+      border-radius: 50%;
+    }
+
+    .ant-checkbox-wrapper:hover .ant-checkbox-checked:after {
+      border-radius: 50%;
+    }
+
+    .ant-checkbox-wrapper .ant-checkbox-checked:after {
+      border-radius: 50%;
+    }
+  }
+}
+
+.favItem:hover {
+  border: 1px solid var(--text-brand-default);
+}
+
+
+
+.mb16 {
+  margin-bottom: 16px;
+}

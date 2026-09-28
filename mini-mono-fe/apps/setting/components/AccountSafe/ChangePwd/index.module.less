@@ -1,0 +1,182 @@
+.changePwd {
+
+  .withdrawTips {
+    display: flex;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--function-orange, #F5841F);
+    background: rgba(245, 132, 31, 0.10);
+    margin-bottom: 16px;
+    max-width: 456px;
+
+    .tipsIcon {
+      width: 20px;
+      height: 16px;
+      background: url('@{BASE_PATH}/images/tips.svg') no-repeat;
+      flex-shrink: 0;
+    }
+
+    .tipsText {
+      color: var(--Functional-warning, #F5841F);
+      margin-left: 8px;
+      font-size: 12px;
+    }
+  }
+
+  .error {
+    margin-top: 12px;
+    color: var(--text-red, #ff4d4f);
+    font-size: 14px;
+  }
+
+  .eyesIcon {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    color: var(--text-tertiary, #A8AAAD);
+    &:hover {
+      color: var(--text-secondary, #808588);
+    }
+  }
+
+  .visibleEyes {
+    background: url('@{BASE_PATH}/images/accountSafe/visbileEyes.svg') no-repeat
+  }
+
+  .unvisibleEyes {
+    background: url('@{BASE_PATH}/images/accountSafe/unVisbileEyes.svg') no-repeat
+  }
+
+  .titleContainer {
+    display: flex;
+    margin-bottom: 24px;
+
+    div {
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--Text-tertiary, #888);
+    }
+
+    .title1 {
+      margin-left: 4px;
+    }
+
+    .title2 {
+      margin-left: 4px;
+      color: var(--text-primary, #101112);
+    }
+  }
+
+  .formTitle {
+    color: var(--text-primary, #101112);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: var(--Bold, 700);
+    line-height: 32px; /* 133.333% */
+  }
+
+  .sentCodeBtn {
+    // height: 100%;
+    color: var(--text-brand-default);
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+  }
+
+  .sentDisable {
+    opacity: .4;
+    cursor: not-allowed;
+  }
+
+  .nextBtn {
+    color: var(--text-white, #fff) !important;
+    background: var(--fill-button-black-default, #101112) !important;
+    border-radius: 12px !important;
+    &:hover {
+      background: var(--fill-button-tertiary-hover, #C2C2C2) !important;
+    }
+  }
+
+  .pwdFormItem {
+    margin-bottom: 8px !important;
+
+    :global {
+      .ant-form-item-explain {
+        display: none;
+      }
+    }
+  }
+
+  .pwdRules {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+
+    .pwdRuleItem {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary, #808588);
+      font-size: 12px;
+      line-height: 16px;
+
+      .checkIcon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      .unCheckIcon {
+        background-image: url('@{BASE_PATH}/images/accountSafe/uncheck.svg');
+      }
+
+      .checkOKIcon {
+        background-image: url('@{BASE_PATH}/images/accountSafe/checked.svg');
+      }
+    }
+  }
+
+  :global {
+
+    .ant-form-item-label {
+      text-align: left;
+    }
+
+    .ant-form-item-label>label {
+      font-size: 14px;
+      color: var(--text-primary, #101112) !important;
+      height: 24px;
+      margin-bottom: 8px;
+    }
+
+    .ant-row {
+      display: block;
+    }
+
+    .ant-btn {
+      width: 100%;
+      height: 48px !important;
+    }
+
+    .ant-btn:disabled {
+      border: none !important;
+    }
+
+    .ant-input-affix-wrapper {
+      padding: 0 12px 0 0 !important;
+    }
+
+    .ant-input {
+      padding: 10px !important;
+    }
+  }
+}

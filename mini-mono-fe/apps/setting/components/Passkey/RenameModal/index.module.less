@@ -1,0 +1,119 @@
+.renameModal {
+  :global {
+    .ant-modal-content {
+      border-radius: 12px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .ant-modal-body {
+      padding: 0;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.closeIcon {
+  font-size: 14px;
+  color: var(--text-primary, #101112);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.illustration {
+  width: 120px;
+  height: 120px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.title {
+  color: var(--text-primary, #101112);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.label {
+  color: var(--text-primary, #101112);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.input {
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: var(--fill-fill-input, #f2f3f4);
+  box-shadow: none;
+
+  :global {
+    .ant-input {
+      background: transparent;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    border: none;
+    box-shadow: none;
+    background: var(--fill-fill-input, #f2f3f4);
+  }
+}
+
+.confirmBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: var(--fill-button-primary-default, #101112);
+  color: var(--text-white-to-black, #fff);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

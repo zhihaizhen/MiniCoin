@@ -1,0 +1,42 @@
+{
+  "/tradingview": {
+    "target": "http://85tey2tpq.test.v8u7k50ylv0nzegojr867a.xyz/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/region-frame": {
+    "target": "http://85tey2tpq.test.v8u7k50ylv0nzegojr867a.xyz/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/static": {
+    "target": "http://85tey2tpq.test.v8u7k50ylv0nzegojr867a.xyz/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/betterbit-frame": {
+    "target": "http://85tey2tpq.test.v8u7k50ylv0nzegojr867a.xyz/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/mapi": {
+    "target": "http://85tey2tpq.test.v8u7k50ylv0nzegojr867a.xyz/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/global-widget": {
+    "target": "https://www.test.bitrunfinance.com/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/icon": {
+    "target": "https://www.test.bitrunfinance.com/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/favicon.ico": {
+    "target": "https://www.test.bitrunfinance.com/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

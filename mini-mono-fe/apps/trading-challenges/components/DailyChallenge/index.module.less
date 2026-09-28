@@ -1,0 +1,826 @@
+.dailyChallenge {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 100px auto 0;
+  padding: 0 20px;
+}
+
+.container {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.rectangle {
+  width: 327px;
+  height: 2px;
+
+  &:first-child {
+    background: linear-gradient(
+      270deg,
+      #abe127 0%,
+      rgba(171, 225, 39, 0) 85.67%
+    );
+  }
+
+  &:last-child {
+    background: linear-gradient(
+      270deg,
+      rgba(171, 225, 39, 0) 14.33%,
+      #abe127 100%
+    );
+  }
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 44px;
+  color: #fafafa;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.progressInfo {
+  text-align: center;
+  width: 100%;
+}
+
+.infoText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.highlight {
+  color: var(--text-brand-default, #abe127);
+}
+
+.progressCardWrapperMobile {
+  display: none; // PC 端隐藏 H5 的独立卡片
+}
+
+.progressCardWrapperPC {
+  width: 100%; // PC 端显示在 rewardsGrid 内
+}
+
+.progressCard {
+  padding: 30px 32px;
+  background: #191b1d;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.progressButtonMobile {
+  display: none; // PC 端隐藏底部按钮
+}
+
+.progressSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.progressLeft,
+.progressMiddle,
+.progressRight {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progressLeft {
+  flex: 0 0 auto;
+}
+
+.progressMiddle {
+  flex: 0 0 auto;
+}
+
+.progressRight {
+  flex-shrink: 0;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.labelText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.progressValues {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.currentValue {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--text-brand-default, #abe127);
+}
+
+.separator {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--text-brand-default, #abe127);
+  margin: 0 4px;
+}
+
+.targetValue {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--text-primary, #fff);
+}
+
+.countdownValue {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--text-primary, #fff);
+}
+
+.viewRewardsButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  padding: 16px 48px;
+  border-radius: 100px;
+  border: none;
+  background: var(--fill-button-tertiary-btn-default, #28292a);
+  cursor: pointer;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #353a32;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.viewRewardsBtnGlow {
+  position: absolute;
+  top: 24px;
+  left: 10px;
+  width: 140px;
+  height: 140px;
+  background: rgba(171, 225, 39, 0.7);
+  filter: blur(40px);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tradeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  padding: 16px 48px;
+  border-radius: 100px;
+  border: 1px solid #96c031;
+  background: var(--fill-button-green-default, #abe127);
+  box-shadow: 0 1px 16px 6px rgba(85, 177, 105, 0.25);
+  cursor: pointer;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black, #101112);
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--fill-button-brand-hover);
+  }
+}
+
+.rewardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid var(--line-border-default, #28292a);
+}
+
+.daysContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.dayCardWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// PC 端：tooltip 在卡片外部上方
+.tooltipPC {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  animation: tooltipFadeIn 0.3s ease-in-out;
+}
+
+// H5 端：tooltip 在卡片内部
+.tooltipMobile {
+  display: none; // PC 端默认隐藏
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.tooltipContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.tooltipIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.tooltipText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  color: var(--text-static-black, #101112);
+}
+
+.tooltipArrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #ffffff;
+  margin-top: -1px;
+}
+
+.dayCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 187px;
+  height: 144px;
+  padding: 11px 40px;
+  background-image: url('@{BASE_PATH}/images/gray-border.svg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.dayCardUnlocked {
+  background-image: url('@{BASE_PATH}/images/green-border.svg');
+
+  .dayText {
+    color: var(--text-primary, #fff);
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .dayCardTradeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    padding: 8px 20px;
+    border-radius: 100px;
+    background: var(--fill-button-green-default, #abe127);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-black, #101112);
+    text-align: center;
+
+    &:hover {
+      background: var(--fill-button-brand-hover);
+    }
+  }
+}
+
+.dayText {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.lockedContent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lockIcon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.divider {
+  width: 42px;
+  height: 2px;
+  background: #36373a;
+  flex-shrink: 0;
+}
+
+.rewardCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+
+  &:hover:not(.locked) {
+    transform: translateY(-4px);
+    border-color: rgba(164, 124, 243, 0.5);
+    box-shadow: 0 8px 24px rgba(164, 124, 243, 0.15);
+  }
+
+  &.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.special {
+    grid-column: span 2;
+  }
+}
+
+.rewardIcon {
+  font-size: 48px;
+}
+
+.rewardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-height: 60px;
+}
+
+.rewardAmount {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.rewardType {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+// 响应式设计
+@media (max-width: 1024px) {
+  .daysContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .dayCard {
+    min-width: 150px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .rewardsGrid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .container {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dailyChallenge {
+    margin: 40px auto 0;
+    padding: 0 16px;
+  }
+
+  .container {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .dayCardWrapper {
+    width: 100%;
+    flex: none;
+  }
+
+  .tooltipPC {
+    display: none; // H5 端隐藏 PC 端的外部 tooltip
+  }
+
+  .tooltipMobile {
+    display: flex; // H5 端显示内部 tooltip
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tooltipContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    background: #ffffff;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .tooltipIcon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .tooltipText {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    color: #101112;
+  }
+
+  .tooltipArrow {
+    display: none; // H5 端不显示箭头
+  }
+
+  .header {
+    gap: 16px;
+  }
+
+  .titleWrapper {
+    gap: 16px;
+    align-self: stretch;
+  }
+
+  .rectangle {
+    flex: 1;
+    height: 2px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 24px;
+    font-weight: var(--Bold, 600);
+    line-height: 32px;
+    letter-spacing: -0.24px;
+    text-align: center;
+    color: var(--text-primary, #fff);
+  }
+
+  .progressInfo {
+    align-self: stretch;
+  }
+
+  .infoText {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .progressCardWrapperMobile {
+    display: block; // H5 端显示独立卡片
+    width: 100%;
+    margin: 16px auto 0;
+  }
+
+  .progressCardWrapperPC {
+    display: none; // H5 端隐藏 PC 端的卡片
+  }
+
+  .progressCard {
+    padding: 24px 16px;
+    background: #191b1d;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; // 设计稿：上下两部分间距
+  }
+
+  .progressSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px; // 设计稿：两列之间的间距
+    align-items: flex-start;
+  }
+
+  .progressLeft {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .progressMiddle {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    width: 125px;
+  }
+
+  .progressRight {
+    display: none; // H5 端按钮放在下面
+  }
+
+  .progressButtonMobile {
+    display: block; // H5 端显示底部按钮
+    width: 100%;
+  }
+
+  .buttonGroupMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .viewRewardsButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding: 16px 48px;
+    border-radius: 100px;
+    border: none;
+    background: var(--fill-button-tertiary-btn-default, #28292a);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+
+    span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .labelText {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .currentValue {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #abe127;
+  }
+
+  .separator {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #ffffff;
+  }
+
+  .targetValue {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--text-primary, #fff);
+  }
+
+  .countdownValue {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #ffffff;
+  }
+
+  .tradeButton {
+    width: 100%;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid #96c031;
+    background: var(--fill-button-green-default, #abe127);
+    box-shadow: 0 1px 16px 6px rgba(85, 177, 105, 0.25);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--text-black, #101112);
+    text-align: center;
+  }
+
+  .rewardsGrid {
+    padding: 0; // H5 端去掉 padding，让 days 卡片充满容器
+    border: none; // H5 端去掉边框
+  }
+
+  .daysContainer {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .dayCardWrapper {
+    width: 100%; // H5 端宽度撑满
+    flex: none; // 覆盖 PC 端的 flex: 1
+  }
+
+  .dayCard {
+    width: 100%;
+    height: auto; // 自动高度以适应内容
+    min-height: 110px;
+    padding: 16px 40px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: transparent; // 去掉背景图，使用透明背景
+    border: 1px solid var(--line-border-default, #37393a);
+  }
+
+  .lockedContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px; // 设计稿：锁图标和文本间距
+  }
+
+  .lockIcon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+
+  .dayText {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .dayCardUnlocked {
+    .dayText {
+      color: rgba(255, 255, 255, 0.5); // H5 端未解锁和已解锁颜色相同
+    }
+
+    .dayCardTradeButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 36px;
+      padding: 8px 20px;
+      border-radius: 100px;
+      background: var(--fill-button-green-default, #abe127);
+      border: none;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--text-black, #101112);
+      text-align: center;
+    }
+  }
+
+  .divider {
+    display: none; // H5 端不显示分隔线
+  }
+
+  .rewardCard {
+    padding: 20px 12px;
+    gap: 12px;
+  }
+
+  .rewardIcon {
+    font-size: 40px;
+  }
+
+  .rewardAmount {
+    font-size: 16px;
+  }
+
+  .rewardType {
+    font-size: 11px;
+  }
+}

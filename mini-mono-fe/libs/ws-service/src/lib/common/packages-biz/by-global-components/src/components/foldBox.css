@@ -1,0 +1,49 @@
+.fold-box__bg {
+  background-color: var(--re-rui-bg-web-2);
+  border-radius: var(--size-4);
+  margin-top: var(--size-12);
+  overflow: hidden;
+}
+
+.fold-box__element {
+  overflow: hidden;
+  position: relative;
+  transition: height 0.15s ease-out;
+  will-change: height;
+}
+
+.fold-box__btn-bg {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  padding: var(--size-8) 0 var(--size-16);
+  cursor: pointer;
+}
+
+.fold-box__btn-inline-bg {
+  display: inline-flex;
+  padding: 0 8px;
+}
+
+.fold-box__btn-inline-bg:hover .fold-box__btn-txt,
+.fold-box__btn-inline-bg:hover .fold-box__btn-icon {
+  color: var(--re-rui-brand-main);
+}
+
+.fold-box__btn-icon {
+  display: inline-block;
+  padding: 0 var(--size-4);
+}
+
+.fold-box__btn-txt {
+  font-weight: 500;
+}
+
+.fold-box__btn-txt,
+.fold-box__btn-icon {
+  font-size: var(--size-12);
+}
+
+.fold-box__btn-show {
+  transform: rotate(180deg);
+}

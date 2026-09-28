@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .cardList {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 24px;
+  }
+
+
+  .titleContainer {
+    display: flex;
+    margin-bottom: 24px;
+
+    div {
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--Text-tertiary, #888);
+    }
+
+    .title1 {
+      margin-left: 4px;
+    }
+
+    .title2 {
+      margin-left: 4px;
+      color: var(--text-primary, #101112);
+    }
+  }
+
+  .formTitle {
+    color: var(--text-primary, #101112);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: var(--Bold, 700);
+    line-height: 32px; /* 133.333% */
+  }
+
+}

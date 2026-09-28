@@ -1,0 +1,8 @@
+{
+  "name": "by-global-settings",
+  "version": "0.1.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {}
+}

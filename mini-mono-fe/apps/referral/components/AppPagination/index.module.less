@@ -1,0 +1,108 @@
+@mobile: ~'(max-width: 768px)';
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+
+  @media @mobile {
+    margin-top: 16px;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+
+  :global {
+    .ant-pagination-item {
+      background: transparent;
+      border: 1px solid var(--line-primary, rgba(255, 255, 255, 0.1));
+      border-radius: 8px;
+      min-width: 32px;
+      height: 32px;
+      line-height: 30px;
+      margin: 0 4px;
+
+      a {
+        color: var(--text-primary, #f5f5f5);
+      }
+
+      &:hover {
+        border-color: var(--text-brand-default, #abe127);
+
+        a {
+          color: var(--text-brand-default, #abe127);
+        }
+      }
+
+      &.ant-pagination-item-active {
+        background: var(--text-brand-default, #abe127);
+        border-color: var(--text-brand-default, #abe127);
+
+        a {
+          color: var(--text-black, #101112);
+        }
+      }
+    }
+
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      margin: 0 4px;
+
+      button {
+        background: transparent;
+        border: 1px solid var(--line-primary, rgba(255, 255, 255, 0.1));
+        border-radius: 8px;
+        color: var(--text-primary, #f5f5f5);
+        width: 32px;
+        height: 32px;
+
+        &:hover:not(:disabled) {
+          border-color: var(--text-brand-default, #abe127);
+          color: var(--text-brand-default, #abe127);
+        }
+
+        &:disabled,
+        &:disabled:hover {
+          background: transparent;
+          border-color: var(--line-primary, rgba(255, 255, 255, 0.1));
+          color: var(--text-disabled, rgba(255, 255, 255, 0.3));
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next {
+      .ant-pagination-item-container {
+        .ant-pagination-item-ellipsis {
+          color: var(--text-secondary, #a8aaad);
+        }
+      }
+    }
+
+    @media @mobile {
+      .ant-pagination-item {
+        min-width: 28px;
+        height: 28px;
+        line-height: 26px;
+        margin: 0 2px;
+
+        a {
+          font-size: 12px;
+        }
+      }
+
+      .ant-pagination-prev,
+      .ant-pagination-next {
+        margin: 0 2px;
+
+        button {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}

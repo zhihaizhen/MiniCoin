@@ -1,0 +1,22 @@
+module.exports = {
+  extends: [require.resolve('@betterbit/marvel-cli/lib/fabric/eslint')],
+  plugins: ['react-hooks'],
+  rules: {
+    'no-console': 0,
+    'no-redeclare': 2,
+    '@typescript-eslint/no-unused-vars': 0,
+    'no-unused-vars': 'off',
+    'react-hooks/rules-of-hooks': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'react/destructuring-assignment': 'off',
+    'react/jsx-boolean-value': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
+    'import/order': 'warn',
+    'import/extensions': 'warn',
+    'import/no-mutable-exports': 'warn',
+    'no-underscore-dangle': 'off',
+    'react/prop-types': 'off',
+    'react/no-unused-prop-types': 'warn',
+    'new-cap': 0,
+  },
+};

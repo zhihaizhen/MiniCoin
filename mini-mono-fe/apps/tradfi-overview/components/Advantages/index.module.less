@@ -1,0 +1,222 @@
+@mobile: ~'(max-width: 768px)';
+
+.section {
+  width: 100%;
+  position: relative;
+  padding: 0 0 80px;
+  overflow: hidden;
+
+  @media @mobile {
+    padding: 40px 16px;
+  }
+}
+
+.bgImage {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 742px;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+
+  @media @mobile {
+    height: 238px;
+    top: 0;
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -0.8px;
+  margin: 0;
+  padding-top: 182px;
+
+  @media @mobile {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+    padding-top: 220px;
+  }
+
+  .highlight {
+    color: #abe127;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 400px;
+  width: 100%;
+
+  @media @mobile {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-clip: padding-box;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(to bottom, #28292a, #28292a);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.4s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 31px;
+    top: -22px;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(147, 201, 25, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    }
+
+    &::after {
+      transform: scale(3.6);
+      opacity: 1;
+      background: radial-gradient(circle, rgba(147, 201, 25, 0.3) 0%, rgba(147, 201, 25, 0.08) 50%, transparent 70%);
+    }
+  }
+
+  @media @mobile {
+    gap: 16px;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.35) 0%,
+        rgba(255, 255, 255, 0.06) 25%,
+        rgba(255, 255, 255, 0.02) 50%,
+        rgba(255, 255, 255, 0.06) 75%,
+        rgba(255, 255, 255, 0.35) 100%
+      );
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.cardIcon {
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  object-fit: contain;
+
+  @media @mobile {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--text-primary, #fff);
+  margin: 0;
+
+  @media @mobile {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+}
+
+.cardDesc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-secondary, #a8aaad);
+  margin: 0;
+
+  @media @mobile {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

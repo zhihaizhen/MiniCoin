@@ -1,0 +1,27 @@
+.enhance-input-num {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.enhance-input-num .iconfont {
+  display: inline-block;
+  width: 25px;
+  height: var(--size-32);
+  line-height: var(--size-32);
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.enhance-input-num .iconfont:last-child {
+  border-left: none;
+  border-radius: 0 var(--size-4) var(--size-4) 0;
+}
+.enhance-input-num .re-input-number {
+  border-radius: var(--size-4) 0 0 var(--size-4);
+}
+.enhance-input-num.disabled .iconfont {
+  /* border:none; */
+  background-color: var(--bg-tertiary);
+  cursor: not-allowed;
+  color: var(--text-tertiary);
+}

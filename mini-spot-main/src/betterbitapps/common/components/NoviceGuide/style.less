@@ -1,0 +1,276 @@
+.priceNumberText {
+  width: 118px;
+  text-align: center;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.novice-guide-dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+  &.kr {
+    .forword-open-animation {
+      .img {
+        background-image: url('./images/scene-forward-open-kr.svg');
+      }
+    }
+
+    .forword-close-animation {
+      .img {
+        background-image: url('./images/scene-forward-close-kr.svg');
+      }
+    }
+  }
+
+  .content {
+    width: 1000px;
+    height: 594px;
+    box-shadow: 0px 2px 24px rgba(27, 39, 52, 0.08);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    background: url('./images/bg-logo.svg') no-repeat right bottom #fff;
+    background-size: 654px auto;
+    box-sizing: border-box;
+    padding: 55px;
+    display: flex;
+
+    .content-wrap {
+      flex: 1;
+      display: flex;
+    }
+
+    .desc-content {
+      flex: 1;
+      h1.title {
+        font-family: ChakraPetch;
+        font-weight: bold;
+        font-size: 45px;
+        line-height: 54px;
+        color: #394e62;
+        padding-left: 33px;
+      }
+      .desc {
+        padding: 32px 0 0 65px;
+        .item {
+          padding-top: 24px;
+          .tit {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 46px;
+            color: rgba(57, 78, 98, 0.6);
+            &.active {
+              color: #0bd9bd;
+            }
+          }
+          .list {
+            padding-left: 20px;
+            overflow: hidden;
+            height: 0;
+            animation: linear;
+            transition: height 0.25s linear;
+            li {
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 32px;
+              letter-spacing: 0.15px;
+              color: rgba(57, 78, 98, 0.8);
+              display: flex;
+              align-items: flex-start;
+              &::before {
+                content: ' ';
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                background: #0bd9bd;
+                border-radius: 3px;
+                margin: 14px 16px 0 0;
+              }
+            }
+          }
+        }
+      }
+      .feature {
+        padding: 40px 0 0 65px;
+        .no-prompt {
+          span {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 17px;
+            letter-spacing: 0.5px;
+            color: rgba(57, 78, 98, 0.8);
+          }
+        }
+        .btns {
+          margin-top: 20px;
+          span {
+            width: 120px;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: #0bd9bd;
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+            &:hover {
+              background: linear-gradient(90deg, #3ef2c9 0%, #1cdfd7 100%);
+            }
+          }
+        }
+      }
+    }
+
+    .animation-wrap {
+      width: 385px;
+      flex: 0 0 auto;
+    }
+  }
+
+  .forword-animation {
+    width: 348px;
+    height: 523px;
+    .img {
+      position: relative;
+      p {
+        position: absolute;
+      }
+      .num {
+        opacity: 0;
+        color: #101014;
+      }
+      .active {
+        opacity: 1;
+      }
+
+      .pointer {
+        width: 16px;
+        height: 16px;
+        display: block;
+        background: url('./images/pointing.svg') no-repeat center / auto 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        backface-visibility: hidden;
+        perspective: 1000;
+        transform: translate3d(180px, 120px, 0);
+      }
+    }
+  }
+
+  // open 动画信息
+  .forword-open-animation {
+    .img {
+      width: 363px;
+      height: 523px;
+      overflow: hidden;
+      background: url('./images/scene-forward-open-en.svg') no-repeat;
+      background-size: 346px auto;
+      .orderprice {
+        top: 176px;
+        left: 175px;
+        transition: opacity 0.2s ease-in 1.5s;
+      }
+      .oty {
+        top: 229px;
+        left: 175px;
+        transition: opacity 0.2s ease-in 0.5s;
+      }
+      .oplong {
+        .priceNumberText();
+        // background: #1bb879;
+        top: 441px;
+        left: 33px;
+      }
+      .opshort {
+        .priceNumberText();
+        // background: #e54b67;
+        top: 441px;
+        left: 177px;
+      }
+      .ordervalue {
+        top: 388px;
+        right: 65px;
+        font-size: 10px;
+        color: #101014;
+      }
+      .pointer {
+        &.step1 {
+          transition: all 0.8s linear;
+          transform: translate3d(90px, 45px, 0);
+        }
+
+        &.step2 {
+          transition: all 1.2s linear;
+          transform: translate3d(190px, 190px, 0);
+        }
+        &.step3 {
+          transition: all 0.4s linear;
+          transform: translate3d(190px, 250px, 0);
+        }
+        &.step4 {
+          transition: all 1s linear;
+          transform: translate3d(95px, 445px, 0);
+        }
+        &.step5 {
+          transition: all 0.4s linear;
+          transform: translate3d(242px, 455px, 0);
+        }
+      }
+    }
+  }
+
+  // close 动画信息
+  .forword-close-animation {
+    .img {
+      width: 363px;
+      height: 449px;
+      overflow: hidden;
+      background: url('./images/scene-forward-close-en.svg') no-repeat;
+      background-size: 363px auto;
+      .oty {
+        top: 207px;
+        left: 65px;
+        transition: opacity 0.2s ease-in 0.5s;
+      }
+      .oplong {
+        .priceNumberText();
+        background: #1bb879;
+        top: 460px;
+        left: 33px;
+      }
+      .opshort {
+        .priceNumberText();
+        background: #e54b67;
+        top: 460px;
+        left: 184px;
+      }
+      .pointer {
+        &.step1 {
+          transition: all 0.8s linear;
+          transform: translate3d(260px, 45px, 0);
+        }
+
+        &.step2 {
+          transition: all 1.2s linear;
+          transform: translate3d(65px, 210px, 0);
+        }
+        &.step3 {
+          transition: all 0.4s linear;
+          transform: translate3d(110px, 380px, 0);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "root": "apps/trading-data",
+  "sourceRoot": "apps/trading-data",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/trading-data",
+        "outputPath": "dist/apps/trading-data"
+      },
+      "configurations": {
+        "production": {},
+        "testnet": {
+          "outputPath": "dist/testnet/apps/trading-data"
+        },
+        "test": {
+          "outputPath": "dist/test/apps/trading-data"
+        },
+        "dev": {
+          "outputPath": "dist/dev/apps/trading-data"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "trading-data:build",
+        "dev": true,
+        "hostname": "dev.test.bitrunfinance.com",
+        "port": 4200
+      },
+      "configurations": {
+        "dev": {
+          "buildTarget": "trading-data:build:development",
+          "dev": true
+        },
+        "test": {
+          "buildTarget": "trading-data:build:development",
+          "dev": false
+        },
+        "testnet": {
+          "buildTarget": "trading-data:build:production",
+          "dev": false
+        },
+        "production": {
+          "buildTarget": "trading-data:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "trading-data:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/trading-data"
+      ],
+      "options": {
+        "jestConfig": "apps/trading-data/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/trading-data/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "cexport": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "node .script/custom-export.js",
+            "forwardAllArgs": true
+          }
+        ],
+        "cwd": "apps/trading-data",
+        "outputPath": "dist/apps/"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,245 @@
+.homeBanner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 684px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .contentWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px 100px;
+    transform: translateY(-110px);
+
+  }
+
+  .videoContent {
+    width: 1920px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mainContent {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+  }
+
+
+
+  .formBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .promoBanner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .giftIcon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  .promoText {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+
+    span {
+      color: var(--text-brand-default);
+    }
+  }
+
+  .managerWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .inputWrapper {
+    width: 100%;
+    max-width: 320px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 8px 8px 24px;
+    border-radius: 100px;
+    border: 1px solid var(--line-border-default, #28292a);
+    background: #ffffff;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: var(--line-border-hover);
+    }
+  }
+
+  .emailInput {
+    flex: 1;
+    background: transparent !important;
+    border: none !important;
+    color: #000000 !important;
+    font-size: 16px;
+    padding: 0;
+
+    &::placeholder {
+      color: #101112;
+    }
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  .submitButton {
+    min-width: 100px;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 100px;
+    background: var(--text-black, #101112);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-white);
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--text-black, #101112) !important;
+      background: var(--fill-button-brand-default, #abe127) !important;
+      transform: translateY(-1px);
+    }
+  }
+
+  .tradeButton {
+    min-width: 216px;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--fill-button-primary-default, #FFF);
+    color: var(--text-white-to-back, #101112);
+  }
+
+  .downloadBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    :global(.downIcons) {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  .loading {
+    width: 100%;
+    max-width: 480px;
+    height: 64px;
+  }
+
+  :global {
+    .ant-input {
+      background-color: transparent !important;
+      border: none !important;
+      color: #000000 !important;
+    }
+
+    .ant-input-outlined {
+      border-width: 0 !important;
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homeBanner {
+    min-height: auto;
+
+    .inputWrapper {
+      padding: 8px;
+    }
+    .contentWrapper {
+      padding: 20px 16px 60px;
+      transform: translateY(-40px);
+    }
+
+    .mainContent {
+      margin-bottom: 0;
+    }
+
+    .videoContent {
+      width: 100%;
+      height: 400px;
+    }
+
+    .promoText {
+      font-size: 14px;
+    }
+    .managerWrapper {
+      gap: 12px;
+    }
+    .managerWrapperLogin {
+      flex-direction: column;
+    }
+
+    .emailInput {
+      display: none;
+    }
+
+    .submitButton {
+      width: 100%;
+      height: 48px;
+      color: var(--text-black, #101112);
+      background: var(--fill-button-primary-default, #FFF);
+    }
+
+    .tradeButton {
+      width: 100%;
+    }
+
+    .downloadBlock {
+      :global(.downIcons) {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+}

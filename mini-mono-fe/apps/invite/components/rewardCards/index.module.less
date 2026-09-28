@@ -1,0 +1,442 @@
+.rewardCards {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  align-items: center;
+  padding: 80px 0px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Outer Card Container ===== */
+.card {
+  width: 100%;
+  max-width: 1200px;
+  backdrop-filter: blur(20.7px);
+  background: var(--bg-primary, #070808);
+  border: 1px solid var(--line-border-default, #28292a);
+  border-radius: 16px;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ===== Section Header (green left border + gradient) ===== */
+.sectionHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  border-left: 4px solid #abe127;
+  overflow: hidden;
+  background: url('@{BASE_PATH}/image/title-bg.png') no-repeat center / cover;
+  border-radius: 0 8px 8px 0;
+}
+
+.sectionHeaderBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.sectionHeaderText {
+  position: relative;
+  z-index: 1;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+  white-space: nowrap;
+}
+
+.headerGreen {
+  color: #abe127;
+}
+
+.headerWhite {
+  color: #fff;
+}
+
+/* ===== Card Content (descriptions) ===== */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.descList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-primary, #f5f5f5);
+
+  li {
+    margin-bottom: 0;
+    padding-left: 16px;
+    position: relative;
+
+    &::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+/* ===== Condition Block (Reward 2 only) ===== */
+.conditionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.conditionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--text-primary, #f5f5f5);
+  margin: 0;
+}
+
+.conditionList {
+  display: flex;
+  flex-direction: column;
+}
+
+.numberItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.numberBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  color: var(--text-brand-default-web, #93c919);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.numberText {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+/* ===== Coupon Card (gold border area) ===== */
+.couponCard {
+  position: relative;
+  backdrop-filter: blur(6px);
+  background: #151717;
+  border-radius: 12px;
+  padding: 32px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      #abe127 0deg,
+      #abe127 30deg,
+      #a8aaad 60deg,
+      rgba(255, 255, 255, 0) 100deg,
+      rgba(255, 255, 255, 0) 260deg,
+      #a8aaad 300deg,
+      #abe127 330deg,
+      #abe127 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#a8aaad 0 0) content-box,
+      linear-gradient(#a8aaad 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.2s ease;
+  }
+
+  &:hover::before {
+    background: #abe127;
+  }
+}
+
+.couponCardBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.66;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.couponCardInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+.couponInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.couponList {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.couponTitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+  color: var(--text-primary, #f5f5f5);
+  margin: 0;
+}
+
+.couponSubtitle {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  color: var(--text-secondary, #808588);
+  margin: 0;
+}
+
+/* ===== Coupon Visual (ticket shape with notches) ===== */
+.coupon {
+  position: relative;
+  width: 300px;
+  height: 132px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.couponBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.couponIcon {
+  position: absolute;
+  left: -27px;
+  top: -34px;
+  width: 98px;
+  height: 98px;
+  transform: rotate(-30deg);
+  pointer-events: none;
+}
+
+.couponAmount {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  color: #593813;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.couponNum {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 54px;
+  letter-spacing: -0.42px;
+}
+
+.couponUnit {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.couponDivider {
+  position: absolute;
+  top: 77px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 270px;
+  height: 1.2px;
+  pointer-events: none;
+}
+
+.couponLabel {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #664f3c;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ===== Mobile ===== */
+@media screen and (max-width: 768px) {
+  .rewardCards {
+    padding: 72px 16px;
+    gap: 24px;
+  }
+
+  .card {
+    padding: 24px 16px;
+    gap: 32px;
+  }
+
+  .cardContent {
+    gap: 16px;
+  }
+
+  .sectionHeaderText {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    white-space: normal;
+  }
+
+  .sectionHeader {
+    padding: 4px 16px;
+    border-left-width: 3px;
+  }
+
+  .descList {
+    font-size: 14px;
+    line-height: 24px;
+
+    li {
+      padding-left: 21px;
+    }
+  }
+
+  .conditionTitle {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  .numberItem {
+    padding: 8px 0;
+  }
+
+  .numberBadge {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .numberText {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .couponCard {
+    padding: 16px;
+
+    &::before {
+      background: conic-gradient(
+        from 0deg at 50% 50%,
+        #abe127 0deg,
+        #abe127 30deg,
+        #a8aaad 50deg,
+        #a8aaad 80deg,
+        rgba(255, 255, 255, 0) 120deg,
+        rgba(255, 255, 255, 0) 240deg,
+        #a8aaad 280deg,
+        #a8aaad 310deg,
+        #abe127 330deg,
+        #abe127 360deg
+      );
+    }
+  }
+
+  .couponCardInner {
+    flex-direction: column-reverse;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .couponInfo {
+    gap: 8px;
+    width: 100%;
+  }
+
+  .couponTitle {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  .couponSubtitle {
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 400;
+  }
+
+  .coupon {
+    width: 276px;
+    height: 100px;
+    border-radius: 5px;
+  }
+
+  .couponIcon {
+    left: -20px;
+    top: -26px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .couponAmount {
+    top: 10px;
+    gap: 1.5px;
+  }
+
+  .couponNum {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.32px;
+  }
+
+  .couponUnit {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .couponDivider {
+    top: 60px;
+    width: 252px;
+  }
+
+  .couponLabel {
+    top: 71px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
