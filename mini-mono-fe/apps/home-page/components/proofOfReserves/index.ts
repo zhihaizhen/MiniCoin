@@ -1,1 +1,0 @@
-export { ProofOfReservesPage } from './ProofOfReservesPage';
