@@ -1,0 +1,127 @@
+.conditionType {
+  display: flex;
+  flex-direction: column;
+  padding: 11px 11px 0px;
+
+  .labelRow {
+    display: flex;
+    align-items: center;
+  }
+
+  .valueRow {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // 限价委托-委托价输入框
+  .priceInput {
+    flex: 1;
+    width: 100%;
+    background: transparent;
+
+    :global(.ant-input-number-input) {
+      padding: 0 !important;
+    }
+  }
+
+  .unit {
+    flex-shrink: 0;
+    margin-left: 8px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-primary);
+  }
+
+  // 市价委托-静态文本
+  .marketText {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--text-tertiary);
+  }
+}
+
+// 下拉框：12px 次要色文本 + 下箭头，无边框
+.typeSelect {
+  :global(.ant-select-selector) {
+    padding: 0 !important;
+    height: 16px !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  :global(.ant-select-selection-item) {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--text-secondary);
+    padding-right: 20px !important;
+  }
+
+  :global(.ant-select-arrow) {
+    font-size: 12px;
+    right: 0;
+
+    // 箭头是 iconfont 字体图标，颜色需直接作用在内层 span 上
+    :global(.iconfont) {
+      color: var(--text-secondary) !important;
+    }
+  }
+}
+
+.typeSelectPopup {
+  border-radius: var(--Number-2, 8px) !important;
+  background: var(--fill-fill-dropdown, #28292a) !important;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.16) !important;
+  padding: 4px !important;
+  width: 150px !important;
+
+  :global(.ant-select-item) {
+    min-height: 36px;
+    padding: 8px;
+    border-radius: 4px;
+    color: var(--text-primary);
+    background: transparent;
+  }
+
+  :global(.ant-select-item-option) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  :global(.ant-select-item-option-content) {
+    flex: 1;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: var(--Regular, 400);
+    justify-content: flex-start;
+  }
+
+  :global(.ant-select-item-option-active) {
+    background-color: var(--fill-fill-hover-1) !important;
+  }
+
+  :global(.ant-select-item-option-selected) {
+    background-color: transparent !important;
+    color: var(--text-brand-default-web) !important;
+
+    :global(.ant-select-item-option-content) {
+      color: var(--text-brand-default-web) !important;
+    }
+  }
+
+  :global(.ant-select-item-option-state) {
+    color: var(--text-brand-default-web) !important;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.selectedIcon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}

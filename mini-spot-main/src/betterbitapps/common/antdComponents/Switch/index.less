@@ -1,0 +1,83 @@
+.switch {
+  border: 1px solid var(--line-border-default);
+  border-radius: var(--size-4);
+  font-size: var(--size-12);
+  display: inline-flex;
+  .switch__item {
+    align-items: center;
+    border-radius: var(--size-4);
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1;
+    height: var(--size-24);
+    justify-content: center;
+    padding: var(--size-0) var(--size-12);
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+  .switch__item--active {
+    border: 1px solid var(--text-brand-default-web);
+    color: var(--text-brand-default-web);
+  }
+}
+
+
+// 下划线
+.switch--underline {
+  background-color: transparent;
+  font-size: var(--size-14);
+}
+
+// 形状
+.switch--contained {
+  background-color: var(--bg-secondary);
+  border: 1px solid transparent;
+}
+
+.switch--rectangle {
+  background-color: transparent;
+  border: none;
+  border-radius: var(--size-0);
+  font-size: var(--size-14);
+  .switch__item {
+    border: var(--size-1) solid var(--line-border-default);
+    height: var(--size-40);
+    line-height: var(--size-40);
+    margin-right: var(--size-12);
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 var(--size-30);
+  }
+  .switch__item:nth-last-child(1) {
+    margin-right: 0;
+  }
+  .switch__item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border: var(--size-1) solid var(--line-border-default);
+    border-radius: var(--size-12);
+    box-sizing: border-box;
+    left: var(--size-16);
+    top: var(--size-14);
+    width: var(--size-12);
+    height: var(--size-12);
+  }
+}
+
+// 大小
+.switch--medium {
+  font-size: var(--size-12);
+  .switch__item {
+    height: var(--size-16);
+    padding: var(--size-0) var(--size-8);
+  }
+}
+
+.switch--large {
+  font-size: var(--size-14);
+  .switch__item {
+    height: var(--size-36);
+    font-size: var(--size-14);
+  }
+}

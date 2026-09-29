@@ -1,0 +1,239 @@
+/* 公共的样式，有用 */
+.ocPanel {
+  padding: 20px 12px 16px 12px;
+  font-size: var(--font-size-12);
+  border-bottom: 1px solid var(--line-border-default);
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+
+  .ocSwitch {
+    width: 100%;
+    padding: 2px;
+    height: 32px;
+    display: flex;
+    border-radius: 8px;
+    background: var(--fill-fill-input, #F2F3F4);
+  
+    .ocItem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 50%;
+      height: 100%;
+      letter-spacing: 0.1px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+  
+    .ocItem.active {
+      color: var(--text-primary);
+      background: var(--fill-fill-switch)
+    }
+  
+  }
+}
+
+.ocPanel::-webkit-scrollbar {
+  display: none;
+  /* Chrome Safari */
+  width: 0 !important
+}
+
+
+
+.oc__head {
+  align-items: center;
+  border-bottom: var(--divide-line);
+  height: var(--size-40);
+  padding: var(--size-0) var(--size-12);
+}
+
+.oc__row-bottom--4 {
+  margin-bottom: var(--size-4);
+}
+
+.oc__row-bottom--8 {
+  margin-bottom: var(--size-8);
+}
+
+.oc__row-bottom--12 {
+  margin-bottom: var(--size-12);
+}
+
+.oc__row-bottom--16 {
+  margin-bottom: var(--size-16);
+}
+
+.oc__row-bottom--20 {
+  margin-bottom: var(--size-20);
+}
+
+.oc__row-bottom--24 {
+  margin-bottom: var(--size-24);
+}
+
+.oc__row-top--16 {
+  margin-top: var(--size-16);
+}
+
+.oc__row {
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+}
+
+
+
+.oc__row-item {
+  display: flex;
+}
+
+
+/* 下单的modal */
+.oc__dialog {
+
+  .oc__pre-dialog-body {
+
+    .type-explain {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 400;
+      margin-bottom: 16px;
+
+      .white-text {
+        color: var(--text-primary);
+      }
+
+      ul {
+        list-style-position: inside;
+
+        li {
+          list-style-type: disc;
+          ;
+        }
+      }
+    }
+
+    .oc__pre-gap {
+      height: 1px;
+      margin: var(--size-16) 0;
+      position: relative;
+      background: var(--line-divider-primary);
+    }
+
+    .row {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+
+      .row-icon {
+        width: 24px;
+        height: 24p;
+        margin-right: 8px;
+      }
+
+      .row-item {
+        border-radius: 2px;
+        background: var(--bg-secondary);
+        margin-right: 8px;
+        padding: 4px 8px;
+        display: inline-block;
+        font-size: 12px;
+      }
+
+      .symbol {
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 8px;
+      }
+
+      .buy {
+        background: var(--long-bg-hover);
+        color: var(--long);
+      }
+
+      .sell {
+        background: var(--short-bg-hover);
+        color: var(--short);
+      }
+    }
+
+    .row-grid4 {
+      display: grid;
+      grid-template-columns: 140px repeat(3, 1fr);
+    }
+
+    .row-grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .row-grid-lable {
+      color: var(--text-secondary, #787E89);
+      font-size: 12px;
+      font-weight: 400;
+
+      li {
+        list-style-type: disc;
+        ;
+      }
+    }
+
+    .row-grid-value {
+      color: var(--text-primary);
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 16px;
+    }
+
+    .warning-predict-liq-price {
+      color: var(--function-orange);
+    }
+
+    .bust-risk-tip {
+      &-icon {
+        margin-right: 8px;
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+      }
+
+      border-radius: 4px;
+      border: 1px solid var(--function-orange);
+      padding: 8px;
+      font-size: 12px;
+      color: var(--function-orange);
+      font-weight: 400;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      word-break: break-word;
+    }
+
+  }
+}
+
+
+.oc__head-calculator {
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+  font-size: 16px !important;
+}
+
+
+.upColor {
+  color: var(--long);
+  line-height: 16px;
+}
+
+.downColor {
+  color: var(--short);
+  line-height: 16px;
+}

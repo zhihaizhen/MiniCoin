@@ -1,0 +1,82 @@
+.dragMask {
+  z-index: 998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.quickOrder {
+  position: absolute;
+  top: 80px;
+  right: 54px;
+  height: var(--size-48);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--line-border-default, #EBEBEB);
+  box-shadow: var(--popover-shadow);
+  color: var(--text-primary);
+  border-radius: 4px;
+  z-index: 999;
+
+  .dragHandle {
+    display: flex;
+    align-items: center;
+    width: var(--size-16);
+    cursor: pointer;
+  }
+
+  .orderBtn {
+    padding: 0 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .buyTitle,
+    .sellTitle {
+      line-height: 18px;
+      font-weight: 400;
+    }
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .buyBtn {
+    cursor: pointer;
+    background-color: var(--long);
+    color: var(--long-text);
+  }
+
+  .sellBtn {
+    background-color: var(--short);
+    cursor: pointer;
+    color: var(--short-text);
+  }
+
+  .qtyWrapper {
+    background: var(--bg-primary);
+    font-size: 12px;
+    font-weight:  400;
+    text-align: center;
+
+    .label {
+      padding-top: 6px;
+    }
+
+    .qtyInput {
+      width: 102px;
+      border-radius: 0 !important;
+      background: var(--bg-primary);
+
+      :global(.ant-input-number-input) {
+        margin-top: -2px;
+        height: auto !important;
+      }
+    }
+  }
+}

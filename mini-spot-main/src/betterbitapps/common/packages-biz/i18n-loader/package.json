@@ -1,0 +1,12 @@
+{
+  "name": "i18n-loader",
+  "version": "0.1.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "global-settings": "^0.1.1",
+    "@unified/helpers": "^0.1.5",
+    "by-i18n-language-detect": "^0.1.1"
+  }
+}

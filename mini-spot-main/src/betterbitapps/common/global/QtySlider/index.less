@@ -1,0 +1,26 @@
+.oc__slider {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 14px);
+  height: 34px;
+  margin: 0 7px;
+}
+
+.qty-slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0 4px;
+  box-sizing: border-box;
+  
+  .ant-slider {
+    width: 95%;
+    
+    .ant-slider-mark {    
+      .ant-slider-mark-text:last-child {
+        transform: translateX(-70%) !important;
+       
+      }
+    }
+  }
+}

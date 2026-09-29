@@ -1,0 +1,120 @@
+.reconnect-modal {
+  border-radius: 6px;
+  :global{
+    .ant-modal-body{
+      padding: 0;
+    }
+  }
+
+  .dialog {
+    background: var(--text-white);
+    color: #353535;
+    // color: var(--netural-900);
+    text-align: center;
+    border: 0;
+    border-radius: 6px;
+
+    .title {
+      position: relative;
+
+      p {
+        font-size: 24px;
+        font-weight: 700;
+        border-bottom: 1px solid rgba(55, 55, 55, 0.1);
+        // border-bottom: 1px solid var(--netural-300);
+        padding: 10px 0;
+        line-height: 36px;
+      }
+      .close {
+        color: #353535;
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .content {
+      min-height: 100px;
+      font-size: 12px;
+      font-weight: 500;
+
+      p {
+        line-height: 40px;
+      }
+
+      .ivu-progress {
+        display: inline-block;
+        width: 35%;
+        font-size: 12px;
+        position: relative;
+
+        .ivu-progress-outer {
+          display: inline-block;
+          width: 100%;
+          margin-right: 0;
+          padding-right: 0;
+
+          .ivu-progress-inner {
+            display: inline-block;
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 12px;
+            vertical-align: middle;
+            position: relative;
+
+            .ivu-progress-bg {
+              text-align: right;
+              border-radius: 12px;
+              background-color: var(--text-brand-default-web);
+              transition: all 0.2s linear;
+              position: relative;
+
+              &:after {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+              }
+            }
+
+            .ivu-progress-success-bg {
+              border-radius: 12px;
+              background-color: var(--text-brand-default-web);
+              transition: all 0.2s linear;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      .ivu-progress-active .ivu-progress-bg:before {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        border-radius: 10px;
+        animation: ivu-progress-active 2s ease-in-out infinite;
+      }
+    }
+  }
+
+  @keyframes ivu-progress-active {
+    0% {
+      opacity: 0.3;
+      width: 0;
+    }
+
+    to {
+      opacity: 0;
+      width: 100%;
+    }
+  }
+}

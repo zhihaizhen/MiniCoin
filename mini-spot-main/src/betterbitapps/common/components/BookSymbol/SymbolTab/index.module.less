@@ -1,0 +1,118 @@
+:global {
+  .book-symbol-tab__bg {
+    position: relative;
+    width: 100%;
+    display: flex;
+    box-sizing: content-box;
+    border-bottom: 1px solid var(--line-border-default);
+    user-select: none;
+    overflow-x: auto; /* 这里用scroll在chrome上会出现白色滚动横条 */
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary, #A8AAAD);
+  }
+
+  .book-symbol-tab__bg,
+  .book-symbol-tab__box,
+  .book-symbol-tab__box-active {
+    height: 44px;
+  }
+
+  .book-symbol-tab__box:hover {
+    color: var(--text-primary);
+  }
+
+  .book-symbol-tab__bg.book-symbol-tab__bg--disable {
+    /* "disable" should not block tab switching; it's used to suppress animations
+       / side-effects while searching. */
+    cursor: default;
+  }
+
+  .book-symbol-tab__box,
+  .book-symbol-tab__box-active {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--size-12);
+    cursor: pointer;
+  }
+
+  .book-symbol-tab__box-active {
+    color: var(--text-primary);
+  }
+
+  .book-symbol-tab__inner {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    height: var(--size-12);
+    justify-content: center;
+    align-items: center;
+    max-width: 140px;
+  }
+
+  .book-symbol-tab__box-active .book-symbol-tab__inner::after {
+    content: '';
+    position: absolute;
+    top: 26px;
+    right: 0;
+    left: 0;
+    // color: var(--text-brand-default-web);
+    border-bottom: 2px solid var(--text-primary);
+  }
+
+  .book-symbol-tab__favored {
+    color: var(--text-primary);
+    margin-right: var(--size-4);
+    position: relative;
+    bottom: 2px;
+  }
+
+  .book-symbol-tab__favored {
+    will-change: transform;
+    transition: 0.4s linear;
+  }
+
+  .book-symbol-tab__favored.no-animation {
+    transition: none;
+  }
+
+  .star-flash-animation {
+    animation-name: starFlash;
+    animation-duration: 0.3s;
+  }
+
+  @keyframes starFlash {
+    0% {
+      transform: scale(1.3);
+    }
+    50% {
+      transform: scale(0.3);
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
+
+  .book-symbol-tab__box:lang(ru) {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    flex-shrink: 1;
+  }
+
+  .book-symbol-tab__txt {
+    max-width: 116px;
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  /* 滚动条 ::-webkit-scrollbar */
+  /* 滑块 ::-webkit-scrollbar-thumb */
+  /* 滑轨两头的监听按钮 ::-webkit-scrollbar-button */
+  .book-symbol-tab__bg::-webkit-scrollbar,
+  .book-symbol-tab__bg::-webkit-scrollbar-thumb,
+  .book-symbol-tab__bg::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+

@@ -1,0 +1,51 @@
+body {
+  .header-theme-dark {
+    /*
+      关键：portal（createPortal）挂到 body 后，会继承页面的全局 CSS 变量。
+      股票页会改写某些全局 token（例如 --text-primary），导致下拉菜单文字整体变绿。
+      这里在 header 主题 class 下补齐 dex-header 依赖的变量，隔离页面级变量污染。
+    */
+    --bg-primary: #070808;
+    --bg-secondary: #1d1d1d;
+    --bg-tertiary: #28292a;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a8aaad;
+    --text-tertiary: #595b5e;
+    --text-brand-default-web: #abe127;
+    --line-border-default: #28292a;
+
+    .rc-menu {
+      --rc-fill-color-blank: #06274d;
+      --rc-menu-bg-color: none;
+      --rc-menu-item-height: 48px;
+      --rc-menu-hover-bg-color: #33343a !important;
+      --rc-menu-hover-text-color: #abe127 !important;
+      --rc-text-color-primary: #f5f5f5;
+      --rc-menu-text-color: #f5f5f5;
+      --rc-menu-active-color: #abe127;
+    }
+  }
+
+  .header-theme-light {
+    /* 同上：为浅色主题补齐 dex-header 依赖变量，避免被页面级变量污染 */
+    --bg-primary: #ffffff;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: rgba(0, 0, 0, 0.04);
+    --text-primary: #121b24;
+    --text-secondary: rgba(18, 27, 36, 0.7);
+    --text-tertiary: rgba(18, 27, 36, 0.5);
+    --text-brand-default-web: #00b9fb;
+    --line-border-default: rgba(0, 0, 0, 0.08);
+
+    .rc-menu {
+      --rc-fill-color-blank: #fff;
+      --rc-menu-bg-color: none;
+      --rc-menu-item-height: 48px;
+      --rc-menu-hover-bg-color: #fff !important;
+      --rc-menu-hover-text-color: #00b9fb !important;
+      --rc-text-color-primary: #121b24;
+      --rc-menu-text-color: #121b24;
+      --rc-menu-active-color: #00b9fb;
+    }
+  }
+}

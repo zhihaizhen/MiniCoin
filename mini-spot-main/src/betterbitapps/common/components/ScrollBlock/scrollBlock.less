@@ -1,0 +1,103 @@
+.scroll-block__container {
+  position: relative;
+  // flex-grow: 1;
+  overflow: hidden;
+  .scroll-arrow {
+    position: absolute;
+    cursor: pointer;
+    width: 92px;
+    height: 70px;
+    color: #9ba6b0;
+    line-height: 70px;
+    &.arrow-lf {
+      top: -18px;
+      text-align: left;
+      .icon-down {
+        margin-left: 10px;
+        transform: rotate(90deg) translateY(4px) scale(0.8);
+      }
+    }
+    &.arrow-rf {
+      top: -18px;
+      right: 0px;
+      text-align: right;
+      .icon-down {
+        transform: rotate(270deg) translateY(4px) scale(0.8);
+        margin-right: 2px;
+      }
+    }
+    &.hide {
+      visibility: hidden;
+    }
+    span {
+      vertical-align: top;
+    }
+    &:hover .icon-down {
+      color: var(--text-brand-hover);
+    }
+  }
+  .scroll-details {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.theme-light {
+  .scroll-block__container {
+    .arrow-lf {
+      background: linear-gradient(
+        90deg,
+        #fff 24.27%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+    .arrow-rf {
+      background: linear-gradient(
+        270deg,
+        #fff 24.27%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+}
+
+.theme-dark {
+  .scroll-block__container {
+    .arrow-lf {
+      background: linear-gradient(
+        90deg,
+        #1a2834 24.27%,
+        rgba(26, 40, 52, 0) 100%
+      );
+    }
+    .arrow-rf {
+      background: linear-gradient(
+        270deg,
+        #1a2834 24.27%,
+        rgba(26, 40, 52, 0) 100%
+      );
+    }
+  }
+}
+
+.theme-trade {
+  .scroll-block__container {
+    .arrow-lf {
+      background: linear-gradient(
+        90deg,
+        var(--bg-primary) 24.27%,
+        rgba(26, 40, 52, 0) 100%
+      );
+    }
+    .arrow-rf {
+      background: linear-gradient(
+        270deg,
+        var(--bg-primary) 24.27%,
+        rgba(26, 40, 52, 0) 100%
+      );
+    }
+  }
+}

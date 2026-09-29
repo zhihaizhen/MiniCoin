@@ -1,0 +1,97 @@
+.trade-assets__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+
+  :global {
+    .ant-select-selection-item {
+      color: var(--text-primary);
+      font-size: 14px;
+    }
+  }
+
+  .left {
+    display: flex;
+    vertical-align: center;
+
+    .left-title {
+      line-height: 16px;
+      color: var(--text-primary);
+      font-size: 14px;
+
+    }
+
+    .left-eyes {
+      padding-left: var(--size-8);
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+  }
+
+  .right {
+    margin-right: -12px;
+  }
+}
+
+.trade-assets__body {
+  .trade-assets__center-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .trade-assets__center-title {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--text-secondary);
+  }
+
+  /* value */
+  .trade-assets__center-txt {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--text-primary, #101112);
+    flex: 1;
+    text-align: end;
+  }
+
+  .trade-assets__center-txt-hide {
+    padding-top: 3px;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+
+    .btn-item {
+      color: var(--text-primary, #101112);
+      width: 47%;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 8px;
+      background: var(--fill-button-tertiary-default, #28292A);
+    }
+
+    .btn-item:hover {
+      background: var(--fill-button-tertiary-hover);
+    }
+  }
+
+}
+
+
+.trade-assets__label {
+  line-height: 17px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+}

@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+// 表格样式
+.dataWrapper {
+  // 子 tab 在上、表格区域内部滚动，表头可在 table-wrapper 内 sticky
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 12px;
+
+  // height: 100%;
+  .flex {
+    display: flex;
+    flex-shrink: 0;
+  }
+}
+
+// 成交明细无子 tab，保留原先顶部间距
+.tradeDetailWrapper {
+  padding-top: 24px;
+}
+
+/* 当前委托：还原原生 table 布局，三个子 tab 表头均可 sticky 固定 */
+/* 列宽跟内容走（max-content），容器更宽时再撑满；避免计划委托等少列 tab
+   被写死 1500px min-width 强制出横向滚动条、中间列间距过大 */
+/* min-height:unset 避免 table 被拉满容器后，仅有少量行时把剩余高度分摊到行上 */
+.current-entrust {
+  width: max-content;
+  min-width: 100% !important;
+  min-height: unset !important;
+  table-layout: auto !important;
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tbody {
+    display: table-row-group !important;
+    height: auto !important;
+  }
+
+  thead tr,
+  tbody tr {
+    display: table-row !important;
+    width: auto !important;
+    height: auto !important;
+    table-layout: auto !important;
+  }
+
+  th,
+  td {
+    width: auto !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    padding-left: 0 !important;
+    padding-right: 40px !important;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 12px !important;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 12px !important;
+  }
+}
+
+/* 历史委托：按文本内容自动撑开列宽，列间距 40px；恢复原生 table 布局以保证表头/表体列对齐 */
+.history-entrust {
+  width: max-content;
+  min-width: 100% !important;
+  min-height: unset !important;
+  table-layout: auto !important;
+
+  thead {
+    display: table-header-group !important;
+    width: auto !important;
+    table-layout: auto !important;
+  }
+
+  tbody {
+    display: table-row-group !important;
+    height: auto !important;
+  }
+
+  tbody tr {
+    display: table-row !important;
+    width: auto !important;
+    height: auto !important;
+    table-layout: auto !important;
+  }
+
+  th,
+  td {
+    width: auto !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    padding-left: 0 !important;
+    padding-right: 40px !important;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 12px !important;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 12px !important;
+  }
+}
+
+.trade-detail {
+  min-width: 1380px !important;
+  min-height: unset !important;
+
+  /* 还原原生 table 布局，表头才能在 table-wrapper 内 sticky 固定 */
+  table-layout: auto !important;
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tbody {
+    display: table-row-group !important;
+    height: auto !important;
+  }
+
+  thead tr,
+  tbody tr {
+    display: table-row !important;
+    width: auto !important;
+    height: auto !important;
+    table-layout: auto !important;
+  }
+
+  th,
+  td {
+    width: auto !important;
+    white-space: nowrap;
+    padding-right: 20px;
+  }
+}
+
+.profit {
+  min-width: 1900px !important;
+}
+
+// 后端返回的字段是大写的
+.BUY {
+  color: var(--long);
+}
+
+.SELL {
+  color: var(--short);
+}
+
+// 历史委托止盈止损列：单侧一行 / 双侧上下两行
+.tpslStack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.tpslTp {
+  color: var(--long);
+}
+
+.tpslSl {
+  color: var(--short);
+}
+
+.statusTriggered {
+  color: var(--text-green, #abe127);
+}
+
+.textPrimary {
+  color: var(--text-primary);
+}
+
+.btn-wrapper {
+  margin-left: 4px !important;
+}
+
+.position__table__content td .symbol {
+  display: block;
+  text-align: left;
+}
+
+.position__table__content td .symbol:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 2px;
+  height: 30px;
+  background: var(--long);
+  margin: 8px 8px 8px 0;
+}
+
+.position__table__content td .symbol.Sell:before {
+  background: var(--short);
+}
+
+.position__table__content td .btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.follow {
+  border-radius: 4px;
+  background: var(--fill-tag-brand-transparent);
+  padding: 0px 4px;
+  color: var(--text-brand-default-web);
+  font-size: 11px;
+}
+
+.tableRowData-tooltip-wrapper {
+  min-width: 320px;
+
+  .tableRowData-tip {
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+
+      .label {
+        color: var(--text-secondary, #666a6c);
+      }
+
+      .thickLable {
+        color: var(--text-primary, #f5f5f5);
+        font-weight: 600;
+      }
+
+      .thickValue {
+        font-weight: 600;
+      }
+    }
+
+    &-line {
+      height: 1px;
+      margin: 2px 0;
+      background: var(--line-border-checkbox, #484d51);
+    }
+
+    &-item:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.trade-share-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.orderId {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .copyImg {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-left: 4px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--text-brand-default-web);
+    }
+  }
+}
+
+.edit-pencil {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  cursor: pointer;
+  vertical-align: middle;
+  color: var(--text-secondary);
+
+  &.pencile_disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.ml4 {
+  margin-left: 4px;
+}
+
+.offline-trade-true {
+  cursor: not-allowed;
+}
