@@ -1,0 +1,234 @@
+.comingSoonSection {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #080808 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 240px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center,
+        rgba(147, 96, 255, 0.1) 0%,
+        transparent 70%);
+    pointer-events: none;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content {
+    flex: 1;
+    max-width: 500px;
+    margin-right: 80px;
+
+    .iconContainer {
+      margin-bottom: 32px;
+
+      .icon {
+        width: 80px;
+        height: 80px;
+        background: url('@{BASE_PATH}/images/PC/coming-soon-icon.svg') no-repeat center;
+        background-size: contain;
+        border-radius: 50%;
+        background-color: rgba(147, 96, 255, 0.1);
+        border: 2px solid rgba(147, 96, 255, 0.3);
+        animation: pulse 2s infinite;
+      }
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+
+      background: linear-gradient(135deg, #fff 0%, var(--text-brand-default) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--text-brand-default);
+      margin-bottom: 24px;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .buttonGroup {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+
+      .primaryBtn {
+        min-width: 160px;
+        border: none;
+        border-radius: 100px;
+        background: var(--fill-button-primary-default);
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 16px 32px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 0.9;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(147, 96, 255, 0.3);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      .secondaryBtn {
+        min-width: 160px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 100px;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 14px 30px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: rgba(255, 255, 255, 0.4);
+          background: rgba(255, 255, 255, 0.05);
+        }
+      }
+    }
+  }
+
+  .illustration {
+    flex: 0 0 400px;
+    height: 400px;
+    background: url('@{BASE_PATH}/images/PC/coming-soon-illustration.svg') no-repeat center;
+    background-size: contain;
+    opacity: 0.8;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle,
+          rgba(147, 96, 255, 0.15) 0%,
+          transparent 70%);
+      animation: float 3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .comingSoonSection {
+    padding: 40px 120px;
+
+    .content {
+      margin-right: 60px;
+
+      .title {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+    }
+
+    .illustration {
+      flex: 0 0 300px;
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .comingSoonSection {
+    padding: 40px 60px;
+
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .content {
+      margin-right: 0;
+      margin-bottom: 40px;
+      max-width: 100%;
+
+      .title {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .buttonGroup {
+        justify-content: center;
+      }
+    }
+
+    .illustration {
+      flex: 0 0 280px;
+      height: 280px;
+    }
+  }
+}

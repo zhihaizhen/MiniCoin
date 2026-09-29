@@ -1,0 +1,33 @@
+.page-wrapper {
+  background: var(--bg-primary, #070808);
+
+  .chat {
+    bottom: 60px;
+    right: 32px;
+  }
+
+  .chat-modal {
+    bottom: 32px;
+    right: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    .chat {
+      bottom: 96px;
+      right: 16px;
+    }
+
+    .chat-modal {
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+body {
+  #widget_header {
+    .header-theme-dark {}
+  }
+}

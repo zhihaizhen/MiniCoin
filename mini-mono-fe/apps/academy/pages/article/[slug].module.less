@@ -1,0 +1,39 @@
+@article-text-color: var(--text-primary, #fff);
+@article-brand-color: var(--text-brand-default-web, #abe127);
+@article-font-size: 14px;
+@article-line-height: 22px;
+@article-list-marker-size: 6px;
+
+.article {
+  width: 100%;
+  margin: 0 auto;
+  color: @article-text-color;
+  font-size: @article-font-size;
+  line-height: @article-line-height;
+  p {
+    margin: 0.5em 0;
+  }
+  a {
+    color: @article-brand-color;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  ul {
+    margin: 1em 0;
+    padding-left: 1.75em;
+    li {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: -1.2em;
+        top: 0.5em;
+        width: @article-list-marker-size;
+        height: @article-list-marker-size;
+        border-radius: 50%;
+        background: @article-brand-color;
+      }
+    }
+  }
+}

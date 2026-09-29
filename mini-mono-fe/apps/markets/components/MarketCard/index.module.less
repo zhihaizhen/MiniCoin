@@ -1,0 +1,75 @@
+.marketCard {
+  flex: 1;
+  min-width: 0;
+  height: 140px;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid var(--line-border-default, #ebebeb);
+  background: var(--bg-primary, #070808);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all .3s;
+
+  &:hover {
+    border-color: var(--text-brand-default);
+    transform: translateY(-4px);
+  }
+
+  .topRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 28px;
+  }
+
+  .symbolInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .symbol {
+    color: var(--text-primary, #101112);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .change {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .bottomRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .price {
+    color: var(--text-primary, #101112);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+    white-space: nowrap;
+  }
+}

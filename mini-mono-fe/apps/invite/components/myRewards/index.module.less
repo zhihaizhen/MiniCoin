@@ -1,0 +1,335 @@
+.myRewards {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+  color: var(--text-primary, #f5f5f5);
+  text-align: center;
+  margin: 0;
+}
+
+/* ===== PC Steps ===== */
+.stepsPC {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px 0;
+  backdrop-filter: blur(20.7px);
+  background: var(--bg-primary, #070808);
+  border-radius: 16px;
+}
+
+.stepsRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.stepIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 61px;
+  background: var(--bg-tertiary, #28292a);
+  flex-shrink: 0;
+}
+
+.stepIconImg {
+  width: 32px;
+  height: 32px;
+}
+
+.stepIconActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.stepIconActiveImg {
+  width: 53px;
+  height: 45px;
+}
+
+.stepLine {
+  flex: 1;
+  height: 0;
+  border-top: 2px dashed var(--line-border-default, #28292a);
+}
+
+.stepsLabels {
+  display: flex;
+  width: 100%;
+}
+
+.stepLabel {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--text-primary, #f5f5f5);
+  text-align: left;
+  flex: 1;
+
+  &:nth-child(2) {
+    text-align: center;
+  }
+}
+
+.stepLabelRight {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--text-primary, #f5f5f5);
+  text-align: right;
+  flex: 1;
+}
+
+/* ===== H5 Steps (hidden on PC) ===== */
+.stepsH5 {
+  display: none;
+}
+
+/* ===== Progress Card ===== */
+.progressCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--bg-secondary, #1d1d1d);
+  backdrop-filter: blur(20.7px);
+  border: 1px solid transparent;
+
+  &:hover {
+    border: 1px solid var(--text-brand-default, #abe127);
+  }
+}
+
+.progressInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 640px;
+}
+
+.progressText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.progressLabel {
+  color: var(--text-primary, #f5f5f5);
+}
+
+.progressCount {
+  display: flex;
+  align-items: center;
+}
+
+.progressCurrent {
+  color: var(--text-brand-default-web, #93c919);
+}
+
+.progressTotal {
+  color: var(--text-secondary, #808588);
+}
+
+.progressBarTrack {
+  width: 100%;
+  height: 4px;
+  border-radius: 48px;
+  background: var(--fill-fill-dragger, #c2c2c2);
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  border-radius: 48px;
+  background: var(--text-brand-default-web, #93c919);
+  transition: width 0.3s ease;
+}
+
+.progressHint {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-secondary, #808588);
+  margin: 0;
+}
+
+.inviteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 48px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background: var(--fill-button-primary-default, #fff);
+  color: var(--text-white-to-back, #101112);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.claimButton {
+  background: var(--fill-button-green-default, #abe127);
+  color: var(--text-black, #101112);
+}
+
+/* ===== Mobile ===== */
+@media screen and (max-width: 768px) {
+  .myRewards {
+    padding: 0 16px 72px;
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .stepsPC {
+    display: none;
+  }
+
+  .stepsH5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 8px;
+    padding: 16px 0;
+  }
+
+  .h5StepRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .h5StepIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 42px;
+    background: var(--bg-tertiary, #28292a);
+    flex-shrink: 0;
+
+    img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .h5StepIconActive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    img {
+      width: 36px;
+      height: 31px;
+    }
+  }
+
+  .h5StepContent {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--text-primary, #f5f5f5);
+    position: relative;
+  }
+
+  .h5StepArrow {
+    display: flex;
+    justify-content: center;
+    width: 44px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .h5StepDash {
+    width: 0;
+    height: 32px;
+    margin-left: 22px;
+    border-left: 1px dashed var(--line-border-radio-checkbox, #46484A);
+  }
+
+  .progressCard {
+    flex-direction: column;
+    gap: 31px;
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .progressInfo {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .progressText {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .progressHint {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .inviteButton {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}

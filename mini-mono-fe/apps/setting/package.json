@@ -1,0 +1,11 @@
+{
+  "name": "setting",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "antd-img-crop": "^4.17.0",
+    "ip-regex": "^5.0.0",
+    "react-cropper": "^2.3.3"
+  }
+}

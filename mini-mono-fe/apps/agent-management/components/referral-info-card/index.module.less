@@ -1,0 +1,133 @@
+.referralInfoCard {
+  padding: 16px 0 0;
+
+  &_container {
+    border-radius: 8px;
+    background: #181818;
+    padding: 16px;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    box-sizing: border-box;
+  }
+
+  &_sm_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    &_item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      &_label {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+      }
+
+      &_value {
+        color: var(--text-brand-default);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16px;
+      }
+
+      &_links {
+        color: var(--text-brand-default);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+      }
+    }
+
+    &_divider {
+      height: 14px;
+      border-left: 1px solid #8c8c8c;
+    }
+  }
+
+  &_lg_info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    border: 1px solid #3f3f3f;
+    border-radius: 60px;
+
+    &_label {
+      color: #8c8c8c;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+
+    &_value {
+      display: flex;
+      align-items: center;
+
+      &_data {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+      }
+
+      &_icon {
+        margin-left: 8px;
+        display: inline-block;
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+        background: url('@{BASE_PATH}/images/copy.svg') no-repeat center;
+      }
+    }
+  }
+
+  &_btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 100px;
+    background: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &_setting {
+    padding: 24px 0;
+
+    &_btn {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      &_text {
+        display: flex;
+        align-items: center;
+        color: var(--text-brand-default);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+
+      &_icon {
+        margin-left: 4px;
+        font-size: 14px;
+      }
+    }
+  }
+}

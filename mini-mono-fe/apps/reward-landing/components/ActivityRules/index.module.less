@@ -1,0 +1,46 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 112px 12%;
+    background-color: #fff;
+    padding-bottom: 56px;
+
+    .title {
+        color: #18191C;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+    }
+
+    .desc {
+        color: #18191C;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+        /* 24px */
+        letter-spacing: 0.32px;
+        margin-top: 16px;
+        white-space: pre-wrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 32px 16px;
+
+        .title {
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 700;
+        }
+
+        .desc {
+            font-size: 12px;
+            line-height: 16px;
+            margin-top: 16px;
+            color: #18191C;
+        }
+    }
+
+}

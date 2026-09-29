@@ -1,0 +1,191 @@
+// 底部CTA栏 - 默认静态布局
+.ctaBar {
+  width: 100%;
+  height: 166px;
+  background: linear-gradient(
+    90deg,
+    rgba(3, 3, 5, 0.3) 25.68%,
+    rgba(87, 87, 111, 0.3) 54%,
+    rgba(3, 3, 5, 0.3) 84%
+  );
+  backdrop-filter: blur(70px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+// 静态布局
+.static {
+  // 用于包含伪元素的定位上下文
+  position: relative;
+}
+
+// Fixed 布局 - 添加弹性滑入动画
+.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  animation: elasticSlideUp 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards;
+}
+
+// 弹性滑入动画 - 从底部滑上来,带有弹性回弹
+@keyframes elasticSlideUp {
+  0% {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.ctaContainer {
+  position: relative;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.countdownSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.countdownText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.countdownBoxes {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.countdownItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.countdownBox {
+  width: 54px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a090b 6%, #1a3a1e 97%);
+  border: 1px solid;
+  border-image: linear-gradient(
+      148deg,
+      #ABE127 0%,
+      #ABE127 60%,
+      #ffffff 60%,
+      #ffffff 100%
+    )
+    1;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.17;
+  color: #ffffff;
+  text-align: center;
+}
+
+.countdownLabel {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .ctaBar {
+    height: auto;
+    padding: 32px 51px;
+    // H5 端不使用 fixed 布局，保持在文档流中
+    position: static !important;
+    // H5 端背景样式
+    background: linear-gradient(
+      90deg,
+      rgba(3, 3, 5, 0.3) 25.68%,
+      rgba(87, 87, 111, 0.3) 54%,
+      rgba(3, 3, 5, 0.3) 84%
+    );
+    backdrop-filter: blur(70px);
+    // 移除 PC 端的伪元素光效
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .static,
+  .fixed {
+    // H5 端统一为 static 布局
+    position: static !important;
+    animation: none !important;
+  }
+
+  .ctaContainer {
+    max-width: 100%;
+    padding: 0;
+    // H5 端不显示按钮，所以只需要居中倒计时区域
+    justify-content: center;
+  }
+
+  .countdownSection {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .countdownText {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em; // 18px
+    text-align: center;
+  }
+
+  .countdownBoxes {
+    gap: 8px;
+  }
+
+  .countdownItem {
+    gap: 6px;
+  }
+
+  .countdownBox {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.4444em; // 26px
+  }
+
+  .countdownLabel {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em; // 18px
+    width: 16.2px;
+    height: 24px;
+    text-align: center;
+  }
+}

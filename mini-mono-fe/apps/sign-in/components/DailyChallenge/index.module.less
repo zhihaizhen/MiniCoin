@@ -1,0 +1,371 @@
+.dailyChallenge {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 80px auto 0;
+  padding: 0 20px;
+}
+
+.container {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.rectangle {
+  width: 327px;
+  height: 2px;
+
+  &:first-child {
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 85.67%);
+  }
+
+  &:last-child {
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 14.33%,
+      #fff 100%
+    );
+  }
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  color: var(--text-primary, #f5f5f5);
+  white-space: nowrap;
+  text-align: center;
+}
+
+// 奖励卡片容器
+.rewardCards {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+}
+
+// 单个奖励卡片 - 设计稿尺寸 580x160
+.rewardCard {
+  position: relative;
+  flex: 1;
+  height: 160px;
+  padding: 16px 40px;
+  transition: all 0.3s ease;
+  border-radius: 16px;
+  background: #151717;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  // 渐变边框实现
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 1) 60%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      radial-gradient(
+        circle at 70% 50%,
+        rgba(171, 225, 39, 1) 0%,
+        rgba(171, 225, 39, 0) 70%
+      );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  // 圆形光晕效果
+  &::after {
+    content: '';
+    position: absolute;
+    left: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(171, 225, 39, 0.6) 0%,
+      rgba(171, 225, 39, 0.3) 30%,
+      rgba(171, 225, 39, 0) 70%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  // PC 端 hover 效果
+  @media (min-width: 769px) {
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  height: 100%;
+}
+
+.cardLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  justify-content: center;
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTag {
+  height: 22px;
+  padding: 2px 10px;
+  border-radius: 4px;
+  background: var(--fill-tag-brand-transparent, rgba(171, 225, 39, 0.15));
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-brand-default-web, #abe127);
+  width: fit-content;
+}
+
+.cardLabel {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.cardValue {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.cardDescription {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.cardIcon {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+
+  .rewardCard:hover & {
+    transform: scale(1.1);
+  }
+}
+
+.iconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+// ==================== 任务卡片区域 ====================
+.taskSection {
+  padding: 40px 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid var(--line-border-default, #28292a);
+}
+
+// 横幅
+.taskBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.bannerDecorationLeft,
+.bannerDecorationRight {
+  width: 351px;
+  height: 12px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.bannerText {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+// 进度标签
+.progressTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 16px;
+  background: rgba(25, 27, 29, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  align-self: flex-start;
+}
+
+// 任务卡片列表样式已移至 TaskCarousel.module.less
+
+// 今日任务进度样式已移至 TodayTaskProgress.module.less
+
+// 响应式设计
+@media (max-width: 1240px) {
+  .container {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .taskSection {
+    padding: 24px 16px;
+
+    .taskBanner {
+      padding: 0;
+      gap: 0;
+    }
+
+    .bannerDecorationLeft,
+    .bannerDecorationRight {
+      display: none;
+    }
+
+    .bannerText {
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      white-space: normal;
+      word-break: break-word;
+      padding: 0;
+    }
+  }
+
+  .dailyChallenge {
+    margin: 56px auto 72px;
+    padding: 0 16px;
+  }
+
+  .container {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .header {
+    gap: 16px;
+  }
+
+  .titleWrapper {
+    gap: 16px;
+    align-self: stretch;
+  }
+
+  .rectangle {
+    flex: 1;
+    height: 2px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 24px;
+    font-weight: var(--Bold, 600);
+    line-height: 32px;
+    letter-spacing: -0.24px;
+    text-align: center;
+    color: var(--text-primary, #fff);
+  }
+
+  .rewardCards {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .rewardCard {
+    padding: 16px 20px 16px 16px;
+  }
+
+  .cardContent {
+    gap: 16px;
+  }
+
+  .cardLeft {
+    gap: 24px;
+  }
+
+  .cardLabel {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .cardValue {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+
+  .cardIcon {
+    width: 72px;
+    height: 72px;
+  }
+}

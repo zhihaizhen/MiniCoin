@@ -1,0 +1,212 @@
+.kycEntranceContainer {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+    gap: 24px;
+  }
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #333333;
+  margin: 40px 0 0 0;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.alertWrapper {
+  align-self: flex-start;
+  width: calc(50% - 20px);
+
+  :global(.ant-alert) {
+    border-radius: 8px !important;
+    border: 0.5px solid var(--function-red, #ed4c52) !important;
+    background: var(--fill-tag-red, rgba(237, 76, 82, 0.12)) !important;
+
+    :global(.ant-alert-message) {
+      color: var(--function-red, #ed4c52) !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.cardsWrapper {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  align-self: stretch;
+  gap: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.kycCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 0;
+  background: var(--text-color-text-white, #fff);
+  border: 1px solid var(--line-border-default, #ebebeb);
+  border-radius: 16px;
+
+  // 激活状态的卡片（当前可操作的卡片）
+  &.active {
+    background: var(--fill-tag-brand-transparent, rgba(120, 56, 255, 0.12));
+    border: 1px solid var(--line-border-default, #ebebeb);
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px 16px;
+  }
+}
+
+.iconWrapper {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // 修改 SVG 图标颜色为品牌色
+  svg {
+    path {
+      fill: var(--fill-button-brand-default, #abe127);
+    }
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #333333;
+  margin: 0;
+
+  // 激活状态的标题
+  &.activeTitle {
+    color: var(--text-primary, #101112);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.actionButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-width: 240px;
+  height: 48px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 240px;
+    min-width: 200px;
+  }
+
+  // 主按钮 - 去认证
+  &.primary {
+    background: var(--fill-button-brand-default, #93c919);
+    color: var(--text-black, #101112);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--fill-button-brand-hover);
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  // 已认证状态
+  &.verified {
+    background: var(--fill-button-tertiary-btn-default, #f5f5f5);
+    color: #101112;
+    cursor: not-allowed;
+
+    &:hover {
+      background: var(--fill-button-tertiary-btn-default, #f5f5f5);
+    }
+
+    // 修改已认证图标（VerifiedCheckIconSvg）的颜色为品牌色
+    svg {
+      path {
+        stroke: var(--fill-button-brand-default, #abe127);
+      }
+    }
+  }
+
+  // 禁用状态 - 未完成基础认证
+  &.disabled {
+    background: var(--fill-button-tertiary-btn-default, #f5f5f5);
+    color: #101112;
+    cursor: not-allowed;
+
+    &:hover {
+      background: var(--fill-button-tertiary-btn-default, #f5f5f5);
+    }
+  }
+}
+
+.checkIcon {
+  flex-shrink: 0;
+}
+
+.lockIcon {
+  flex-shrink: 0;
+}

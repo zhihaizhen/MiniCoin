@@ -1,0 +1,78 @@
+.bottomBannerSection {
+  min-height: 300px;
+  padding: 0 32px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #070808 6.5%, #587C00 141.83%);
+
+  .content {
+    margin: auto;
+    padding: 75px 0;
+    z-index: 1;
+    text-align: center;
+
+    .title {
+      font-size: 24px;
+      // 有两种颜色 #0075ED
+      color: var(--text-brand-default, var(--text-brand-default));
+      font-weight: 500;
+    }
+
+    .desc {
+      font-size: 24px;
+      color: #fff;
+      font-weight: 500;
+
+      span {
+        color: var(--text-brand-default, var(--text-brand-default));
+      }
+    }
+
+    button {
+      min-width: 180px;
+      max-width: 240px;
+      border: none;
+      border-radius: 12px;
+      background: var(--fill-button-brand-default, #ABE127);
+      color: var(--text-black, #101112);
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 4px 24px;
+      height: 56px;
+      margin-top: 32px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .image {
+    position: absolute;
+    right: 240px;
+    top: 0;
+    width: 488px;
+    height: 100%;
+    background: url('@{BASE_PATH}/images/PC/illustration-1.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .bannerSection {
+    padding: 0 120px;
+
+    .image {
+      position: absolute;
+      right: 120px;
+      top: 0;
+      width: 688px;
+      height: 100%;
+      background: url('@{BASE_PATH}/images/PC/illustration-1.png') no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

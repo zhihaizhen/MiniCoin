@@ -1,0 +1,133 @@
+.commissionRecord {
+  height: 100vh;
+  overflow-y: auto;
+
+  &_head {
+    position: fixed;
+    width: 100vw;
+    color: #fff;
+    z-index: 99;
+    background-color: #060606;
+    border-bottom: 1px solid #222222;
+
+    .rightWrapper {
+      display: flex;
+      align-items: center;
+
+      .refreshIcon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url('@{BASE_PATH}/images/refresh.svg') no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+
+  &_title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &_list {
+    padding-top: 45px;
+    height: calc(100vh - 45px);
+    overflow-y: auto;
+  }
+
+  &_dropdown {
+    background: #222;
+    color: #fff;
+    padding: 16px;
+
+    &_row {
+      margin-bottom: 32px;
+
+      &_title {
+        margin: 16px 0;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    &_tab {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      &_item {
+        flex: 1;
+        padding: 8px 10px;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 100px;
+        color: #fff;
+        border: 1px solid #333;
+        text-align: center;
+      }
+
+      &_active {
+        flex: 1;
+        padding: 8px 10px;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 100px;
+        text-align: center;
+        border: 1px solid var(--text-brand-default);
+        color: var(--text-brand-default);
+        background: rgba(0, 238, 209, 0.1);
+      }
+    }
+
+    &_picker {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      &_date {
+        flex: 1;
+        border-radius: 8px;
+        padding: 8px 10px;
+        height: 16px;
+        font-size: 14px;
+        line-height: 16px;
+        border: 1px solid #333;
+        text-align: center;
+      }
+    }
+
+    &_footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      &_reset {
+        flex: 1;
+        padding: 7px 10px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        border-radius: 100px;
+        color: #fff;
+        border: 1px solid #fff;
+        text-align: center;
+      }
+
+      &_confirm {
+        flex: 1;
+        padding: 7px 10px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        border-radius: 100px;
+        color: #000;
+        border: 1px solid #fff;
+        background-color: #fff;
+        text-align: center;
+      }
+    }
+  }
+}

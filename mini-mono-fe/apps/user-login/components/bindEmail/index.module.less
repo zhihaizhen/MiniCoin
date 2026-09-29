@@ -1,0 +1,96 @@
+.bindEmailContainer {
+  :global {
+
+    .ant-input,
+    .ant-input-affix-wrapper {
+      border-color: transparent;
+
+      &:hover {
+        border-color: var(--text-brand-default);
+      }
+
+      &:focus {
+        border-color: var(--text-brand-default);
+      }
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      width: 100%;
+      font-weight: 700;
+      border-radius: 8px;
+
+      &:hover {
+        opacity: .8;
+      }
+
+      .ant-btn-primary:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      // &:disabled{
+      //   opacity: .3;
+      //   color: #000;
+      //   cursor: not-allowed;
+      // }
+    }
+  }
+
+  .changeEmailDesc {
+    color: #888;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .userInp {
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 500;
+    // input{
+    //   background-color: rgb(245 247 250/var(--tw-bg-opacity));
+    // }
+  }
+
+  .sentCodeBtn {
+    color: var(--text-brand-default);
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+
+    .sentDisable {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+  }
+
+  .withdrawTips {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: rgba(245, 132, 31, 0.10);
+    margin-bottom: 8px;
+
+    .tipsIcon {
+      width: 16px;
+      height: 16px;
+      background: url('@{BASE_PATH}/images/tips.svg') no-repeat;
+    }
+
+    .tipsText {
+      flex:1;
+      color: var(--Functional-warning, #F5841F);
+      margin-left: 8px;
+      font-size: 12px;
+      word-break: break-word;
+    }
+  }
+}

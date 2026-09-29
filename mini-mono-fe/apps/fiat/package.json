@@ -1,0 +1,11 @@
+{
+  "name": "fiat",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@region-lib/env": "0.1.21",
+    "@unified/request": "0.4.22",
+    "echart": "^0.1.3"
+  }
+}

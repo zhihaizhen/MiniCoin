@@ -1,0 +1,155 @@
+@mobile: ~'(max-width: 768px)';
+
+.section {
+  width: 100%;
+  padding: 80px 0;
+
+  @media @mobile {
+    padding: 40px 16px;
+  }
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+
+  @media @mobile {
+    gap: 40px;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -0.8px;
+  margin: 0;
+
+  @media @mobile {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 160px;
+  width: 100%;
+
+  @media @mobile {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.phoneWrap {
+  width: 639px;
+  height: 469px;
+  flex-shrink: 0;
+  border: 1px solid #28292a;
+  border-radius: 40px;
+  overflow: hidden;
+
+  @media @mobile {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 639 / 469;
+    border-radius: 21px;
+  }
+}
+
+.phoneImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media @mobile {
+    width: 100%;
+    gap: 40px;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media @mobile {
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+}
+
+.stepHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  height: 70px;
+  position: relative;
+
+  @media @mobile {
+    height: 40px;
+    justify-content: center;
+  }
+}
+
+.stepNumber {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: normal;
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1.2px;
+  font-feature-settings: 'lnum' 1, 'tnum' 1;
+
+  @media @mobile {
+    font-size: 32px;
+    letter-spacing: -0.32px;
+  }
+}
+
+.stepLabel {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  background: linear-gradient(180deg, #fff 33.93%, rgba(255, 255, 255, 0) 114.29%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 8px;
+
+  @media @mobile {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.stepDesc {
+  font-size: 16px;
+  line-height: 24px;
+  color: #808588;
+  margin: 0;
+
+  @media @mobile {
+    font-size: 14px;
+    line-height: 18px;
+    color: #a8aaad;
+  }
+}

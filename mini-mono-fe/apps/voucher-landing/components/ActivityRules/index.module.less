@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 18%;
+    background-color: #fff;
+
+    .title {
+        color: #18191C;
+
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+    }
+
+    .desc {
+        color: #192632;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-top: 32px;
+        white-space: pre-wrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 32px 16px;
+
+        .title {
+            font-size: 24px;
+            line-height: normal;
+            font-weight: 600;
+        }
+
+        .desc {
+            font-size: 14px;
+            line-height: 24px;
+            margin-top: 16px;
+            color: #192632;
+        }
+    }
+
+}

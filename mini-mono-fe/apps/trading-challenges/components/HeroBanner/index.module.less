@@ -1,0 +1,228 @@
+.heroBanner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #080808;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 33px;
+}
+
+// 主内容区 - Flex 居中布局
+.mainContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  max-width: 1200px;
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+// PC 视频区：设计稿 1440 × 510
+.bgDecoration {
+  position: relative;
+  width: 100%;
+  height: 510px;
+  background: #080808;
+  flex-shrink: 0;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.bgVideo {
+  width: 100%;
+  height: 100%;
+}
+
+.bgVideoPc {
+  display: block;
+}
+
+.bgVideoH5 {
+  display: none;
+}
+
+// 文字内容区
+.textContent {
+  width: 100%;
+  max-width: 669px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px; // 标题和时间标签之间的间距
+  flex-shrink: 0;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.25em; // 60px
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+
+.amount {
+  color: #abe127;
+  white-space: nowrap;
+}
+
+.timeTag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px; // 图标和文字之间的间距
+  padding: 7px 20px;
+  height: 48px;
+  background: rgba(4, 4, 4, 0.2);
+  border: 1px solid #37393a;
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+
+  // 确保内容居中对齐
+  justify-content: center;
+}
+
+.timeIcon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.timeText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5em; // 24px
+  color: #ffffff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+// H5 端按钮容器
+.buttonMobile {
+  display: none; // PC 端隐藏
+}
+
+// 响应式设计
+@media (max-width: 1240px) {
+  .heroBanner {
+    gap: 40px;
+  }
+
+  .textContent {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroBanner {
+    gap: 20px;
+  }
+
+  .mainContent {
+    padding-bottom: 0;
+  }
+
+  .bgDecoration {
+    width: 100%;
+    height: 280px;
+  }
+
+  .bgVideoPc {
+    display: none;
+  }
+
+  .bgVideoH5 {
+    display: block;
+  }
+
+  .textContent {
+    width: 100%;
+    padding: 0 16px;
+    gap: 16px; // 标题区域和按钮之间的间距
+  }
+
+  .titleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    letter-spacing: -0.28px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .amount {
+    color: var(--text-brand-default, #abe127);
+  }
+
+  .buttonMobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 8px 0 58px;
+  }
+
+  .timeTag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+    padding: 7px 12px;
+    gap: 8px;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid #37393a;
+    background: rgba(4, 4, 4, 0.2);
+    backdrop-filter: blur(10px);
+  }
+
+  .timeText {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em; // 18px
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .timeIcon {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

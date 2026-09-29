@@ -1,0 +1,356 @@
+.loginContent {
+  min-height: 562px;
+  border-radius: 16px;
+  height: 100%;
+  .loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+    .loading {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .title {
+    color: #888;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 16px;
+  }
+
+  .web2Item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #3F3F3F;
+    background: #323131;
+    margin-bottom: 16px;
+    font-weight: 500;
+
+    &:hover {
+      background: var(--text-brand-default);
+      color: #FFF;
+    }
+
+    span {
+      display: inline-block;
+      margin-left: 16px;
+    }
+  }
+
+  .middleLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    margin: 32px 0;
+
+    span {
+      margin: 10px 0;
+      width: 45%;
+      display: inline-block;
+      height: 1px;
+      background: #666;
+    }
+  }
+
+  .leftPart {
+    width: 400px;
+    height: 100%;
+    border-right: 1px solid #3F3F3F;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .rightPart {
+    width: 400px;
+    // height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 40px 40px 80px;
+
+    // box-sizing: border-box;
+    .title {
+      display: flex;
+      align-items: center;
+
+      span {
+        display: inline-block;
+        // margin-left: 10px;
+
+        color: #FFF;
+        text-align: center;
+        text-overflow: ellipsis;
+        font-size: 18px;
+        font-weight: 600;
+        height: 24px;
+        line-height: 24px;
+        margin-bottom: 32px;
+        // &:nth-child(1){
+        //   width: 20px;
+        //   height: 20px;
+        //   line-height: 20px;
+        //   border-radius: 10px;
+        //   background: var(--text-brand-default);
+        //   color: rgba(0, 0, 0, 0.80);
+        //   text-align: center;
+        //   font-size: 12px;
+        //   font-weight: 700;
+        // }
+        // &:nth-child(2){
+        //   margin-left: 10px;
+        //   color: #FFF;
+        //   text-align: center;
+        //   text-overflow: ellipsis;
+        //   font-size: 18px;
+        //   font-weight: 600;
+        //   height: 24px;
+        //   line-height: 24px;
+        // }
+      }
+    }
+
+    .content {
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.60);
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .iconContainer {
+      text-align: center;
+
+      :global {
+        .ant-btn {
+          height: 34px;
+          background-color: var(--text-brand-default);
+          color: #000;
+          font-size: 14px;
+          font-weight: 500;
+          border-radius: 8px;
+
+          &:hover {
+            background-color: var(--text-brand-default);
+            color: #fff;
+          }
+
+          &:disabled {
+            opacity: .3;
+            color: #000;
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      div {
+        margin-top: 8px;
+      }
+
+      .connecting {
+        margin-left: 4px;
+        color: rgba(255, 255, 255, 0.60);
+        font-size: 14px;
+      }
+
+      .errorContent {
+        color: #FF3F3F;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .subtitle {
+      color: #FFF;
+      font-size: 14px;
+      font-weight: 700;
+      min-height: 18px;
+      line-height: 18px;
+      margin-bottom: 2px;
+    }
+
+    .part2 {
+      margin-top: 64px;
+
+      .contentContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+
+        &>div {
+          margin-left: 16px;
+        }
+
+        .content {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .loginItem {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #3F3F3F;
+    background: #323131;
+    font-weight: 500;
+
+    &:hover {
+      background: var(--text-brand-default);
+      color: #fff;
+    }
+
+    span {
+      display: inline-block;
+      margin-left: 16px;
+    }
+  }
+
+  .referral {
+    :global {
+
+      .ant-input,
+      .ant-input-affix-wrapper {
+        border: 1px solid #3F3F3F;
+        border-radius: 8px;
+        background: #323131;
+
+        &:hover {
+          border-color: var(--text-brand-default);
+        }
+
+        &:focus {
+          border-color: var(--text-brand-default);
+        }
+      }
+    }
+
+    .referralTitle {
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: #888;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .referralCodeInp {
+      padding: 16px;
+      font-size: 16px;
+    }
+
+    .referralDesc {
+      color: #8A8A8A;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  }
+}
+
+
+/* ipad */
+// @media (min-width: 768px) and (max-width: 1280px) {
+// }
+/* mobile: We do not support medium-sized screens at the moment */
+@media (max-width: 1279px) {}
+
+/* mobile */
+@media (max-width: 767px) {
+  .loginContent {
+    display: flex;
+    flex-direction: column;
+    // background-color: #060606;
+    border-width: 0;
+
+    .title {
+      overflow: hidden;
+      color: #FFF;
+      text-overflow: ellipsis;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 16px;
+      /* 100% */
+      opacity: 0.5;
+    }
+
+    .web2Item,
+    .loginItem {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      padding: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      margin-bottom: 16px;
+      font-weight: 500;
+      position: relative;
+
+      &:hover {
+        background-color: transparent;
+        color: white;
+        //   background: var(--text-brand-default);
+        //   color: rgba(0, 0, 0, 0.80);
+      }
+
+      span {
+        display: inline-block;
+        margin-left: 16px;
+      }
+
+    }
+
+    .loginItem {
+      span {
+        color: #888
+      }
+
+      ;
+    }
+
+    .h5Btn {
+      position: absolute;
+      right: 0;
+      color: var(--text-brand-default);
+    }
+
+    .leftPart {
+      width: 100%;
+      background-color: #141414;
+      padding: 24px;
+    }
+
+    .rightPart {
+      width: 100%;
+      padding: 24px;
+      margin-top: 16px;
+      box-sizing: border-box;
+      background-color: #141414;
+
+      .title {
+        opacity: 1;
+      }
+
+      .content {
+        color: #FFF;
+        opacity: 0.8;
+      }
+
+      .part2 {
+        margin-top: 24px;
+      }
+    }
+  }
+}

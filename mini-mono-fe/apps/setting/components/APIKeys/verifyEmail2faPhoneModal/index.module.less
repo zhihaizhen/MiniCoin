@@ -1,0 +1,83 @@
+.modalWrap {
+  :global {
+
+    .ant-input,
+    .ant-input-affix-wrapper {
+      border-color: transparent;
+
+      &:hover {
+        border-color: var(--fill-button-brand-default);
+      }
+
+      &:focus {
+        border-color: var(--fill-button-brand-default);
+      }
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      width: 100%;
+      background-color: var(--fill-button-brand-default);
+      color: #000;
+      font-weight: 700;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: var(--fill-button-brand-hover);
+        color: #000;
+      }
+
+      &:disabled {
+        opacity: .3;
+        color: #000;
+        cursor: not-allowed;
+      }
+    }
+
+    .ant-input-affix-wrapper,
+    .ant-input {
+      padding: 13px 16px;
+    }
+  }
+
+  .desc {
+    color: #888;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 12px;
+
+    .verifyDescText {
+      color: var(--text-secondary, #A8AAAD);
+    }
+
+    .verifyDescInfo {
+      color: var(--text-primary, #fff);
+      font-weight: 500;
+    }
+  }
+
+  .userInp {
+    background: #efefef;
+    height: 48px;
+    border-radius: 8px;
+
+    input {
+      background: #efefef;
+    }
+  }
+
+  .sentCodeBtn {
+    color: var(--fill-button-brand-default);
+    line-height: 22px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+  }
+}

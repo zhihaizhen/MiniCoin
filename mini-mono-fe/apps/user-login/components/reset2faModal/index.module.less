@@ -1,0 +1,57 @@
+.reset2faModalContainer {
+
+  .verifyDesc {
+     color: var(--text-secondary, #A8AAAD);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 12px;
+
+    .verifyDescInfo {
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  .userInp {
+    height: 48px;
+    border-radius: 8px;
+
+  }
+
+  .sentCodeBtn {
+    color: var(--text-brand-default);
+    line-height: 22px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.modalWrapper {
+  .withdrawTips {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: rgba(245, 132, 31, 0.1);
+    margin: 24px 0;
+
+    .tipsIcon {
+      flex-shrink: 0;
+    }
+
+    .tipsText {
+      color: var(--functional-orange);
+      margin-left: 8px;
+      font-size: 12px;
+      word-break: break-word;
+    }
+  }
+}

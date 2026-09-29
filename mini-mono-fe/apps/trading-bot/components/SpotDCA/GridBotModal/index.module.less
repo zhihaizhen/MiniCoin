@@ -1,0 +1,732 @@
+.gridBotModal {
+  :global(.ant-modal-content) {
+    padding: 0;
+    border-radius: 12px;
+    background: var(--fill-fill-modal, #101112);
+    overflow: hidden;
+    border: 1px solid var(--line-border-default, #28292a);
+  }
+
+  :global(.ant-modal-close) {
+    display: none; // 隐藏默认关闭按钮
+  }
+}
+
+.modalContent {
+  height: 570px;
+  display: flex;
+  flex-direction: column;
+}
+
+// 头部
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--text-primary, #f5f5f5);
+  margin: 0;
+}
+
+.closeBtn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-primary, #f5f5f5);
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// 币对信息区
+.pairSection {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.pairDivider {
+  height: 1px;
+  background: var(--line-border-default, #28292a);
+  margin: 16px 24px 0;
+  flex-shrink: 0;
+}
+
+// 第一行：左侧币对名+标签，右侧币对详情
+.pairTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+}
+
+.pairLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pairName {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.pairTag {
+  padding: 2px 4px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+  border-radius: var(--Number, 4px);
+  background: var(--fill-tag-gray, rgba(255, 255, 255, 0.08));
+}
+
+.pairRight {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pairBottomRow {
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.followers {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.coinIcon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+
+  .coinIconImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.coinPair {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.coinPrice {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  color: var(--text-brand-default, #abe127);
+
+  &.priceChangeNegative {
+    color: var(--text-error-default, #ff4d4f);
+  }
+}
+
+// 主体内容
+.bodySection {
+  padding: 24px 24px 0;
+  display: flex;
+  gap: 8px;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+}
+
+.leftPanel {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--fill-fill-dragger, #46484a);
+    border-radius: 3px;
+
+    &:hover {
+      background: var(--fill-fill-dragger-hover, #5a5c5f);
+    }
+  }
+}
+
+.divider {
+  width: 3px;
+  height: 190px;
+  background: var(--line-border-default, #28292a);
+  border-radius: 14px;
+}
+
+.rightPanel {
+  margin-left: 24px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// 策略概况
+.strategyOverview {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  color: var(--text-primary, #f5f5f5);
+  margin: 0;
+}
+
+.priceInfo {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 18px;
+}
+
+.priceLabel {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.priceValue {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.chartCard {
+  width: 390px;
+  height: 162px;
+  padding-top: 28px;
+  border-radius: var(--Number, 4px);
+  border: 1px solid var(--line-border-default, #28292a);
+  display: flex;
+  position: relative;
+  align-items: stretch;
+}
+
+.profitRate {
+  width: 54px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.rateValue {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  color: var(--text-brand-default, #abe127);
+}
+
+.rateLabel {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.chartArea {
+  flex: 1;
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chartPlot {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.chartTitle {
+  position: absolute;
+  left: 24px;
+  top: -14px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.chartPlot :global(canvas),
+.chartPlot :global(svg) {
+  border-radius: 0;
+}
+
+/* 图表样式兜底：仅折线使用品牌色，避免覆盖坐标轴颜色 */
+.chartPlot :global(.g2-line path),
+.chartPlot :global(.g2-geometry-line path) {
+  stroke: #abe127 !important;
+}
+
+.emptyChart {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary, #85888e);
+  font-size: 14px;
+}
+
+.chartContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.yAxis {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-right: 8px;
+}
+
+.yLabel {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.chartMain {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.gridLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gridLine {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid var(--line-border-default, #28292a);
+}
+
+.verticalDivider {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 18px;
+  width: 0;
+  border-left: 1px solid var(--line-border-default, #28292a);
+  transform: translateX(-50%);
+}
+
+.lineChart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chartSvg {
+  width: 100%;
+  height: 40px;
+}
+
+.chartCanvas {
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+
+.xAxis {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 38px;
+  padding-right: 0;
+}
+
+.xLabel {
+  width: 45px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+  text-align: center;
+}
+
+// 参数详情
+.paramDetails {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.paramGrid {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.paramRow {
+  min-height: 37px;
+  display: flex;
+  gap: 40px;
+}
+
+.paramItem {
+  width: 175px;
+  min-height: 37px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.paramLabel {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.paramValue {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.paramCoinList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.paramCoinRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 18px;
+}
+
+.paramCoinIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.paramPriceRow {
+  display: flex;
+  align-items: center;
+  line-height: 18px;
+}
+
+// 投资金额输入
+.investSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputWrapper {
+  :global(.ant-input-affix-wrapper) {
+    height: 40px;
+    border: 1px solid var(--line-border-default, #28292a);
+    border-radius: 8px;
+    background: var(--fill-fill-input, #1f2023);
+    padding: 0 12px;
+
+    &:hover {
+      border-color: var(--text-brand-default, #abe127);
+    }
+
+    &:focus,
+    &:focus-within {
+      border-color: var(--text-brand-default, #abe127);
+      box-shadow: none;
+    }
+  }
+
+  :global(.ant-input) {
+    background: transparent;
+    color: var(--text-primary, #f5f5f5);
+    font-size: 14px;
+
+    &::placeholder {
+      color: var(--text-secondary, #a8aaad);
+    }
+  }
+}
+
+.inputSuffix {
+  font-size: 14px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.availableBalance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.balanceLabel {
+  color: var(--text-secondary, #a8aaad);
+}
+
+.balanceValue {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.switchIcon {
+  cursor: pointer;
+  color: var(--text-primary, #f5f5f5);
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--text-brand-default, #abe127);
+  }
+}
+
+// 高级设置
+.advancedSection {
+  padding-top: 16px;
+  border-top: 1px solid var(--line-border-default, #28292a);
+}
+
+.advancedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.advancedTitle {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.advancedArrow {
+  width: 14px;
+  height: 14px;
+  color: var(--text-secondary, #a8aaad);
+  transition: transform 0.3s;
+
+  &.advancedArrowOpen {
+    transform: rotate(180deg);
+  }
+}
+
+.advancedBody {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.advancedItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.advancedLabel {
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.advancedAction {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.advancedValue {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text-primary, #f5f5f5);
+  text-align: right;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
+}
+
+.advancedChevron {
+  width: 14px;
+  height: 14px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+// 底部按钮
+.btnGroup {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.cancelBtn,
+.confirmBtn {
+  width: 320px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cancelBtn {
+  color: var(--text-primary, #f5f5f5);
+  background: var(--fill-button-primary-disable, #28292a);
+
+  &:hover {
+    background: var(--fill-button-tertiary-hover, #35393a);
+  }
+}
+
+.confirmBtn {
+  background: var(--fill-button-primary-default, #fff);
+  color: var(--text-white-to-back, #101112);
+
+  &:hover:not(:disabled) {
+    background: var(--fill-button-primary-hover, #f5f5f5);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--text-quartenary, #46484a);
+    background: var(--fill-button-primary-disable, #28292a);
+  }
+
+  &.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      top: 50%;
+      left: 50%;
+      margin-left: -7px;
+      margin-top: -7px;
+      border: 2px solid var(--text-white-to-back, #101112);
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 0.6s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

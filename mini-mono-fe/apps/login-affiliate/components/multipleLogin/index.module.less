@@ -1,0 +1,165 @@
+.flagContainer {
+  display: flex;
+  align-items: center;
+}
+
+// 公用
+.eyesIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.visibleEyes {
+  background: url('@{BASE_PATH}/images/visibleEyes.svg') no-repeat
+}
+
+.unvisibleEyes {
+  background: url('@{BASE_PATH}/images/unVisibleEyes.svg') no-repeat
+}
+
+.email {
+  .title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .referral {
+    margin-bottom: 24px;
+
+    .referralTitle {
+      margin-bottom: 10px;
+    }
+  }
+
+  :global {
+    .ant-select-selector {
+      height: 48px !important;
+      line-height: 48px !important;
+      padding: 8px 11px !important;
+    }
+
+    .ant-input-group-addon {
+      --tw-bg-opacity: 1;
+      background-color: rgb(245 247 250/var(--tw-bg-opacity));
+      color: rgb(18, 18, 20);
+      height: 48px;
+      border-radius: 8px;
+      font-weight: 500;
+      border: none;
+    }
+
+    .ant-input,
+    .ant-input-affix-wrapper {
+      border-color: transparent;
+
+      &:hover {
+        border-color: var(--text-brand-default);
+      }
+
+      &:focus {
+        border-color: var(--text-brand-default);
+      }
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      width: 100%;
+      background-color: var(--text-brand-default);
+      color: #FFF;
+      font-weight: 700;
+      border-radius: 8px;
+
+      &:hover {
+        opacity: .8;
+      }
+
+      &:disabled {
+        opacity: .3;
+        color: #000;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .addonInp {
+    --tw-bg-opacity: 1;
+    background-color: rgb(245 247 250/var(--tw-bg-opacity));
+    color: rgb(18, 18, 20);
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 500;
+
+    input {
+      height: 48px;
+      border-radius: 8px;
+      font-weight: 500;
+      background-color: rgb(245 247 250/var(--tw-bg-opacity));
+    }
+  }
+
+  .userInp {
+    --tw-bg-opacity: 1;
+    background-color: rgb(245 247 250/var(--tw-bg-opacity)) !important;
+    color: rgb(18, 18, 20);
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 500;
+
+    input {
+      background-color: rgb(245 247 250/var(--tw-bg-opacity));
+    }
+  }
+
+  .sentCodeBtn {
+    // height: 100%;
+    color: var(--text-brand-default);
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+  }
+
+  .sentDisable {
+    opacity: .4;
+    cursor: not-allowed;
+  }
+}
+
+/* ipad */
+// @media (min-width: 768px) and (max-width: 1280px) {
+// }
+/* mobile: We do not support medium-sized screens at the moment */
+@media (max-width: 1279px) {}
+
+/* mobile */
+@media (max-width: 767px) {
+  .email {
+    :global {
+
+      .ant-input,
+      .ant-input-affix-wrapper {
+        border-color: transparent;
+
+        &:hover {
+          border-color: var(--text-brand-default);
+        }
+
+        &:focus {
+          border-color: var(--text-brand-default);
+        }
+      }
+
+      .ant-btn-primary {
+        height: 40px;
+      }
+    }
+  }
+}

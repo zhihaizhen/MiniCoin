@@ -1,0 +1,45 @@
+.createContainer {
+  &>div {
+    width: 45%;
+  }
+
+  display: flex;
+  justify-content: space-between;
+
+  .formItemContainer {
+    border-right: 1px solid #3A3A3A;
+  }
+
+  .formItem {
+    margin-bottom: 32px;
+
+    .tips {
+      &:hover {
+        color: var(--fill-button-brand-default);
+        cursor: pointer;
+      }
+
+      margin-left: 4px;
+    }
+  }
+
+  .rightRemind {
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .descRemind {
+      margin-top: 16px;
+
+      p {
+        font-size: 14px;
+        color: #8C8C8C;
+      }
+
+      .highLight {
+        color: var(--fill-button-brand-default);
+      }
+    }
+  }
+}

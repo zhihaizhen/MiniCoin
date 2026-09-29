@@ -1,0 +1,275 @@
+.activityRules {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto;
+}
+
+.title {
+  margin: 0 0 40px 0;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  color: var(--text-primary, #f5f5f5);
+}
+
+.rulesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ruleItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  min-height: 36px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-primary, #fff);
+}
+
+.ruleIndex {
+  flex-shrink: 0;
+  color: var(--text-brand-default-web, #abe127);
+  font-size: 16px;
+  font-weight: var(--Bold, 700);
+  line-height: 24px;
+  align-self: flex-start;
+}
+
+.ruleContent {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-primary, #fff);
+
+  .tableWrapper {
+    margin: 0 0 0 22px;
+  }
+}
+
+.ruleTitle {
+  font-weight: 700;
+  color: var(--text-primary, #fff);
+}
+
+.ruleText {
+  margin-bottom: 16px;
+}
+
+.rewardTable {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line-border-default, #28292A);
+}
+
+.tableHeader {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--line-border-default, #28292A);
+}
+
+.tableRow {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--line-border-default, #28292A);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.tableCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  border-right: 1px solid var(--line-border-default, #28292A);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  .tableHeader & {
+    color: var(--text-primary, #f5f5f5);
+
+    &:first-child {
+      flex: 0 0 140px;
+      width: 140px;
+      padding: 10px;
+    }
+
+    &:last-child {
+      flex: 1;
+      padding: 10px 52px;
+    }
+  }
+
+  .tableRow & {
+    font-weight: 400;
+    color: var(--text-primary, #f5f5f5);
+    border-right-color: var(--line-border-default, #28292A);
+
+    &:first-child {
+      flex: 0 0 140px;
+      width: 140px;
+      padding: 10px;
+    }
+
+    &:last-child {
+      flex: 1;
+      padding: 10px 52px;
+    }
+  }
+}
+
+.subRulesList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.subRuleItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-primary, #fff);
+
+  .ruleIndex {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .activityRules {
+    width: calc(100% - 32px);
+    margin-top: 72px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+
+  .rulesList {
+    gap: 0px;
+  }
+
+  .ruleItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #ffffff;
+  }
+
+  .ruleIndex {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: var(--text-brand-default-web, #ABE127);
+    text-align: center;
+  }
+
+  .ruleContent {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--text-primary, #F5F5F5);
+  }
+
+  .ruleTitle {
+    font-weight: 700;
+    color: var(--text-primary, #F5F5F5);
+  }
+
+  .subRulesList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    margin-left: 0;
+  }
+
+  .subRuleItem {
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #ffffff;
+    padding-left: 0;
+
+    .ruleIndex {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &::before {
+      display: none; // 去掉伪元素
+    }
+  }
+
+  .tableWrapper {
+    margin: 0 0 0 18px;
+  }
+
+  .rewardTable {
+    min-width: 100%;
+    font-size: 13px;
+  }
+
+  .tableCell {
+    font-size: 13px;
+    line-height: 18px;
+
+    .tableHeader & {
+      padding: 10px 12px;
+
+      &:first-child {
+        padding: 10px;
+      }
+
+      &:last-child {
+        padding: 10px 24px;
+      }
+    }
+
+    .tableRow & {
+      padding: 10px 12px;
+
+      &:first-child {
+        padding: 10px;
+      }
+
+      &:last-child {
+        padding: 10px 24px;
+      }
+    }
+  }
+}

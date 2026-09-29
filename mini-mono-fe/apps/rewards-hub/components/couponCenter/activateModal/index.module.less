@@ -1,0 +1,131 @@
+.modalWrap {
+  :global {
+    .ant-modal-content {
+      border-radius: 12px;
+      background: var(--fill-fill-modal, #101112);
+      border-radius: 16px;
+      border: 1px solid var(--line-border-default, #37393a);
+      padding: 0;
+    }
+  }
+}
+
+.modal {
+  padding: 24px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  .title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary, #fff);
+    line-height: 26px;
+  }
+
+  .closeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.body {
+  margin-bottom: 24px;
+
+  .desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-primary, #fff);
+    line-height: 24px;
+    margin: 0 0 16px;
+  }
+
+  .warning {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--function-orange, #ff7738);
+    line-height: 24px;
+    margin: 0;
+  }
+}
+
+.footer {
+  display: flex;
+  gap: 16px;
+
+  .cancelBtn,
+  .confirmBtn {
+    max-width: 392px;
+    padding: 12px 16px;
+    flex: 1;
+    height: 48px;
+    border: none;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .cancelBtn {
+    background: var(--fill-button-tertiary-btn-default, #28292a);
+    color: var(--text-primary, #fff);
+
+    &:hover {
+      background: var(--fill-button-tertiary-hover, #35393a);
+    }
+  }
+
+  .confirmBtn {
+    background: var(--fill-button-primary-default, #fff);
+    color: var(--text-white-to-back, #101112);
+
+    &:hover {
+      background: var(--fill-button-primary-hover, #f5f5f5);
+    }
+
+    :global {
+      .ant-spin-dot-item {
+        background-color: var(--text-brand-default);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modalWrap:global(.ant-modal) {
+    width: calc(100vw - 32px) !important;
+  }
+
+  .footer {
+    .cancelBtn,
+    .confirmBtn {
+      height: 40px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: var(--Medium, 500);
+      line-height: 18px;
+    }
+  }
+}

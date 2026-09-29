@@ -1,0 +1,16 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  :global {
+    .ant-spin-dot-item {
+      background-color: var(--text-brand-default, #abe127) !important;
+    }
+
+    .ant-spin-text {
+      color: var(--text-brand-default-app, #abe127);
+    }
+  }
+}

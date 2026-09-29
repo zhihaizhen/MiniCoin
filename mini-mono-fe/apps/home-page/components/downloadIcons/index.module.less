@@ -1,0 +1,214 @@
+.downIcons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+
+  img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .icon {
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
+// icon 有三种主题色
+
+// 下载页用到
+.white {
+  .text {
+    display: none;
+  }
+
+  svg {
+    rect {
+      fill: var(--fill-button-primary-default, #FFF);
+    }
+
+    path {
+      // fill: var(--text-primary, #101112);  // 这里的颜色和黑白模式有关
+      fill: #101112;
+    }
+  }
+
+  &:hover {
+    svg {
+      rect {
+        fill: var(--fill-button-primary-hover, #F5F5F5);
+      }
+
+    }
+  }
+}
+
+
+//  首页banner区用到
+.dark {
+  .text {
+    display: none;
+  }
+
+  svg {
+    border-radius: 12px;
+    border: 1px solid var(--line-divider-primary, #37393A);
+
+    rect {
+      // fill: var(--bg-primary, #070808);
+      fill: transparent;
+    }
+
+    path {
+      fill: white;
+    }
+  }
+
+
+  .icon {
+    &:hover {
+      svg {
+        rect {
+          fill: var(--fill-fill-hover-1, #1D1D1D);
+          rx: 12px;
+        }
+      }
+    }
+  }
+
+}
+
+
+// 首页下载区用到
+.dark_no_border {
+  gap: 12px;
+
+  .icon {
+    padding: 12px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon {
+    &:hover {
+      border-radius: 12px;
+      background: var(--fill-fill-hover-1, #1D1D1D);
+    }
+  }
+
+  .text {
+    color: var(--text-primary, #FFF);
+    font-size: 14px;
+  }
+
+  svg {
+    rect {
+      fill: transparent;
+    }
+
+    path {
+      fill: white;
+    }
+  }
+}
+
+// 首页banner区域——新版
+.dark_round {
+  background-color: #1D1D1D;
+  border-radius: 100px;
+  border: none;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 4px;
+
+  .text {
+    display: none;
+  }
+
+  .icon {
+    border: none;
+    padding: 0;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  svg {
+    rect {
+      fill: transparent;
+    }
+
+    path {
+      fill: white;
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .downIcons {
+    .icon {
+      text-align: center;
+      color: var(--text-brand-default);
+      font-size: 12px;
+    }
+  }
+
+  // 首页下载区用到
+  .dark_no_border {
+    gap: 12px;
+
+    .icon {
+      padding: 12px 16px;
+    }
+
+    .text {
+      font-size: 12px;
+    }
+
+  }
+
+}
+
+// .tooltipQrcode {
+//   background: #2d2d2d;
+//   border-radius: 8px;
+
+//   :global {
+//     .ant-tooltip-arrow:before {
+//       background: #2d2d2d;
+//     }
+
+//     .ant-tooltip-content {
+//       background: #2d2d2d;
+//       padding: 16px;
+//       border-radius: 8px;
+//     }
+
+//     .ant-tooltip-inner {
+//       background: #2d2d2d;
+//       padding: 0;
+//       width: 134px;
+//     }
+//   }
+
+//   .text {
+//     font-weight: 500;
+//     line-height: 18px;
+//     text-align: center;
+
+//     margin-bottom: 16px;
+//   }
+
+//   img {
+//     width: 134px;
+//     height: 134px;
+//   }
+// }

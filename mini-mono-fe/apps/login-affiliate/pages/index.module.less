@@ -1,0 +1,50 @@
+.page {
+  color: var(--text-primary, #101112);
+  // height: calc(100vh - 64px);
+  height: 100vh;
+  // position: relative;
+  overflow: hidden;
+
+  .container {
+    // width: 954px;
+    margin: 0 auto;
+    // padding: 56px 0;
+    box-sizing: border-box;
+
+    .title {
+      color: var(--text-primary, #101112);
+      font-size: 28px;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: 40px;
+    }
+
+    .content {
+      min-height: 562px;
+      border-radius: 16px;
+      border: 1px solid var(--line-divider-primary, #EEE);
+      background: #272727;
+    }
+  }
+}
+
+/* ipad */
+// @media (min-width: 768px) and (max-width: 1280px) {
+// }
+/* mobile: We do not support medium-sized screens at the moment */
+@media (max-width: 1279px) {}
+
+/* mobile */
+@media (max-width: 767px) {
+  .page {
+    padding-bottom: 0px;
+
+    .container {
+      width: 100%;
+
+      .content {
+        border-width: 0;
+      }
+    }
+  }
+}

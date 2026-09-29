@@ -1,0 +1,167 @@
+.advancedSection {
+  padding-top: 16px;
+  border-top: 1px solid var(--line-border-default, #28292a);
+}
+
+.advancedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--text-primary, #f5f5f5);
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.arrowIcon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.advancedContent {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .conditionDesc {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 19px;
+
+    .conditionDescLabel {
+      color: var(--text-secondary, #a8aaad);
+    }
+
+    .conditionDescValue {
+      color: var(--text-primary, #f5f5f5);
+      font-weight: var(--Medium, 500);
+    }
+  }
+}
+
+.stopConditionTitle {
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--text-secondary, #a8aaad);
+}
+
+.conditionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 24px;
+
+  :global(.ant-radio-wrapper) {
+    font-size: 14px;
+    line-height: 19px;
+    margin-right: 0;
+
+    :global(.ant-radio) {
+      font-size: 14px;
+    }
+
+    :global(.ant-radio-inner) {
+      width: 14px;
+      height: 14px;
+      border-color: #46484a;
+      background: transparent;
+
+      &::after {
+        width: 14px;
+        height: 14px;
+        margin-block-start: -7px;
+        margin-inline-start: -7px;
+      }
+    }
+
+    &:hover {
+      color: var(--text-primary, #f5f5f5);
+
+      :global(.ant-radio-inner) {
+        border-color: var(--text-primary, #f5f5f5);
+      }
+    }
+
+    &:global(.ant-radio-wrapper-checked) {
+      color: var(--text-primary, #f5f5f5);
+
+      :global(.ant-radio-inner) {
+        border-color: var(--text-primary, #f5f5f5);
+        background: transparent;
+
+        &::after {
+          background: var(--text-primary, #f5f5f5);
+        }
+      }
+    }
+  }
+}
+
+.conditionInput {
+  :global(.ant-input-affix-wrapper) {
+    height: 40px;
+    background: var(--fill-fill-input, #1f2023);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0 12px;
+
+    &:hover {
+      border-color: var(--text-brand-default, #abe127);
+    }
+
+    &:focus,
+    &:focus-within {
+      border-color: var(--text-brand-default, #abe127);
+      box-shadow: none;
+    }
+  }
+
+  &.hasError :global(.ant-input-affix-wrapper) {
+    border-color: #7e2e2f;
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      border-color: #7e2e2f;
+      box-shadow: none;
+    }
+  }
+
+  :global(.ant-input) {
+    background: transparent;
+    color: var(--text-primary, #f5f5f5);
+    font-size: 14px;
+
+    &::placeholder {
+      color: var(--text-secondary, #a8aaad);
+    }
+  }
+
+  :global(.ant-input-suffix) {
+    color: var(--text-secondary, #a8aaad);
+    font-size: 14px;
+  }
+}
+
+.errorTip {
+  color: var(--text-red, #f43f5e);
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+}

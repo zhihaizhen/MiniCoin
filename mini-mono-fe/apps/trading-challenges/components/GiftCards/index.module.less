@@ -1,0 +1,404 @@
+.giftCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+
+  // 卡片数 < 6：PC 单列，间距 24px
+  &.compact {
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    .giftCard {
+      position: relative;
+      background: #151717;
+      border: 1px solid transparent;
+      overflow: hidden;
+
+      // 左侧高亮光晕：设计稿 Ellipse + 模糊，裁切在卡片内
+      &::before {
+        content: '';
+        position: absolute;
+        left: -16px;
+        top: 50%;
+        width: 64px;
+        height: 64px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background: #fff;
+        filter: blur(28px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+      }
+
+      // 渐变描边：左侧较暗，右侧更白
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.06) 0%,
+          rgba(255, 255, 255, 0.16) 32%,
+          rgba(255, 255, 255, 0.5) 100%
+        );
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+      }
+
+      .cardLeft,
+      .claimButton {
+        position: relative;
+        z-index: 1;
+      }
+
+      // PC hover：渐变边框 + 左侧光晕（覆盖默认绿色实线边框）
+      @media (min-width: 769px) {
+        &:hover {
+          border-color: transparent;
+          cursor: pointer;
+
+          &::before,
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .giftInfo {
+      gap: 4px;
+    }
+  }
+}
+
+.giftCard {
+  align-self: stretch;
+  padding: 24px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid var(--line-border-default, #37393a);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  &:hover {
+    border: 1px solid #abe127;
+    cursor: pointer;
+  }
+}
+
+.cardLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconImage {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.giftInfo {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.amount {
+  display: flex;
+  justify-content: flex-start;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.type {
+  display: flex;
+  justify-content: flex-start;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.claimButton {
+  width: 112px;
+  height: 40px;
+  padding: 12px;
+  border-radius: 100px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  // 可领取状态（绿色按钮）
+  &.claimable {
+    background: var(--fill-button-green-default, #abe127);
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    .buttonText {
+      color: var(--text-black, #101112) !important;
+    }
+
+    &:hover {
+      background: var(--fill-button-brand-hover, #96c031);
+      border: 1px solid transparent;
+    }
+  }
+
+  // 待解锁状态（灰色禁用 + 锁图标）
+  &.locked {
+    background: var(--fill-button-tertiary-btn-default, #28292a);
+    border: 1px solid transparent;
+    cursor: not-allowed;
+  }
+
+  // 已领取状态（灰色禁用）
+  &.claimed {
+    background: var(--fill-button-tertiary-btn-default, #28292a);
+    border: 1px solid transparent;
+    cursor: not-allowed;
+  }
+
+  // 发放中状态（灰色禁用）
+  &.awarding {
+    background: var(--fill-button-tertiary-btn-default, #28292a);
+    border: 1px solid transparent;
+    cursor: not-allowed;
+  }
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    width: 13.33px;
+    height: 14.17px;
+    object-fit: contain;
+  }
+}
+
+.buttonText {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+// 响应式设计
+@media (max-width: 1024px) {
+  .giftCards {
+    gap: 16px;
+
+    &.compact {
+      gap: 24px;
+    }
+  }
+
+  .giftCard {
+    padding: 20px;
+  }
+
+  .cardLeft {
+    gap: 20px;
+  }
+
+  .iconWrapper {
+    width: 64px;
+    height: 64px;
+  }
+
+  .iconImage {
+    width: 64px;
+    height: 64px;
+  }
+
+  .amount {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .type {
+    font-size: 13px;
+  }
+
+  .claimButton {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .giftCards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    // 卡片数 < 6：H5 竖向大卡（图标 / 标题 / 说明 / 全宽按钮）
+    &.compact {
+      gap: 16px;
+
+      .giftCard {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        padding: 16px;
+        background: #151717;
+        border: 1px solid transparent;
+      }
+
+      .cardLeft {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .iconWrapper {
+        width: 56px;
+        height: 56px;
+      }
+
+      .iconImage {
+        width: 56px;
+        height: 56px;
+      }
+
+      .giftInfo {
+        gap: 8px;
+      }
+
+      .amount {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+      }
+
+      .type {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        color: var(--text-secondary, #808588);
+      }
+
+      .claimButton {
+        width: 100%;
+        height: 40px;
+        padding: 12px 16px;
+        gap: 4px;
+      }
+
+      .buttonIcon {
+        width: 16px;
+        height: 16px;
+      }
+
+      .buttonText {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  .giftCard {
+    padding: 16px 16px 16px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--line-divider-secondary, #1d1d1d);
+  }
+
+  .cardLeft {
+    gap: 8px;
+  }
+
+  .iconWrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+  .iconImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .amount {
+    font-size: 14px;
+    font-weight: var(--Bold, 600);
+    line-height: 24px;
+  }
+
+  .type {
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .claimButton {
+    padding: 12px;
+    border-radius: 100px;
+  }
+
+  .buttonText {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.chatContainer {
+  position: absolute;
+}
+
+.hiddenChatButton {
+  display: none !important;
+}

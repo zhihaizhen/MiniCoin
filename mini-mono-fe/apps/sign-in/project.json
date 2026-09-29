@@ -1,0 +1,98 @@
+{
+  "root": "apps/sign-in",
+  "sourceRoot": "apps/sign-in",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/sign-in",
+        "outputPath": "dist/apps/sign-in"
+      },
+      "configurations": {
+        "production": {},
+        "testnet": {
+          "outputPath": "dist/testnet/apps/sign-in"
+        },
+        "test": {
+          "outputPath": "dist/test/apps/sign-in"
+        },
+        "dev": {
+          "outputPath": "dist/dev/apps/sign-in"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "sign-in:build",
+        "dev": true,
+        "hostname": "dev.test.bitrunfinance.com",
+        "port": 4200
+      },
+      "configurations": {
+        "dev": {
+          "buildTarget": "sign-in:build:development",
+          "dev": true
+        },
+        "test": {
+          "buildTarget": "sign-in:build:development",
+          "dev": false
+        },
+        "testnet": {
+          "buildTarget": "sign-in:build:production",
+          "dev": false
+        },
+        "production": {
+          "buildTarget": "sign-in:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "sign-in:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/sign-in"
+      ],
+      "options": {
+        "jestConfig": "apps/sign-in/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/sign-in/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "cexport": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "node .script/custom-export.js",
+            "forwardAllArgs": true
+          }
+        ],
+        "cwd": "apps/sign-in",
+        "outputPath": "dist/apps/"
+      }
+    }
+  },
+  "tags": []
+}

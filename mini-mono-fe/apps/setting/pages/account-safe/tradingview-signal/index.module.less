@@ -1,0 +1,195 @@
+.copyButton {
+  min-width: 80px;
+  height: 40px !important;
+  line-height: 40px;
+  padding: 0 16px;
+  border-radius: 8px;
+  background: var(--fill-button-primary-default, #101112);
+  font-weight: var(--Medium, 500);
+  &:not(:disabled):hover {
+    background: var(--fill-button-primary-default, #101112) !important;
+    opacity: 0.8;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    border: none;
+  }
+}
+.webhookModal {
+  .webhookWarningTips {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: 0.5px solid var(--function-red, #fa465b);
+    background: var(--fill-tag-red, rgba(250, 70, 91, 0.12));
+    color: var(--text-red, #fa465b);
+    font-size: 12px;
+    font-weight: var(--Regular, 400);
+    line-height: 18px; /* 150% */
+    margin: 24px 0 16px;
+  }
+  .webhookLink {
+    // display: flex;
+    height: 56px;
+    line-height: 40px;
+    padding: 8px 8px 8px 16px;
+    align-items: center;
+    gap: 24px;
+    border-radius: 8px;
+    background: var(--fill-fill-input, #f2f3f4);
+    overflow: hidden;
+    color: var(--text-primary, #101112);
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: var(--Regular, 400);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 24px;
+  }
+  .confirmCheckbox {
+    margin-bottom: 16px;
+    color: var(--text-primary, #101112);
+  }
+}
+.tradingview-signal-page {
+  max-width: 1200px;
+  min-height: calc(100vh - 64px);
+  margin: 0 auto;
+  padding: 24px;
+  :global {
+    .ant-radio-wrapper {
+      color: var(--text-primary, #101112);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19px;
+    }
+  }
+
+  .radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mainTitle {
+    color: var(--text-primary, #101112);
+    font-size: 28px;
+    font-weight: var(--Bold, 700);
+    line-height: 36px;
+    margin-bottom: 24px;
+  }
+
+  .content {
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1px solid var(--line-border-default, #ebebeb);
+    .contentItem {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .contentItemTitle {
+        display: flex;
+        align-items: center;
+        .itemNumber {
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          border-radius: 20px;
+          background: var(--text-primary, #101112);
+          color: var(--text-white, #fff);
+          font-weight: var(--Regular, 400);
+          line-height: 20px;
+          margin-right: 12px;
+        }
+        .itemTitle {
+          color: var(--text-primary, #101112);
+          font-size: 14px;
+          font-weight: var(--Medium, 500);
+          line-height: 18px;
+        }
+      }
+      .templateTitle {
+        // margin: 16px 0 12px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .contentItemDesc {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        display: flex;
+        height: 56px;
+        padding: 8px 8px 8px 16px;
+        align-items: center;
+        gap: 24px;
+        border-radius: 8px;
+        background: var(--fill-fill-input, #f2f3f4);
+        & > span {
+          width: 580px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  .readMoreText {
+    color: var(--text-primary, #101112);
+    text-align: center;
+    font-size: 14px;
+    font-weight: var(--Regular, 400);
+    line-height: 18px;
+    cursor: pointer;
+  }
+
+  .Tips {
+    display: flex;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 0.5px solid var(--function-orange, #ff7738);
+    background: var(--fill-tag-orange, rgba(255, 119, 56, 0.12));
+    margin-bottom: 16px;
+    margin-top: -4px;
+
+    .tipsIcon {
+      width: 20px;
+      height: 16px;
+      background: url('@{BASE_PATH}/images/tips.svg') no-repeat;
+      flex-shrink: 0;
+    }
+
+    .tipsText {
+      color: var(--function-orange, #ff7738);
+      margin-left: 8px;
+      font-size: 12px;
+    }
+  }
+
+  .titleContainer {
+    display: flex;
+    margin-bottom: 24px;
+
+    div {
+      font-size: 16px;
+      color: var(--Text-tertiary, #888);
+    }
+
+    .title1 {
+      cursor: pointer;
+    }
+
+    .title2 {
+      margin-left: 4px;
+      color: var(--Text-primary, #333);
+      font-weight: 500;
+    }
+  }
+}

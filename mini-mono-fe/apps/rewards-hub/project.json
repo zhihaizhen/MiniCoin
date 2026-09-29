@@ -1,0 +1,98 @@
+{
+  "root": "apps/rewards-hub",
+  "sourceRoot": "apps/rewards-hub",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/rewards-hub",
+        "outputPath": "dist/apps/rewards-hub"
+      },
+      "configurations": {
+        "production": {},
+        "testnet": {
+          "outputPath": "dist/testnet/apps/rewards-hub"
+        },
+        "test": {
+          "outputPath": "dist/test/apps/rewards-hub"
+        },
+        "dev": {
+          "outputPath": "dist/dev/apps/rewards-hub"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "rewards-hub:build",
+        "dev": true,
+        "hostname": "dev.test.bitrunfinance.com",
+        "port": 4200
+      },
+      "configurations": {
+        "dev": {
+          "buildTarget": "rewards-hub:build:development",
+          "dev": true
+        },
+        "test": {
+          "buildTarget": "rewards-hub:build:development",
+          "dev": false
+        },
+        "testnet": {
+          "buildTarget": "rewards-hub:build:production",
+          "dev": false
+        },
+        "production": {
+          "buildTarget": "rewards-hub:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "rewards-hub:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/rewards-hub"
+      ],
+      "options": {
+        "jestConfig": "apps/rewards-hub/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/rewards-hub/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "cexport": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "node .script/custom-export.js",
+            "forwardAllArgs": true
+          }
+        ],
+        "cwd": "apps/rewards-hub",
+        "outputPath": "dist/apps/"
+      }
+    }
+  },
+  "tags": []
+}
