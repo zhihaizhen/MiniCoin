@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant greenUpRedDown (&:is(.greenUpRedDown *));
+@custom-variant redUpGreenDown (&:is(.redUpGreenDown *));
+@custom-variant redUpBlueDown (&:is(.redUpBlueDown *));
+
+@custom-variant lang-en-US (&:is([lang="en-US"] *));
+@custom-variant lang-zh-CN (&:is([lang="zh-CN"] *));
+@custom-variant lang-zh-TW (&:is([lang="zh-TW"] *));
+@custom-variant lang-zh-HK (&:is([lang="zh-HK"] *));
+@custom-variant lang-ja-JP (&:is([lang="ja-JP"] *));
+@custom-variant lang-ko-KR (&:is([lang="ko-KR"] *));
+@custom-variant lang-vi-VN (&:is([lang="vi-VN"] *));
+
+/*
+    https://github.com/tailwindlabs/tailwindcss/discussions/2394
+    https://github.com/tailwindlabs/tailwindcss/pull/5732
+*/
+@layer utilities {
+
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+
+@theme {
+  --breakpoint-xs: 280px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-w1280: 1280px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1920px;
+}
+
+@theme inline {
+
+  /* Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-white: var(--text-white);
+  --color-text-black: var(--text-black);
+  --color-text-white-to-black: var(--text-white-to-black);
+  --color-text-brand-default-web: var(--text-brand-default-web);
+  /* --text-brand-default-web为新增的，和 --text-brand-default是一样的 */
+  --color-text-brand-default: var(--text-brand-default);
+  --color-text-brand-hover: var(--text-brand-hover);
+  --color-text-brand-press: var(--text-brand-press);
+  --color-text-brand-disable: var(--text-brand-disable);
+  --color-text-green: var(--text-green);
+  --color-text-red: var(--text-red);
+
+  /* Background Colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+
+  /* Fill Colors */
+  --color-fill-input: var(--fill-fill-input);
+  --color-fill-select: var(--fill-fill-select);
+  --color-fill-dropdown: var(--fill-fill-dropdown);
+  --color-fill-switch: var(--fill-fill-switch);
+  --color-fill-slider: var(--fill-fill-slider);
+  --color-fill-tooltip: var(--fill-fill-tooltip);
+  --color-fill-hover: var(--fill-fill-hover);
+  --color-fill-modal: var(--fill-fill-modal);
+  --color-fill-mask: var(--fill-fill-mask);
+
+  /* Button Fill Colors */
+  --color-fill-button-primary-default: var(--fill-button-primary-default);
+  --color-fill-button-primary-hover: var(--fill-button-primary-hover);
+  --color-fill-button-primary-press: var(--fill-button-primary-press);
+  --color-fill-button-brand-default: var(--fill-button-brand-default);
+  --color-fill-button-brand-hover: var(--fill-button-brand-hover);
+  --color-fill-button-brand-press: var(--fill-button-brand-press);
+  --color-fill-button-primary-disabled: var(--fill-button-primary-disabled);
+  --color-fill-button-secondary-default: var(--fill-button-secondary-default);
+  --color-fill-button-secondary-hover: var(--fill-button-secondary-hover);
+  --color-fill-button-secondary-press: var(--fill-button-secondary-press);
+  --color-fill-button-tertiary-default: var(--fill-button-tertiary-default);
+  --color-fill-button-tertiary-hover: var(--fill-button-tertiary-hover);
+  --color-fill-button-tertiary-press: var(--fill-button-tertiary-press);
+
+  --color-fill-button-green-default: var(--fill-button-green-default);
+  --color-fill-button-green-hover: var(--fill-button-green-hover);
+  --color-fill-button-green-press: var(--fill-button-green-press);
+  --color-fill-button-green-disable: var(--fill-button-green-disable);
+  --color-fill-button-red-default: var(--fill-button-red-default);
+  --color-fill-button-red-hover: var(--fill-button-red-hover);
+  --color-fill-button-red-press: var(--fill-button-red-press);
+  --color-fill-button-red-disable: var(--fill-button-red-disable);
+
+  /* Tag Fill Colors */
+  --color-fill-tag-brand: var(--fill-tag-brand);
+  --color-fill-tag-blue: var(--fill-tag-blue);
+  --color-fill-tag-green: var(--fill-tag-green);
+  --color-fill-tag-red: var(--fill-tag-red);
+  --color-fill-tag-gray: var(--fill-tag-gray);
+
+  /* Line Colors */
+  --color-line-divider-primary: var(--line-divider-primary);
+  --color-line-divider-secondary: var(--line-divider-secondary);
+  --color-line-divider-tertiary: var(--line-divider-tertiary);
+  --color-line-border-default: var(--line-border-default);
+  --color-line-border-hover: var(--line-border-hover);
+  --color-line-border-focus: var(--line-border-focus);
+  /* Function Colors */
+  --color-function-brand: var(--function-brand);
+  --color-function-green: var(--function-green);
+  --color-function-red: var(--function-red);
+  --color-function-orange: var(--function-orange);
+  --color-function-blue: var(--function-blue);
+}

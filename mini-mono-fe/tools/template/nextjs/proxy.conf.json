@@ -1,0 +1,27 @@
+{
+  "/tradingview": {
+    "target": "http://www.test.bitrunfinance.com/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/static": {
+    "target": "http://www.test.bitrunfinance.com/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/betterbit-frame": {
+    "target": "http://www.test.bitrunfinance.com/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/mapi": {
+    "target": "http://www.test.bitrunfinance.com/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/global-widget": {
+    "target": "https://www.test.bitrunfinance.com/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

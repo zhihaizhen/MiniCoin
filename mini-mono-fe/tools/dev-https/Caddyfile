@@ -1,0 +1,15 @@
+# 由 start.sh 启动；证书路径相对本文件所在目录
+# 默认监听 8443，避免占用系统 443 需要 sudo
+# 访问：https://dev.test.bitrunfinance.com:8443
+#
+# 注意：日常请用 start.sh（会按 HTTPS_PORT / HTTP_TARGET 生成 runtime 配置）。
+# 本文件仅作 Caddy 参考；硬编码端口可能与当前环境变量不一致。
+
+{
+	auto_https disable_redirects
+}
+
+dev.test.bitrunfinance.com:8443 {
+	tls ./certs/dev.test.bitrunfinance.com.pem ./certs/dev.test.bitrunfinance.com-key.pem
+	reverse_proxy 127.0.0.1:4200
+}

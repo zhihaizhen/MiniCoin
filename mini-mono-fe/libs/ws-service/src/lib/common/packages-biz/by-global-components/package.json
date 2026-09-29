@@ -1,0 +1,11 @@
+{
+  "name": "by-global-components",
+  "version": "0.1.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "by-global-settings": "^0.1.1",
+    "@unified/helpers": "^0.1.5"
+  }
+}
